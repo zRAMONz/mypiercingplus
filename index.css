@@ -1,7 +1,7 @@
 body {
     background-image: radial-gradient(#c3ffee, #7dfff9);
        background-size: 200% 500%;
-    color: #000;
+    color: #303030;
     font-family: Arial, sans-serif;
     font-size: 40px;
 }
@@ -21,11 +21,12 @@ body {
     max-width: 281px;
     height: auto;
     margin-bottom: 15px;
+    border-radius: 60px;
 }
 
 .product h3 {
     margin-bottom: 10px;
-    color: #000000;
+    color: #303030;
     width: 100%;
     margin-top: 0px;
 }
@@ -50,6 +51,10 @@ body {
 }
 
 .sizes {
+    display: none;
+}
+
+.sizes[data-color="Natural"] {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -57,7 +62,6 @@ body {
     max-width: 450px;
     justify-content: space-evenly;
 }
-
 .sizes .size {
     display: flex;
     flex-direction: column;
@@ -75,9 +79,14 @@ body {
     color: #000000;
 }
 
-
+#popup-add {
+    background-image: linear-gradient(-180deg, #00e3ce 0%, #1ec8b0 100%);
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    height: 80px;
+}
 #welcomePopup {
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -87,7 +96,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #9ffff6;
-    color: rgb(0, 0, 0);
+    color: #303030
     z-index: 1000;
     padding: 10px;
     font-size: 30px;
@@ -146,6 +155,7 @@ button.color {
         user-select: none;
         -webkit-user-select: none;
         touch-action: manipulation;
+        border-radius: 10px;
       }
 
 button.color:active {
@@ -198,8 +208,8 @@ button:focus:active {
     background-color: darkpurple;
 }
 header h1 {
-    color: #000000;
-    margin: 100px 20px 220px;
+    color: #303030;
+    margin: 100px 20px 180px;
 }
 
 #productList h2,
@@ -210,11 +220,19 @@ header h1 {
 button.color[data-color="Natural"] {
     background-color: #fff;
     color: #000;
+    border-radius: 22px;
 }
 
 button.color[data-color="Gold"] {
     background-image: linear-gradient(-180deg, #ffee9b 0%, #ffe254 100%);
     color: #000;
+    border-radius: 22px;
+}
+
+button.color[data-color="Black"] {
+    background-image: linear-gradient(-180deg, #666666 0%, #2c2c2c 100%);
+    color: #ffffff;
+    border-radius: 22px;
 }
 button.color:focus {
     background-color: darkgray;
