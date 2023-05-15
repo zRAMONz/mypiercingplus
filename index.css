@@ -157,12 +157,17 @@ body {
 
 
 button {
-    padding: 10px;
-    margin: 5px;
-    border: none;
-    color: black;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 60px;
+    background-image: linear-gradient(-180deg, #f7f7f7 0%, #ededed 100%);
+    border-radius: .5rem;
+    box-sizing: border-box;
+    color: #000000;
+    padding: 1rem 1.75rem;
+    text-decoration: none;
+    border: 1px;
     cursor: pointer;
-    font-size: 40px;
 }
 
 button.color {
@@ -392,10 +397,11 @@ button.color:focus:active {
 .popup-text {
     display: flex;
     flex-direction: column;
+    margin-left: 20px;
 }
 .product-info {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -407,7 +413,6 @@ button.color:focus:active {
     font-size: 40px; /* ajuste este valor conforme necessário */
 }
 #cart {
-    font-size: 22px;
     margin-left: 40px;
 }
 .popup-product-name {
@@ -417,4 +422,34 @@ button.color:focus:active {
 }
 .popup-color {
     font-size: 40px;
+}
+#cart div {
+    margin-bottom: 10px;  
+}
+#cart p {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+#cart p img {
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    display: block;
+}
+
+#cart p .product-info {
+    flex: 1;
+}
+
+#cart p button {
+    margin-left: auto;
+    background-color: #000000;
+    color: rgb(0, 0, 0);
+    padding: 5px 10px;
+    cursor: pointer;
 }
