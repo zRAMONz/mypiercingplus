@@ -120,7 +120,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: radial-gradient(#c6ffff, #dffafa);
+    background-color: #dffafa;
     color: #303030
     z-index: 1000;
     padding: 10px;
@@ -129,7 +129,7 @@ body {
 
 #welcomePopup p {
     font-size: 2.5em;
-    margin-bottom: 20px;
+    margin-bottom: 100px;
     text-align: center;
 }
 
@@ -152,7 +152,8 @@ body {
     text-decoration: none;
     border: 1px;
     cursor: pointer;
-    width: 80%;
+    width: 60%;
+    border: 2px solid #979797;
 }
 
 
@@ -480,4 +481,10 @@ header {
 header img {
     width: 400px; /* Ajuste o tamanho do logo */
     height: auto;
+}
+#popup-logo {
+    width: 600px; /* Ajuste o tamanho do logo */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centraliza o logo horizontalmente */
 }
