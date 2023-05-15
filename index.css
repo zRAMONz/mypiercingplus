@@ -1,21 +1,29 @@
 body {
-    background-image: radial-gradient(#c3ffee, #7dfff9);
+    background-image: radial-gradient(#dbfff5, #c0fffc);
        background-size: 200% 500%;
     color: #303030;
     font-family: Arial, sans-serif;
-    font-size: 40px;
+    font-size: 35px;
 }
 
 .product {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    margin: 15px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 15px 0 40px;
     padding: 20px;
     background-color: #ffffff96;
-    border-radius: 60px;
+    border-radius: 20px;
+    min-height: 340px;
 }
-
+.product-details {
+    flex-basis: 60%;
+    display: flex;
+    flex-direction: column;
+    max-width: 270px;
+    margin-left: 40px;
+}
 .product img {
     width: 100%;
     max-width: 281px;
@@ -25,10 +33,11 @@ body {
 }
 
 .product h3 {
-    margin-bottom: 10px;
     color: #303030;
-    width: 100%;
-    margin-top: 0px;
+    max-width: 120px;
+    margin-bottom: 35px;
+    font-size: 35px;
+    margin-top: 10px;
 }
 
 .colors {
@@ -48,25 +57,35 @@ body {
     border-radius: 5px;
     cursor: pointer;
     margin: 10px;
+    border: 2px solid #979797;
 }
+
 
 .sizes {
-    display: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
-
 .sizes[data-color="Natural"] {
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 100%;
-    max-width: 450px;
-    justify-content: space-evenly;
+    max-width: 270px;
+    justify-content: space-between;
 }
 .sizes .size {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 10px;
+}
+
+.sizes[data-color="Gold"] {
+    display: none;
+}
+.sizes[data-color="Black"] {
+    display: none;
 }
 
 .sizes h4 {
@@ -84,7 +103,7 @@ body {
     border-radius: 0.5rem;
     box-sizing: border-box;
     color: #FFFFFF;
-    height: 80px;
+    height: 115px;
 }
 #welcomePopup {
     top: 0;
@@ -95,7 +114,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #9ffff6;
+    background-image: radial-gradient(#dbfff5, #c0fffc);
     color: #303030
     z-index: 1000;
     padding: 10px;
@@ -127,6 +146,7 @@ body {
     text-decoration: none;
     border: 1px;
     cursor: pointer;
+    width: 80%;
 }
 
 
@@ -209,13 +229,13 @@ button:focus:active {
 }
 header h1 {
     color: #303030;
-    margin: 100px 20px 180px;
+    margin: 245px 40px 200px;
 }
 
 #productList h2,
 #purchaseSummary h2 {
     color: #003d29;
-    margin: 20px;
+    margin: 20px 40px;
 }
 button.color[data-color="Natural"] {
     background-color: #fff;
@@ -224,13 +244,13 @@ button.color[data-color="Natural"] {
 }
 
 button.color[data-color="Gold"] {
-    background-image: linear-gradient(-180deg, #ffee9b 0%, #ffe254 100%);
+    background-image: linear-gradient(-180deg, #fff2b3 0%, #ffed92 100%);
     color: #000;
     border-radius: 22px;
 }
 
 button.color[data-color="Black"] {
-    background-image: linear-gradient(-180deg, #666666 0%, #2c2c2c 100%);
+    background-image: linear-gradient(-180deg, #838383 0%, #444444 100%);
     color: #ffffff;
     border-radius: 22px;
 }
@@ -248,7 +268,7 @@ button.color:focus:active {
 
 #purchaseSummary p {
     color: #000000;
-    margin: 20px;
+    margin: 50px 40px;
 }
 
 .sizes h4 {
@@ -274,7 +294,7 @@ button.color:focus:active {
     height: 50px;
     margin-left: 10px;
     padding: 5px;
-    border: 1px solid #ddd;
+    border: 1px solid #000000;
     border-radius: 5px;
 }
 #popup .popup-sizes {
@@ -319,6 +339,7 @@ button.color:focus:active {
         color: #ddd;
         border-radius: 5px;
         cursor: pointer;
+        border: 1px solid #ccc; /* cinza claro */
     }
     
     .measure {
@@ -334,7 +355,7 @@ button.color:focus:active {
     align-items: center;
 }
 #copyButton {
-    margin-left: 20px
+    margin-left: 40px
 }
 #copyButton, #whatsappButton {
     font-size: 60px;
@@ -346,6 +367,7 @@ button.color:focus:active {
     text-decoration: none;
     border: 1px;
     cursor: pointer;
+    border: 2px solid #979797;
   }
 
 #popup-product-image {
@@ -377,5 +399,6 @@ button.color:focus:active {
     font-size: 40px; /* ajuste este valor conforme necessário */
 }
 #cart {
-    font-size: 26px; /* ajuste este valor conforme necessário */
+    font-size: 22px;
+    margin-left: 40px;
 }
