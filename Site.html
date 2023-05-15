@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>My Piercing Italy</title>
+    <link rel="stylesheet" type="text/css" href="site.css">
+</head>
+<body>
+    <!-- Pop-up de boas-vindas -->
+    <div id="welcomePopup">
+        <p>Bem-vindo ao nosso site!</p>
+        <button id="individualButton">Pessoa Física</button>
+        <button id="businessButton">Pessoa Jurídica</button>
+    </div>
+
+    <!-- Cabeçalho do site -->
+    <header>
+       <!-- <img src="https://cdn.awsli.com.br/1000x1000/1130/1130778/produto/164284781/bolinha-qsmlcb.jpg" alt="Logo" width="200" height="200">-->
+        <h1>My Piercing Italy</h1>
+    </header>
+
+    <!-- Lista de produtos -->
+    <section id="productList">
+        <h2>Produtos</h2>
+        <!-- Produto D Ring -->
+        <div class="product">
+            <div class="product-info">
+                <img src="https://cdn.awsli.com.br/1000x1000/1130/1130778/produto/164284781/bolinha-qsmlcb.jpg" alt="D Ring" width="100" height="100">
+                <h3 class="product-name">D Ring</h3>
+            </div>
+
+            <!-- Medidas para a cor Natural do produto D Ring -->
+            <div class="sizes" data-color="Natural">
+                <!-- Preços estão em euro -->
+                <div class="size">
+                    <h4>1.0 mm</h4>
+                        <div class="measure-container"><span class="measure" data-price="1.5">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                            <div class="measure-container"><span class="measure" data-price="1.5">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="1.5">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                </div>
+                <div class="size">
+                    <h4>2.2 mm</h4>
+                    <div class="measure-container"><span class="measure" data-price="1.5">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                    <div class="measure-container"><span class="measure" data-price="1.5">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                        <div class="measure-container"><span class="measure" data-price="1.5">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                    </div>
+            </div>
+            <!-- Medidas para a cor Gold do produto D Ring -->
+            <div class="sizes" data-color="Gold">
+                <!-- Preços estão em euro -->
+                <div class="size">
+                    <h4>1.0 mm</h4>
+                    <div class="measure-container"><span class="measure" data-price="2.5">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                    <div class="measure-container"><span class="measure" data-price="2.5">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                        <div class="measure-container"><span class="measure" data-price="2.5">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                </div>
+                <div class="size">
+                    <h4>1.2 mm</h4>
+                    <div class="measure-container"><span class="measure" data-price="2.5">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                    <div class="measure-container"><span class="measure" data-price="2.5">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                        <div class="measure-container"><span class="measure" data-price="2.5">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                </div>
+            </div>
+
+            <div class="colors">
+                <!-- Preços estão em euro -->
+<!-- Preços estão em euro -->
+<button class="color" data-price="1.5" data-color="Natural">€ 1.5</button>
+<button class="color" data-price="2.5"data-color="Gold">€ 2.5</button>
+
+            </div>
+        </div>
+        
+<!-- Pop-up de seleção de cores e medidas -->
+<div id="popup" style="display: none;">
+    <div class="popup-header">
+    <img id="popup-product-image" src="" alt="Product Image"/>
+         <div class="popup-text">
+                 <p class="popup-product-name"></p>
+                    <p class="popup-color"></p>
+         </div>
+         </div>
+        
+    <h2>Selecione a medida</h2>
+    
+    <div class="popup-sizes">
+        <!-- Aqui vão as opções de medidas -->
+    </div>
+
+    <button id="popup-add">Adicionar ao carrinho</button>
+    <button id="popup-close">Fechar</button>
+</div>
+
+    </section>
+
+    <!-- Resumo da compra -->
+    <section id="purchaseSummary">
+        <h2>Resumo da Compra</h2>
+        <div id="cart">
+            <!-- Lista de produtos selecionados será preenchida aqui pelo JavaScript -->
+        </div>
+        <p>Total: €<span id="total">0</span></p>
+        <button id="copyButton">Copiar</button>
+        <button id="whatsappButton">Whatsapp</button>
+    </section>
+
+
+    <script src="site.js"></script>
+</body>
+
+</html>
