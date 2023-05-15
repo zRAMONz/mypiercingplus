@@ -1,31 +1,44 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-    // Função para aumentar os preços dos produtos em 22% para pessoa jurídica
-    function updatePricesForBusiness() {
-        var colorButtons = document.getElementsByClassName('color');
-        for (var i = 0; i < colorButtons.length; i++) {
-            var price = parseFloat(colorButtons[i].getAttribute('data-price'));
-            price *= 1.22; // Aumentar o preço em 22%
-            colorButtons[i].setAttribute('data-price', price.toFixed(2)); // Atualizar o preço no atributo data-price
-            colorButtons[i].innerText = colorButtons[i].innerText.split('-')[0] + '- €' + price.toFixed(2); // Mostrar o novo preço com duas casas decimais
-        }
-
-        var measureButtons = document.getElementsByClassName('measure');
-        for (var i = 0; i < measureButtons.length; i++) {
-            var price = parseFloat(measureButtons[i].getAttribute('data-price'));
-            price *= 1.22; // Aumentar o preço em 22%
-            measureButtons[i].setAttribute('data-price', price.toFixed(2)); // Atualizar o preço no atributo data-price
-            measureButtons[i].innerText = measureButtons[i].innerText.split('-')[0] + '- €' + price.toFixed(2); // Mostrar o novo preço com duas casas decimais
-        }
+// Função para aumentar os preços dos produtos em 22% para pessoa jurídica
+// Função para aumentar os preços dos produtos em 22% para pessoa jurídica
+function updatePricesForBusiness() {
+    var colorButtons = document.getElementsByClassName('color');
+    for (var i = 0; i < colorButtons.length; i++) {
+        var price = parseFloat(colorButtons[i].getAttribute('data-price'));
+        price *= 1.22; // Aumentar o preço em 22%
+        colorButtons[i].setAttribute('data-price', price.toFixed(2)); // Atualizar o preço no atributo data-price
+        var colorName = colorButtons[i].innerText.replace(/€\s*\d+(\.\d{1,2})?/, '').trim(); // Remove original price from the color name
+        colorButtons[i].innerText = colorName + '€' + price.toFixed(2); // Show the new price with two decimal places
     }
 
-    document.getElementById('businessButton').addEventListener('click', function() {
-        updatePricesForBusiness();
-        document.getElementById('welcomePopup').style.display = 'none';
-    });
+    var measureButtons = document.getElementsByClassName('measure');
+    for (var i = 0; i < measureButtons.length; i++) {
+        var price = parseFloat(measureButtons[i].getAttribute('data-price'));
+        price *= 1.22; // Aumentar o preço em 22%
+        measureButtons[i].setAttribute('data-price', price.toFixed(2)); // Atualizar o preço no atributo data-price
+        var measureName = measureButtons[i].innerText.replace(/€\s*\d+(\.\d{1,2})?/, '').trim(); // Remove original price from the measure name
+        measureButtons[i].innerText = measureName; // Show only measure name
+    }
+}
 
-    document.getElementById('individualButton').addEventListener('click', function() {
-        document.getElementById('welcomePopup').style.display = 'none';
-    });
+
+
+// Exibe o popup de boas-vindas
+document.getElementById('welcomePopup').style.display = 'flex';
+document.body.style.overflow = 'hidden';
+
+
+document.getElementById('businessButton').addEventListener('click', function() {
+    updatePricesForBusiness();
+    document.getElementById('welcomePopup').style.display = 'none';
+    document.body.style.overflow = '';
+});
+
+document.getElementById('individualButton').addEventListener('click', function() {
+    document.getElementById('welcomePopup').style.display = 'none';
+    document.body.style.overflow = '';
+});
+
 
     // Resto do código...
 });
