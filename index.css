@@ -1,5 +1,5 @@
 body {
-    background-image: radial-gradient(#dbfff5, #c0fffc);
+    background-color: #dffafa;
        background-size: 200% 500%;
     color: #303030;
     font-family: Arial, sans-serif;
@@ -120,7 +120,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: radial-gradient(#dbfff5, #c0fffc);
+    background-image: radial-gradient(#c6ffff, #dffafa);
     color: #303030
     z-index: 1000;
     padding: 10px;
@@ -246,7 +246,7 @@ header h1 {
 
 #productList h2,
 #purchaseSummary h2 {
-    color: #003d29;
+    color: #005e5e;
     margin: 20px 40px;
 }
 button.color[data-color="Natural"] {
@@ -452,4 +452,32 @@ button.color:focus:active {
     color: rgb(0, 0, 0);
     padding: 5px 10px;
     cursor: pointer;
+}
+header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.whatsapp-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.whatsapp-container img {
+    width: 30px; /* Ajuste o tamanho do ícone do WhatsApp */
+    height: 30px;
+}
+
+.whatsapp-container span {
+    font-size: 28px; /* Ajuste o tamanho do texto */
+    color: #000; /* Ajuste a cor do texto */
+}
+
+header img {
+    width: 400px; /* Ajuste o tamanho do logo */
+    height: auto;
 }
