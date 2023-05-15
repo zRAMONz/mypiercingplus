@@ -99,12 +99,17 @@ body {
 }
 
 #popup-add {
-    background-image: linear-gradient(-180deg, #00e3ce 0%, #1ec8b0 100%);
-    border-radius: 0.5rem;
+    font-size: 60px;
+    background-image: linear-gradient(-180deg, #f7f7f7 0%, #ededed 100%);
+    border-radius: .5rem;
     box-sizing: border-box;
-    color: #FFFFFF;
-    height: 115px;
-}
+    color: #000000;
+    padding: 1rem 1.75rem;
+    text-decoration: none;
+    border: 1px;
+    cursor: pointer;
+    border: 2px solid #979797;
+  }
 #welcomePopup {
     top: 0;
     left: 0;
@@ -229,7 +234,8 @@ button:focus:active {
 }
 header h1 {
     color: #303030;
-    margin: 245px 40px 200px;
+    margin: 150px 0 200px;
+    text-align: center;
 }
 
 #productList h2,
@@ -401,4 +407,12 @@ button.color:focus:active {
 #cart {
     font-size: 22px;
     margin-left: 40px;
+}
+.popup-product-name {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0;
+}
+.popup-color {
+    font-size: 40px;
 }
