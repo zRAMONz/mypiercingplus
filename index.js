@@ -204,7 +204,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         var cartItems = document.getElementById('cart').innerText;
         var totalValue = document.getElementById('total').innerText;
         var textToSend = "Resumo da Compra:\n" + cartItems + "\nTotal: €" + totalValue;
-        var phoneNumber = "1234567890"; // Substitua pelo número de telefone desejado
+        var phoneNumber = "393898986018"; // Substitua pelo número de telefone desejado
         var message = encodeURIComponent(textToSend);
         window.open(`https://wa.me/${phoneNumber}?text=${message}`);
     });
