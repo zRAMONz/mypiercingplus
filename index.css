@@ -207,7 +207,7 @@ button.measure:active {
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 20px;
-    background-image: radial-gradient(#e0fffc, #ededed);
+    background-image: radial-gradient(#e7e7e7, #e4e4e4);
     border: 1px solid black;
     z-index: 100;
     width: 90%;
