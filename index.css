@@ -9,8 +9,8 @@ body {
 .product {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
+    margin-top: auto;
+    margin-bottom: auto;
     margin: 15px 0 40px;
     padding: 20px;
     background-color: #ffffff96;
@@ -23,6 +23,7 @@ body {
     flex-direction: column;
     max-width: 270px;
     margin-left: 40px;
+    justify-content: center;
 }
 .product img {
     width: 100%;
@@ -396,6 +397,7 @@ button.color:focus:active {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
+    justify-content: center;
 }
 
 .product-info img {
