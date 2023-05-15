@@ -58,7 +58,8 @@ function openPopup(e) {
     var productImage = product.getElementsByTagName('img')[0];
     document.getElementById('popup-product-image').src = productImage.src;
     // Pega as divs de medidas da cor correta
-    var sizes = product.querySelectorAll('.sizes[data-color="' + color + '"] .size');
+   
+    var sizes = product.querySelectorAll('.sizes[data-color="' + color + '"] > .size');
 
     // Remove as opções de medidas existentes no pop-up
     var popupSizes = popup.getElementsByClassName('popup-sizes')[0];
@@ -71,7 +72,7 @@ function openPopup(e) {
     var sizeDiv = sizes[i].cloneNode(true);
 
     // Adiciona novamente os campos de entrada
-    var measures = sizeDiv.getElementsByClassName('measure');
+    var measures = sizeDiv.querySelectorAll('.measure-container .measure');
     for (var j = 0; j < measures.length; j++) {
         // Verifica se já existe um campo de entrada ao lado da medida
         var nextSibling = measures[j].nextSibling;
@@ -86,6 +87,7 @@ function openPopup(e) {
 
     popupSizes.appendChild(sizeDiv);
 }
+
 
 popup.style.display = 'block';
 }
@@ -166,7 +168,7 @@ document.getElementById('whatsappButton').addEventListener('click', function() {
     var cartItems = document.getElementById('cart').innerText;
     var totalValue = document.getElementById('total').innerText;
     var textToSend = "Resumo da Compra:\n" + cartItems + "\nTotal: €" + totalValue;
-    var phoneNumber = "5511989174080"; // Substitua pelo número de telefone desejado
+    var phoneNumber = "1234567890"; // Substitua pelo número de telefone desejado
     var message = encodeURIComponent(textToSend);
     window.open(`https://wa.me/${phoneNumber}?text=${message}`);
 });
