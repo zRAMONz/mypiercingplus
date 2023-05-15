@@ -469,8 +469,8 @@ header {
 }
 
 .whatsapp-container img {
-    width: 30px; /* Ajuste o tamanho do ícone do WhatsApp */
-    height: 30px;
+    width: 100px;
+    height: auto;
 }
 
 .whatsapp-container span {
