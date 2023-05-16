@@ -383,18 +383,19 @@ button.color:focus:active {
     margin-left: 40px
 }
 #copyButton, #whatsappButton {
-    font-size: 60px;
-    background-image: linear-gradient(-180deg, #f7f7f7 0%, #ededed 100%);
-    border-radius: .5rem;
-    box-sizing: border-box;
-    color: #000000;
-    padding: 1rem 1.75rem;
-    text-decoration: none;
-    border: 1px;
-    cursor: pointer;
-    border: 2px solid #979797;
-    margin-bottom: 120px;
-  }
+        font-size: 60px;
+        background-image: linear-gradient(-180deg, #00d2db 0%, #0db2b9 100%);
+        border-radius: 0.5rem;
+        box-sizing: border-box;
+        color: #ffffff;
+        font-weight: 600;
+        padding: 1rem 1.75rem;
+        text-decoration: none;
+        border: 1px;
+        cursor: pointer;
+        border: 2px solid #979797;
+        margin-bottom: 120px;
+    }
 
 #popup-product-image {
     width: 230px;  /* ajuste a largura da imagem */
@@ -475,19 +476,29 @@ header {
     flex-direction: column;
 }
 
-.whatsapp-container {
+.icons .whatsapp-container {
     display: flex;
     align-items: center;
     gap: 10px;
+ 
+}
+.icons {
+    display: flex;
+    flex-direction: row;
     justify-content: flex-end;
 }
-
-.whatsapp-container img {
+.icons .whatsapp-container img {
     width: 100px;
     height: auto;
+    margin: 5px;
+}
+.icons .insta-container img {
+    width: 100px;
+    height: auto;
+    margin: 5px;
 }
 
-.whatsapp-container span {
+.icons .whatsapp-container span {
     font-size: 28px; /* Ajuste o tamanho do texto */
     color: #000; /* Ajuste a cor do texto */
 }
