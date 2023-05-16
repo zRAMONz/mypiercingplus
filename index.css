@@ -297,6 +297,7 @@ button.color:focus:active {
 }
 #popup h2 {
     color: #000;
+    margin-top: 80px;
 }
 .measure.selected {
     /* Aqui você pode definir os estilos CSS que fazem o botão parecer selecionado */
@@ -311,12 +312,13 @@ button.color:focus:active {
 }
 
 .measure-quantity {
-    width: 80px;   /* ajuste conforme necessário */
+    width: 117px;
     height: 50px;
     margin-left: 10px;
     padding: 5px;
-    border: 1px solid #000000;
+    border: 2px solid #000000;
     border-radius: 5px;
+    margin: 15px;
 }
 #popup .popup-sizes {
     display: flex;
@@ -506,4 +508,126 @@ header img {
     left: 50%;
     transform: translate(-50%, -50%); 
     /* demais propriedades */
+}
+/* Tablets em retrato e paisagem */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    #welcomePopup button {
+        font-size: 25px;
+        width: 25%;
+    }
+    #popup-logo {
+        width: 20%;!important
+    }
+    #welcomePopup button {
+        font-size: 20px;
+}
+    body {
+        font-size: 28px;
+    }
+    .product {
+        flex-wrap: wrap;
+    }
+    .product img {
+        max-width: 200px;
+    }
+    .product h3 {
+        font-size: 28px;
+    }
+    .product-details {
+        margin-left: 20px;
+    }
+    .colors {
+        flex-direction: row;
+    }
+    .sizes .size {
+        margin-right: -60px;
+    }
+    #popup-add {
+        font-size: 40px;
+    }
+    #welcomePopup {
+        font-size: 24px;
+    }
+    #welcomePopup p {
+        font-size: 2em;
+    }
+
+    button {
+        font-size: 40px;
+    }
+    button.color {
+        font-size: 30px;
+    }
+    #popup {
+        width: 80%;
+    }
+    #popup-close {
+        height: 60px;
+        font-size: 40px;
+    }
+    header h1 {
+        margin: 100px 0 150px;
+    }
+}
+
+/* Desktops e laptops */
+#popup-logo {
+    width: 20%;
+}
+#welcomePopup button {
+    font-size: 20px;
+}
+@media screen and (min-width: 1025px) 
+{
+    body {
+        font-size: 20px;
+    }
+    .product {
+        justify-content: space-between;
+    }
+    .product img {
+        max-width: 150px;
+    }
+    .product h3 {
+        font-size: 20px;
+    }
+    .product-details {
+        margin-left: 20px;
+    }
+    .colors {
+        flex-direction: row;
+    }
+    .sizes .size {
+        margin-right: -40px;
+    }
+    #popup-add {
+        font-size: 30px;
+    }
+    #welcomePopup {
+        font-size: 20px;
+    }
+    #welcomePopup p {
+        font-size: 1.5em;
+    }
+    #welcomePopup button {
+        font-size: 30px;
+        width: 60%;
+    }
+    button {
+        font-size: 30px;
+    }
+    button.color {
+        font-size: 20px;
+    }
+    #popup {
+        width: 60%;
+    }
+    #popup-close {
+        height: 40px;
+        font-size: 30px;
+    }
+    header h1 {
+        margin: 80px 0 120px;
+    }
+
 }
