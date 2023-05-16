@@ -134,7 +134,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 
                 var productInfo = document.createElement('span');
                 productInfo.className = 'product-info';
-                productInfo.innerText = productName + ' ' + color + ' | ' + size + ' x ' + measure + ' | ';
+                productInfo.innerText = productName + ' ' + color + ' | ' + size + ' ' + measure;
                 var priceElement = document.createElement('span');
                 priceElement.innerText = '€' + price.toFixed(2) + ' * ' + quantity + ' unid = €' + (price * quantity).toFixed(2);
                 productInfo.appendChild(document.createElement('br'));
@@ -198,21 +198,32 @@ window.addEventListener('DOMContentLoaded', (event) => {
     
     document.getElementById('popup-close').addEventListener('click', closePopup);
     
+    function getCartItemsText() {
+        var cartItems = document.getElementById('cart').children;
+        var cartItemsText = '';
+        
+        for (var i = 0; i < cartItems.length; i++) {
+            var productInfo = cartItems[i].querySelector('.product-info').innerText;
+            cartItemsText += productInfo + '\n';
+        }
+        
+        return cartItemsText;
+    }
     
     
     document.getElementById('whatsappButton').addEventListener('click', function() {
-        var cartItems = document.getElementById('cart').innerText;
+        var cartItemsText = getCartItemsText();
         var totalValue = document.getElementById('total').innerText;
-        var textToSend = "Resumo da Compra:\n" + cartItems + "\nTotal: €" + totalValue;
+        var textToSend = "Resumo da Compra:\n" + cartItemsText + "Total: €" + totalValue;
         var phoneNumber = "393898986018"; // Substitua pelo número de telefone desejado
         var message = encodeURIComponent(textToSend);
         window.open(`https://wa.me/${phoneNumber}?text=${message}`);
     });
     
     document.getElementById('copyButton').addEventListener('click', function() {
-        var cartItems = document.getElementById('cart').innerText;
+        var cartItemsText = getCartItemsText();
         var totalValue = document.getElementById('total').innerText;
-        var textToCopy = "Resumo da Compra:\n" + cartItems + "\nTotal: €" + totalValue;
+        var textToCopy = "Resumo da Compra:\n" + cartItemsText + "Total: €" + totalValue;
         var tempInput = document.createElement('textarea');
         tempInput.style = "position: absolute; left: -1000px; top: -1000px";
         tempInput.value = textToCopy;
@@ -221,5 +232,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
         document.execCommand('copy');
         document.body.removeChild(tempInput);
     });
+    
     
     
