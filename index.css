@@ -12,17 +12,17 @@ body {
     margin-top: auto;
     margin-bottom: auto;
     margin: 15px 0 40px;
-    padding: 20px;
+    padding: 15px 20px;
     background-color: #ffffff96;
     border-radius: 20px;
     min-height: 340px;
+    
 }
 .product-details {
     flex-basis: 60%;
     display: flex;
     flex-direction: column;
-    max-width: 270px;
-    margin-left: 40px;
+      margin-left: 40px;
     justify-content: center;
 }
 .product img {
@@ -35,7 +35,6 @@ body {
 
 .product h3 {
     color: #303030;
-    max-width: 120px;
     margin-bottom: 35px;
     font-size: 35px;
     margin-top: 10px;
@@ -46,8 +45,9 @@ body {
     flex-direction: column;
     align-content: flex-end;
     align-items: center;
-    position: absolute;
-    right: 40px;
+    /* position: absolute; */
+    /* right: 40px; */
+    justify-content: center;
 }
 
 .colors .color {
@@ -71,15 +71,16 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 100%;
-    max-width: 270px;
+    max-width: 60%;
     justify-content: space-between;
+
 }
 .sizes .size {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 10px;
+    align-items: flex-start;
 }
 
 .sizes[data-color="Gold"] {
@@ -208,24 +209,26 @@ button.measure:active {
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 20px;
-    background-image: radial-gradient(#e7e7e7, #e4e4e4);
+    background-color: #efffff;
     border: 1px solid black;
     z-index: 100;
     width: 90%;
     max-width: 100%; /* Defina um valor máximo desejado para evitar que o pop-up fique muito largo em telas grandes */
+    
 }
 
 #popup-close {
     position: absolute;
     top: 10px;
     right: 10px;
-    height: 20px;
+    height: 90px;
     font-size: 50px;
     font-weight: bold;
     color: #000;
     background-color: transparent;
     border: none;
     cursor: pointer;
+    border: 1px solid #5c5c5c;
 }
 
 
@@ -366,6 +369,8 @@ button.color:focus:active {
 .measure-container {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+
 }
 #copyButton {
     margin-left: 40px
@@ -397,8 +402,9 @@ button.color:focus:active {
 
 .popup-text {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     margin-left: 20px;
+
 }
 .product-info {
     display: flex;
