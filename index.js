@@ -204,11 +204,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
         
         for (var i = 0; i < cartItems.length; i++) {
             var productInfo = cartItems[i].querySelector('.product-info').innerText;
-            cartItemsText += productInfo + '\n';
+            cartItemsText += productInfo + '\n\n'; // Adiciona uma linha extra em branco entre cada item
         }
         
         return cartItemsText;
     }
+    
     
     
     document.getElementById('whatsappButton').addEventListener('click', function() {
