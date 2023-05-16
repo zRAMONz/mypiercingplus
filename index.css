@@ -257,8 +257,8 @@ header h1 {
 #purchaseSummary h2 {
     color: #005e5e;
     margin: 20px 40px;
-    font-size: 50px;
 }
+
 button.color[data-color="Natural"] {
     background-color: #fff;
     color: #000;
@@ -291,6 +291,7 @@ button.color:focus:active {
 #purchaseSummary p {
     color: #000000;
     margin: 50px 40px;
+    font-size: 50px;
 }
 
 .sizes h4 {
