@@ -290,8 +290,8 @@ button.color:focus:active {
 
 #purchaseSummary p {
     color: #000000;
-    margin: 50px 40px;
-    font-size: 50px;
+    margin: 30px 0;
+    font-size: 35px;
 }
 
 .sizes h4 {
@@ -431,7 +431,7 @@ button.color:focus:active {
     font-size: 40px; /* ajuste este valor conforme necessário */
 }
 #cart {
-    margin-left: 40px;
+    margin: 5px;
 }
 .popup-product-name {
     font-size: 50px;
