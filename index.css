@@ -257,6 +257,7 @@ header h1 {
 #purchaseSummary h2 {
     color: #005e5e;
     margin: 20px 40px;
+    font-size: 50px;
 }
 button.color[data-color="Natural"] {
     background-color: #fff;
@@ -383,19 +384,19 @@ button.color:focus:active {
     margin-left: 40px
 }
 #copyButton, #whatsappButton {
-        font-size: 60px;
-        background-image: linear-gradient(-180deg, #00d2db 0%, #0db2b9 100%);
-        border-radius: 0.5rem;
-        box-sizing: border-box;
-        color: #ffffff;
-        font-weight: 600;
-        padding: 1rem 1.75rem;
-        text-decoration: none;
-        border: 1px;
-        cursor: pointer;
-        border: 2px solid #979797;
-        margin-bottom: 120px;
-    }
+    font-size: 60px;
+    background-image: linear-gradient(-180deg, #00a6ad 0%, #00858b 100%);
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    color: white;
+    padding: 0 100px 0;
+    text-decoration: none;
+    border: 1px;
+    cursor: pointer;
+    border: 2px solid #979797;
+    margin-bottom: 120px;
+    height: 160px;
+}
 
 #popup-product-image {
     width: 230px;  /* ajuste a largura da imagem */
