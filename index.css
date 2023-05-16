@@ -27,7 +27,7 @@ body {
 }
 .product img {
     width: 100%;
-    max-width: 281px;
+    max-width: 340px;
     height: auto;
     margin-bottom: 15px;
     border-radius: 60px;
@@ -48,10 +48,11 @@ body {
     /* position: absolute; */
     /* right: 40px; */
     justify-content: center;
+    min-width: 120px;
 }
 
 .colors .color {
-    padding: 24px;
+    padding: 40px 12px;
     background-color: #444;
     border: none;
     color: #ddd;
@@ -101,6 +102,8 @@ body {
 }
 
 #popup-add {
+    display: block;
+    margin-left: auto;
     font-size: 60px;
     background-image: linear-gradient(-180deg, #f7f7f7 0%, #ededed 100%);
     border-radius: .5rem;
@@ -111,6 +114,7 @@ body {
     border: 1px;
     cursor: pointer;
     border: 2px solid #979797;
+
   }
 #welcomePopup {
     top: 0;
@@ -340,7 +344,7 @@ button.color:focus:active {
     }
     .product img {
         width: 100%;
-        max-width: 281px;
+        max-width: 340px;
         height: auto;
         margin-bottom: 15px;
     }
@@ -386,6 +390,7 @@ button.color:focus:active {
     border: 1px;
     cursor: pointer;
     border: 2px solid #979797;
+    margin-bottom: 120px;
   }
 
 #popup-product-image {
@@ -493,4 +498,11 @@ header img {
     height: auto;
     display: block;
     margin: 0 auto; /* Centraliza o logo horizontalmente */
+}
+#popup, #welcomePopup {
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    /* demais propriedades */
 }
