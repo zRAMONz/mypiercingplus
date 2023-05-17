@@ -23,11 +23,10 @@ body {
     display: flex;
     flex-direction: column;
       margin-left: 40px;
-    justify-content: center;
 }
 .product img {
     width: 100%;
-    max-width: 340px;
+    width: 350px;
     height: auto;
     margin-bottom: 15px;
     border-radius: 60px;
