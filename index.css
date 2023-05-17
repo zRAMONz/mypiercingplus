@@ -135,8 +135,9 @@ body {
 
 #welcomePopup p {
     font-size: 2.5em;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
     text-align: center;
+    font-size: 80px;
 }
 
 #welcomePopup .buttons {
@@ -523,7 +524,7 @@ header img {
     height: auto;
 }
 #popup-logo {
-    width: 80%;
+    width: 60%;
     height: auto;
     display: block;
     margin: 0 auto; /* Centraliza o logo horizontalmente */
