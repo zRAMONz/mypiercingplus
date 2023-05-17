@@ -262,18 +262,27 @@ button.color[data-color="Natural"] {
     background-color: #fff;
     color: #000;
     border-radius: 22px;
+    height: 112px;
+    align-items: center;
+    width: 150px;
 }
 
 button.color[data-color="Gold"] {
     background-image: linear-gradient(-180deg, #fff2b3 0%, #ffed92 100%);
     color: #000;
     border-radius: 22px;
+    height: 112px;
+    align-items: center;
+    width: 150px;
 }
 
 button.color[data-color="Black"] {
     background-image: linear-gradient(-180deg, #838383 0%, #444444 100%);
     color: #ffffff;
     border-radius: 22px;
+    height: 112px;
+    align-items: center;
+    width: 150px;
 }
 button.color:focus {
     background-color: darkgray;
@@ -522,5 +531,6 @@ header img {
     /* demais propriedades */
 }
 .argola-segmento .sizes[data-color="Natural"] {
-    max-width: 50%;
+    max-width: 40%;
 }
+
