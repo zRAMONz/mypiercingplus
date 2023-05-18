@@ -540,7 +540,7 @@ header img {
     max-width: 40%;
 }
 
-@media (min-width: 680px) {
+@media (min-width: 1080px) {
     #popup-logo {
         width: 20%;
     }
