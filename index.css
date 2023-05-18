@@ -667,3 +667,15 @@ header img {
     justify-content: space-between;
 }
 
+.language-selector {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.language-selector img {
+    width: 158px;
+    height: auto;
+    margin: 0 25px;
+    cursor: pointer;
+}
