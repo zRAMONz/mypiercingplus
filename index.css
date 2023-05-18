@@ -603,4 +603,38 @@ body {
 header img {
     width: 300px;   
 }
+.popup-product-name {
+    font-size: 25px;
+}
+#popup .measure {
+    font-size: 30px;
+}
+#popup-close {
+    height: 60px;
+    font-size: 30px;
+}
+#popup input[type="number"] {
+    font-size: 35px;
+}
+.measure-quantity {
+    width: 90px;
+    height: 40px;}
+    
+#popup-product-image {
+    width: 200px;
+    height: 200px;
+}
+#popup .popup-sizes .size h4 {
+    font-size: 30px;
+    margin-top: 10px;
+}
+#popup h2 {
+    margin-top: 5px;
+}
+#popup .popup-sizes {
+    padding-bottom: 10px;
+}
+.measure-quantity {
+    margin: 5px;
+}
 }
