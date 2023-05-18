@@ -220,7 +220,7 @@ button.measure:active {
     z-index: 100;
     width: 90%;
     max-width: 100%; /* Defina um valor máximo desejado para evitar que o pop-up fique muito largo em telas grandes */
-    
+    max-height: 90%;    
 }
 
 #popup-close {
@@ -334,7 +334,7 @@ button.color:focus:active {
     padding: 5px;
     border: 2px solid #000000;
     border-radius: 5px;
-    margin: 15px;
+    margin: 8px;
 }
 #popup .popup-sizes {
     display: flex;
@@ -347,6 +347,15 @@ button.color:focus:active {
     width: 100%; /* ajuste este valor conforme necessário */
     max-width: 250px;
 }
+
+#popup .measure {
+    font-size: 40px;
+}
+#popup .popup-sizes .size h4 {
+    font-size: 40px; /* Altere o valor para o tamanho de fonte desejado */
+    margin-bottom: 20px;
+}
+
 .measure {
     margin-bottom: 10px;
 }
