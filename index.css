@@ -197,17 +197,6 @@ button.color {
         border-radius: 10px;
       }
 
-button.color:active {
-    background-color: darkblue;
-}
-
-button.measure {
-    background-color: green;
-}
-
-button.measure:active {
-    background-color: darkgreen;
-}
 
 #popup {
     position: absolute;
@@ -313,12 +302,9 @@ button.color:focus:active {
 }
 #popup h2 {
     color: #000;
-    margin-top: 80px;
+    margin-top: 35px;
 }
-.measure.selected {
-    /* Aqui você pode definir os estilos CSS que fazem o botão parecer selecionado */
-    background-color: #f00; /* por exemplo, isso fará com que o fundo do botão se torne vermelho */
-}
+
 .measure {
     display: flex;
     flex-direction: row;
