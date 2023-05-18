@@ -28,13 +28,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
     document.body.style.overflow = 'hidden';
     
     
-    document.getElementById('businessButton').addEventListener('click', function() {
+    document.getElementById('individualButton').addEventListener('click', function() {
         updatePricesForBusiness();
         document.getElementById('welcomePopup').style.display = 'none';
         document.body.style.overflow = '';
     });
     
-    document.getElementById('individualButton').addEventListener('click', function() {
+    document.getElementById('businessButton').addEventListener('click', function() {
         document.getElementById('welcomePopup').style.display = 'none';
         document.body.style.overflow = '';
     });
