@@ -540,3 +540,72 @@ header img {
     max-width: 40%;
 }
 
+@media (min-width: 680px) {
+    #popup-logo {
+        width: 20%;
+    }
+    #welcomePopup p {
+        font-size: 40px;
+    }
+    #welcomePopup button {
+        font-size: 30px;
+        width: 30%;
+  }
+
+  .icons .insta-container img {
+    width: 50px;
+  }
+  .icons .whatsapp-container img {
+    width: 50px;
+  }
+  body {
+    font-size: 20px;
+}
+.product h3 {
+    font-size: 25px;
+}
+button.color {
+    font-size: 30px;
+}
+button.color[data-color="Natural"] {
+    height: 80px;
+    width: 112px;
+}
+button.color[data-color="Gold"] {
+    height: 80px;
+    width: 112px;
+}
+button.color[data-color="Black"] {
+    height: 80px;
+    width: 112px;
+}
+.product img {
+    width: 240px;
+}
+.product {
+    min-height: 230px;
+}
+.product {
+    max-width: 90%;
+    justify-content: space-around;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.icons {
+    min-width: 100%;
+}
+#copyButton, #whatsappButton {
+    font-size: 40px;
+    padding: 0 35px 0;
+    height: 95px;
+}
+#copyButton {
+    margin-left: 0px;
+}
+header img {
+    width: 300px;   
+}
+}
