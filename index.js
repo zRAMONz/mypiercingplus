@@ -43,7 +43,25 @@ window.addEventListener('DOMContentLoaded', (event) => {
         // Resto do código...
     });
     
+    let viewMoreButtons = document.querySelectorAll('.view-more');
+    for (let i = 0; i < viewMoreButtons.length; i++) {
+        viewMoreButtons[i].addEventListener('click', function() {
+            let moreProducts = this.parentElement.parentElement.nextElementSibling;
+            let categoryLine = this.parentElement.parentElement;
+            if (moreProducts.style.display === "none") {
+                moreProducts.style.display = "block";
+                categoryLine.style.display = "none";
+            } else {
+                moreProducts.style.display = "none";
+                categoryLine.style.display = "block";
+            }
+        });
+    }
     
+    
+ 
+
+
     
     // Função para abrir o popup e preencher com as informações do produto
     // Função para abrir o popup e preencher com as informações do produto
