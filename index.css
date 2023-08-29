@@ -277,7 +277,6 @@ button.color:focus:active {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-column-gap: 10px;
 }
 .product-details .measure-container {
     display: flex;
