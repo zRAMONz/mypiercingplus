@@ -225,6 +225,10 @@ button.color:focus:active {
 }
 .measure-quantity {
     width: 80px;
+  border: 1px solid #ccc;
+  padding: 0 5px;
+    margin: 8px 0 8px 0;
+   text-align: center;
 }
 #popup .popup-sizes {
     display: flex;
@@ -983,12 +987,6 @@ border-radius: 0 15px 15px 0;
 .decrease-button {
 border-radius: 15px 0 0 15px;
 
-.measure-quantity {
-  border: 1px solid #ccc;
-  padding: 0 5px;
-    margin: 8px 0 8px 0;
-   text-align: center;
-}
 .measure {
     margin: 0 15px;
 }
