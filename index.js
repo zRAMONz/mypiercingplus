@@ -298,3 +298,13 @@ document.getElementById("copyButton").addEventListener("click", function () {
     document.getElementById("sideMenu").style.width = "0";
   });
   
+// Suponha que os IDs dos botões de categoria terminem com "-category"
+const categoryButtons = document.querySelectorAll("[id$='-category']");
+
+// Para cada botão encontrado, adiciona um evento de clique
+categoryButtons.forEach((button) => {
+    button.addEventListener("click", function() {
+        const categoryName = button.id.replace("-category", "");  // Extrai o nome da categoria do ID
+        loadCategory(categoryName);
+    });
+});
