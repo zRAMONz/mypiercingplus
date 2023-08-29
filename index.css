@@ -1023,3 +1023,7 @@ padding: 0 21px 0 21px;
   font-size: 30px;
 margin-right: 0;
 }
+
+ul {
+    list-style-type: none;
+}
