@@ -1010,12 +1010,13 @@ padding: 0 21px 0 21px;
 }
 
 .search-button {
-  background-color: white;
-  cursor: pointer;
-border-width: 2px;
-    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
-margin: 0;
-border-style: inset;
+    background-color: white;
+    cursor: pointer;
+    border-width: 2px 2px 2px 0;
+    border-color: #cbcbcb;
+    margin: 0;
+    border-style: inset;
+    border-radius: 0 0.5rem 0.5rem 0;
 }
 
 .fas.fa-search {
