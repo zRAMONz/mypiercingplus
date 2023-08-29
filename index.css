@@ -996,3 +996,6 @@ padding: 0 21px 0 21px;
 .productList .h2 {
     margin: 20px;
 }
+#id-do-menu-lateral ul {
+    list-style-type: none;
+}
