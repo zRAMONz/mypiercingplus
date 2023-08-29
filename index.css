@@ -906,13 +906,16 @@ footer {
   border-right: 1px solid #ccc;  /* Adiciona uma borda à direita */
       }
       
-      .side-menu .close-button {
-        position: absolute;
-        top: 20px;
-        right: 10px;
-        font-size: 40px;
-        cursor: pointer;
-      }
+    .side-menu .close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+    cursor: pointer;
+    border-width: 2px;
+    border-color: #cbcbcb;
+    border-style: inset;
+}
       
       .side-menu .search-bar {
         margin: 30px 0 30px 30px;
