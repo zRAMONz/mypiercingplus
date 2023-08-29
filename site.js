@@ -1,69 +1,67 @@
 function openPopup(e) {
   var t = e.target.closest(".product"),
-    n = e.target.getAttribute("data-color"),
-    r = e.target.getAttribute("data-price"),
-    o = document.getElementById("popup");
+      n = e.target.getAttribute("data-color"),
+      r = e.target.getAttribute("data-price"),
+      o = document.getElementById("popup");
 
   o.getElementsByClassName("popup-product-name")[0].innerText = t.getElementsByClassName("product-name")[0].innerText;
   o.getElementsByClassName("popup-color")[0].innerText = n + ": €" + r;
   
   var l = t.getElementsByTagName("img")[0];
   document.getElementById("popup-product-image").src = l.src;
-  
+
   var d = o.getElementsByClassName("popup-sizes")[0];
-  
   while (d.firstChild) {
     d.removeChild(d.firstChild);
   }
 
   var a = t.querySelectorAll('.sizes[data-color="' + n + '"] > .size');
-  
   for (var s = 0; s < a.length; s++) {
     var p = a[s].cloneNode(true);
-
     var c = p.querySelectorAll(".measure-container .measure");
     
     for (var m = 0; m < c.length; m++) {
-      var u = c[m].nextSibling;
+      var measureContainer = c[m].parentNode;
+
+      // Criar e configurar os botões e a caixa de texto
+      var decreaseButton = document.createElement("button");
+      decreaseButton.innerText = "-";
+      decreaseButton.className = "decrease-button";
+
+      var increaseButton = document.createElement("button");
+      increaseButton.innerText = "+";
+      increaseButton.className = "increase-button";
+
+      var y = document.createElement("input");
+      y.type = "number";
+      y.min = "0";
+      y.className = "measure-quantity";
       
-      if (!u || "input" !== u.nodeName.toLowerCase()) {
-        var y = document.createElement("input");
-        y.type = "number";
-        y.min = "0";
-        y.className = "measure-quantity";
-        c[m].parentNode.insertBefore(y, c[m].nextSibling);
+      // Anexar elementos ao container da medida
+      measureContainer.appendChild(decreaseButton);
+      measureContainer.appendChild(y);
+      measureContainer.appendChild(increaseButton);
 
-        // Botão de decremento
-        var decreaseButton = document.createElement("button");
-        decreaseButton.innerText = "-";
-        decreaseButton.className = "decrease-button";
-        c[m].parentNode.insertBefore(decreaseButton, y);
+      // Eventos para os botões
+      decreaseButton.addEventListener("click", function() {
+        let currentValue = parseInt(y.value, 10);
+        if (currentValue > 0) {
+          y.value = currentValue - 1;
+        }
+      });
 
-        // Botão de incremento
-        var increaseButton = document.createElement("button");
-        increaseButton.innerText = "+";
-        increaseButton.className = "increase-button";
-        c[m].parentNode.insertBefore(increaseButton, y.nextSibling);
-
-        // Evento para decrementar
-        decreaseButton.addEventListener("click", function() {
-          let currentValue = parseInt(y.value, 10);
-          if (currentValue > 0) {
-            y.value = currentValue - 1;
-          }
-        });
-
-        // Evento para incrementar
-        increaseButton.addEventListener("click", function() {
-          let currentValue = parseInt(y.value, 10);
-          y.value = currentValue + 1;
-        });
-      }
+      increaseButton.addEventListener("click", function() {
+        let currentValue = parseInt(y.value, 10);
+        y.value = currentValue + 1;
+      });
     }
+    
     d.appendChild(p);
   }
+  
   o.style.display = "block";
 }
+
 
 let freight = 21.0; // define o valor do frete
 let selectedSize = null,
