@@ -943,7 +943,7 @@ top: 20px;
 .product-container {
     flex-wrap: wrap;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 .colors {
         flex-direction: row;
