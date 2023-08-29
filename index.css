@@ -969,7 +969,7 @@ footer {
     border: 1px solid #979797;
 }
 .decrease-button, .increase-button, .measure-quantity {
-   height: 70px;
+   height: 80px;
   vertical-align: middle; /* Alinha verticalmente os elementos */
 }
 
@@ -977,16 +977,18 @@ footer {
 .decrease-button, .increase-button {
     background-color: #eee;
     border: 1px solid #ccc;
-    padding: 0 19px 0 19px;
+    
     cursor: pointer;
     margin: 10px 0 10px 0;
 border-radius: 0;
 }
 .increase-button {
 border-radius: 0 15px 15px 0;
+padding: 0 19px 0 19px;
 }
 .decrease-button {
 border-radius: 15px 0 0 15px;
+padding: 0 21px 0 21px;
 }
 .measure {
     margin: 0 15px;
