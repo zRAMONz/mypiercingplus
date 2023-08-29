@@ -159,7 +159,7 @@ function addToCartFromPopup() {
 
   for (var i = 0; i < measures.length; i++) {
       var price = parseFloat(measures[i].getAttribute("data-price"));
-      var quantity = parseInt(measures[i].nextElementSibling.value, 10);
+      var quantity = parseInt(measures[i].parentNode.querySelector(".measure-quantity").value, 10);
 
       if (quantity > 0) {
           var sizeText = measures[i].innerText;
