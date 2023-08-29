@@ -116,6 +116,7 @@ window.addEventListener("DOMContentLoaded", e => {
   document.getElementById("active-category-title").innerText = getCategoryName(activeCategory);
 
 function setActiveCategory(category) {
+  console.log("Set active category chamado com: ", category); // log para debug
   activeCategory = category;
   let categoryName = getCategoryName(activeCategory);
   const titleElement = document.getElementById("active-category-title");
@@ -124,6 +125,7 @@ function setActiveCategory(category) {
   }
   loadCategory(activeCategory);  // Chama a função para carregar os produtos da nova categoria
 }
+
 
 
 
