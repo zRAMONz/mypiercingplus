@@ -23,7 +23,10 @@ function openPopup(e) {
     for (var m = 0; m < c.length; m++) {
       var measureContainer = c[m].parentNode;
 
-      // Criar e configurar os botões e a caixa de texto
+      // Pega o input existente
+      var y = measureContainer.querySelector(".measure-quantity");
+
+      // Criar e configurar os botões
       var decreaseButton = document.createElement("button");
       decreaseButton.innerText = "-";
       decreaseButton.className = "decrease-button";
@@ -31,16 +34,10 @@ function openPopup(e) {
       var increaseButton = document.createElement("button");
       increaseButton.innerText = "+";
       increaseButton.className = "increase-button";
-
-      var y = document.createElement("input");
-      y.type = "number";
-      y.min = "0";
-      y.className = "measure-quantity";
       
-      // Anexar elementos ao container da medida
-      measureContainer.appendChild(decreaseButton);
-      measureContainer.appendChild(y);
-      measureContainer.appendChild(increaseButton);
+      // Inserir os botões antes e depois do input
+      measureContainer.insertBefore(decreaseButton, y);
+      measureContainer.insertBefore(increaseButton, y.nextSibling);
 
       // Eventos para os botões
       decreaseButton.addEventListener("click", function() {
@@ -61,6 +58,7 @@ function openPopup(e) {
   
   o.style.display = "block";
 }
+
 
 
 let freight = 21.0; // define o valor do frete
