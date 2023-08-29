@@ -1030,3 +1030,10 @@ margin-right: 0;
 ul {
     list-style-type: none;
 }
+
+select#category-dropdown {
+  font-size: 16px;  /* Define o tamanho da fonte */
+  padding: 10px;    /* Espaço interno ao redor do texto */
+  width: 200px;     /* Largura do dropdown */
+  height: 40px;     /* Altura do dropdown */
+}
