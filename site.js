@@ -91,44 +91,34 @@ window.addEventListener("DOMContentLoaded", e => {
 
     document.getElementById("total").innerText = total.toFixed(2);
   } else {
-    // se o carrinho está vazio, o total deve ser o valor do frete
     document.getElementById("total").innerText = freight.toFixed(2);
   }
 
   updateCartCount();
 
-  document.getElementById('nariz-category').addEventListener('click', function() {
-    loadCategory('nariz');
+  // Configuração do dropdown customizado
+  document.getElementById("active-category-title").addEventListener("click", function() {
+    const dropdownContent = document.getElementById("custom-dropdown");
+    dropdownContent.style.display = dropdownContent.style.display === "flex" ? "none" : "flex";
   });
 
-  document.querySelector('.product-container').addEventListener('click', function(event) {
-    const target = event.target;
-    let btn = target.closest('.classe-do-botao-com-preco');
-    if (btn) {
-      // Seu código para abrir o modal de escolha de cada variação
-    }
+  document.querySelectorAll(".dropdown-item").forEach(item => {
+    item.addEventListener("click", function() {
+      setActiveCategory(this.getAttribute("data-category"));
+      document.getElementById("custom-dropdown").style.display = "none";
+    });
   });
 
   // Carrega a categoria "Básicos" como padrão
   loadCategory('basicos');
-  var activeCategory = "basicos"; // Categoria padrão
+  var activeCategory = "basicos";
 
   document.getElementById("active-category-title").innerText = getCategoryName(activeCategory);
-
-  document.querySelectorAll("li[id$='-category']").forEach(function(li) {
-    li.addEventListener("click", function() {
-      setActiveCategory(this.id.replace('-category', ''));
-    });
-  });
-
-  document.getElementById("category-dropdown").addEventListener("change", function() {
-    setActiveCategory(this.value);
-  });
 
   function setActiveCategory(category) {
     activeCategory = category;
     document.getElementById("active-category-title").innerText = getCategoryName(activeCategory);
-    loadCategory(activeCategory);  // Chama a função para carregar os produtos da nova categoria
+    loadCategory(activeCategory);  // Carrega os produtos da nova categoria
   }
 
   function getCategoryName(categoryId) {
@@ -143,21 +133,20 @@ window.addEventListener("DOMContentLoaded", e => {
       default: return "Produtos";
     }
   }
-
 });
 
-// Sua função loadCategory permaneceu inalterada
+// Sua função loadCategory permanece inalterada
 function loadCategory(categoryName) {
   const xhr = new XMLHttpRequest();
   xhr.open('GET', `${categoryName}.html`, true);
   xhr.onreadystatechange = function() {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-          document.querySelector('.product-container').innerHTML = xhr.responseText;
-          let colorButtons = document.getElementsByClassName("color");
-          for(let i=0; i < colorButtons.length; i++) {
-              colorButtons[i].addEventListener("click", openPopup);
-          }
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      document.querySelector('.product-container').innerHTML = xhr.responseText;
+      let colorButtons = document.getElementsByClassName("color");
+      for(let i = 0; i < colorButtons.length; i++) {
+        colorButtons[i].addEventListener("click", openPopup);
       }
+    }
   };
 
   xhr.send();
