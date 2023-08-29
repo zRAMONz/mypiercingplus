@@ -1,256 +1,275 @@
-window.addEventListener('DOMContentLoaded', (event) => {
-    // Função para aumentar os preços dos produtos em 22% para pessoa jurídica
-    // Função para aumentar os preços dos produtos em 22% para pessoa jurídica
-    function updatePricesForBusiness() {
-        var colorButtons = document.getElementsByClassName('color');
-        for (var i = 0; i < colorButtons.length; i++) {
-            var price = parseFloat(colorButtons[i].getAttribute('data-price'));
-            price *= 1.22; // Aumentar o preço em 22%
-            colorButtons[i].setAttribute('data-price', price.toFixed(2)); // Atualizar o preço no atributo data-price
-            var colorName = colorButtons[i].innerText.replace(/€\s*\d+(\.\d{1,2})?/, '').trim(); // Remove original price from the color name
-            colorButtons[i].innerText = colorName + '€' + price.toFixed(2); // Show the new price with two decimal places
+function openPopup(e) {
+    var t = e.target.closest(".product"),
+      n = e.target.getAttribute("data-color"),
+      r = e.target.getAttribute("data-price"),
+      o = document.getElementById("popup");
+    o.getElementsByClassName("popup-product-name")[0].innerText = t.getElementsByClassName("product-name")[0].innerText, o.getElementsByClassName("popup-color")[0].innerText = n + ": €" + r;
+    var l = t.getElementsByTagName("img")[0];
+    document.getElementById("popup-product-image").src = l.src;
+    for (var a = t.querySelectorAll('.sizes[data-color="' + n + '"] > .size'), d = o.getElementsByClassName("popup-sizes")[0]; d.firstChild;) d.removeChild(d.firstChild);
+    for (var s = 0; s < a.length; s++) {
+      for (var p = a[s].cloneNode(!0), c = p.querySelectorAll(".measure-container .measure"), m = 0; m < c.length; m++) {
+        var u = c[m].nextSibling;
+        if (!u || "input" !== u.nodeName.toLowerCase()) {
+          var y = document.createElement("input");
+          y.type = "number", y.min = "0", y.className = "measure-quantity", c[m].parentNode.insertBefore(y, c[m].nextSibling);
         }
-    
-        var measureButtons = document.getElementsByClassName('measure');
-        for (var i = 0; i < measureButtons.length; i++) {
-            var price = parseFloat(measureButtons[i].getAttribute('data-price'));
-            price *= 1.22; // Aumentar o preço em 22%
-            measureButtons[i].setAttribute('data-price', price.toFixed(2)); // Atualizar o preço no atributo data-price
-            var measureName = measureButtons[i].innerText.replace(/€\s*\d+(\.\d{1,2})?/, '').trim(); // Remove original price from the measure name
-            measureButtons[i].innerText = measureName; // Show only measure name
-        }
+      }
+      d.appendChild(p);
     }
-    
-    
-    
-    // Exibe o popup de boas-vindas
-    document.getElementById('welcomePopup').style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-    
-    
-    document.getElementById('individualButton').addEventListener('click', function() {
-        updatePricesForBusiness();
-        document.getElementById('welcomePopup').style.display = 'none';
-        document.body.style.overflow = '';
-    });
-    
-    document.getElementById('businessButton').addEventListener('click', function() {
-        document.getElementById('welcomePopup').style.display = 'none';
-        document.body.style.overflow = '';
-    });
-    
-    
-        // Resto do código...
-    });
-    
-    let viewMoreButtons = document.querySelectorAll('.view-more');
-    for (let i = 0; i < viewMoreButtons.length; i++) {
-        viewMoreButtons[i].addEventListener('click', function() {
-            let moreProducts = this.parentElement.parentElement.nextElementSibling;
-            let categoryLine = this.parentElement.parentElement;
-            if (moreProducts.style.display === "none") {
-                moreProducts.style.display = "block";
-                categoryLine.style.display = "none";
-            } else {
-                moreProducts.style.display = "none";
-                categoryLine.style.display = "block";
+    o.style.display = "block";
+  }
+  let freight = 21.0; // define o valor do frete
+  let selectedSize = null,
+    initialViewportHeight = window.innerHeight;
+  let itemsInCart = 0;
+
+  window.addEventListener("DOMContentLoaded", e => {
+    let cartItems = JSON.parse(getItemWithExpiry("cart") || "[]");
+    let total = freight; // Inicializa o total com o valor do frete
+    let itemsInCart = cartItems.length;
+
+    if (cartItems.length > 0) {
+      var o;
+      let l = document.getElementById("cart");
+      for (let item of cartItems) {
+        let d = document.createElement("div");
+        d.innerHTML = item;
+        let s = d.firstChild;
+        s.querySelector("button").addEventListener("click", removeFromCart), l.appendChild(s);
+        total += parseFloat(s.querySelector(".product-info > span").innerText.match(/€(\d+(\.\d{1,2})?) \* (\d+) unid = €(\d+(\.\d{1,2})?)/)[4]);
+      }
+      
+      document.getElementById("total").innerText = total.toFixed(2);
+    } else {
+      // se o carrinho está vazio, o total deve ser o valor do frete
+      document.getElementById("total").innerText = freight.toFixed(2);
+  }
+  updateCartCount();
+  document.getElementById('nariz-category').addEventListener('click', function() {
+    loadCategory('nariz');
+  });
+  });
+
+  // Função para carregar a categoria de produtos
+function loadCategory(categoryName) {
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', `${categoryName}.html`, true);
+  
+  xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+          // Substitua o conteúdo de 'product-container' com o novo conteúdo HTML
+          document.querySelector('.product-container').innerHTML = xhr.responseText;
+      }
+  };
+
+  xhr.send();
+}
+
+
+  function addToCartFromPopup() {
+    var totalValue = parseFloat(document.getElementById("total").innerText);
+    var popup = document.getElementById("popup");
+    var productName = popup.querySelector(".popup-product-name").innerText;
+    var color = popup.querySelector(".popup-color").innerText.split(":")[0].trim();
+    var productImage = popup.querySelector(".popup-product-image").src;
+    var measures = popup.querySelectorAll(".measure");
+
+    // Inicialize cartItems como um array vazio
+    let cartItems = JSON.parse(getItemWithExpiry("cart") || "[]");
+
+    for (var i = 0; i < measures.length; i++) {
+        var price = parseFloat(measures[i].getAttribute("data-price"));
+        var quantity = parseInt(measures[i].nextElementSibling.value, 10);
+
+        if (quantity > 0) {
+            var sizeText = measures[i].innerText;
+            var sizeName = measures[i].closest(".size").querySelector("h4").innerText;
+
+            // Encontrar o índice do produto existente, se houver
+            var existingIndex = cartItems.findIndex(p => {
+                var div = document.createElement('div');
+                div.innerHTML = p;
+                return div.firstChild.querySelector(".product-info").innerText.includes(productName + " " + color + " | " + sizeName + " " + sizeText);
+            });
+
+            if (existingIndex >= 0) {
+                // Atualizar a quantidade e remover o item existente do array cartItems
+                var div = document.createElement('div');
+                div.innerHTML = cartItems[existingIndex];
+                var existingQty = parseInt(div.firstChild.querySelector(".product-info > span").innerText.split("*")[1].split("unid")[0].trim());
+                
+                // Atualizar o totalValue de acordo com a quantidade anterior
+                totalValue -= price * existingQty;
+
+                quantity += existingQty;
+                cartItems.splice(existingIndex, 1);
             }
-        });
+
+            // Atualizar o totalValue de acordo com a nova quantidade
+            totalValue += price * quantity;
+
+            var productElement = document.createElement("p");
+            var imgElement = document.createElement("img");
+            imgElement.src = productImage;
+            productElement.appendChild(imgElement);
+
+            var productInfo = document.createElement("span");
+            productInfo.className = "product-info";
+            productInfo.innerText = productName + " " + color + " | " + sizeName + " " + sizeText;
+            var productPrice = document.createElement("span");
+            productPrice.innerText = "€" + price.toFixed(2) + " * " + quantity + " unid = €" + (price * quantity).toFixed(2);
+            productInfo.appendChild(document.createElement("br"));
+            productInfo.appendChild(productPrice);
+            productElement.appendChild(productInfo);
+
+            var removeButton = document.createElement("button");
+            removeButton.innerText = "X";
+            removeButton.addEventListener("click", removeFromCart);
+            productElement.appendChild(removeButton);
+
+            // Adicionar o novo elemento ao array cartItems
+            cartItems.push(productElement.outerHTML);
+        }
     }
-    
-    
+
+ // Atualize o localStorage e o carrinho no DOM
+ document.getElementById("total").innerText = totalValue.toFixed(2);
+ setItemWithExpiry("cart", JSON.stringify(cartItems));
  
+ var cart = document.getElementById("cart");
+ cart.innerHTML = "";  // Limpa o carrinho para evitar duplicação de elementos
+ for (var i = 0; i < cartItems.length; i++) {
+     var div = document.createElement('div');
+     div.innerHTML = cartItems[i];
+     div.firstChild.querySelector("button").addEventListener("click", removeFromCart);
+     cart.appendChild(div.firstChild);
+ }
 
+ closePopup();
+ updateCartCount();
+}
+function updateCartCount() {
+  const cart = document.getElementById("cart");
+  const cartCount = document.querySelector(".cart-count");
+  cartCount.innerText = cart.children.length;
+}
 
-    
-    // Função para abrir o popup e preencher com as informações do produto
-    // Função para abrir o popup e preencher com as informações do produto
-    function openPopup(e) {
-        var product = e.target.closest('.product');
-        var color = e.target.getAttribute('data-color');
-        var price = e.target.getAttribute('data-price');
-        
-        var popup = document.getElementById('popup');
-        popup.getElementsByClassName('popup-product-name')[0].innerText = product.getElementsByClassName('product-name')[0].innerText;
-        popup.getElementsByClassName('popup-color')[0].innerText = color + ': €' + price;
-        var productImage = product.getElementsByTagName('img')[0];
-        document.getElementById('popup-product-image').src = productImage.src;
-        // Pega as divs de medidas da cor correta
-       
-        var sizes = product.querySelectorAll('.sizes[data-color="' + color + '"] > .size');
-    
-        // Remove as opções de medidas existentes no pop-up
-        var popupSizes = popup.getElementsByClassName('popup-sizes')[0];
-        while (popupSizes.firstChild) {
-            popupSizes.removeChild(popupSizes.firstChild);
-        }
-    
-      // Adiciona as opções de medidas corretas ao pop-up
-      for (var i = 0; i < sizes.length; i++) {
-        var sizeDiv = sizes[i].cloneNode(true);
-    
-        // Adiciona novamente os campos de entrada
-        var measures = sizeDiv.querySelectorAll('.measure-container .measure');
-        for (var j = 0; j < measures.length; j++) {
-            // Verifica se já existe um campo de entrada ao lado da medida
-            var nextSibling = measures[j].nextSibling;
-            if (!nextSibling || nextSibling.nodeName.toLowerCase() !== 'input') {
-                var input = document.createElement('input');
-                input.type = 'number';
-                input.min = '0';
-                input.className = 'measure-quantity';
-                measures[j].parentNode.insertBefore(input, measures[j].nextSibling);
-            }
-        }
-    
-        popupSizes.appendChild(sizeDiv);
-    }
-    
-    
-    popup.style.display = 'block';
-    }
-    
-    let selectedSize = null;
-    
-    document.addEventListener('click', (event) => {
-        if (event.target.classList.contains('measure')) {
-            // Remova a classe 'selected' de qualquer botão de medida anteriormente selecionado
-            if (selectedSize) {
-                selectedSize.classList.remove('selected');
-            }
-    
-            // Adicione a classe 'selected' ao botão de medida atualmente selecionado
-            event.target.classList.add('selected');
-    
-            // Atualize a variável selectedSize
-            selectedSize = event.target;
-        }
-    });
-    
-    
-    // Adicionar produto ao resumo da compra a partir do popup
-    function addToCartFromPopup() {
-        var popup = document.getElementById('popup');
-        var productName = popup.querySelector('.popup-product-name').innerText;
-        var color = popup.querySelector('.popup-color').innerText.split(':')[0].trim();
-        var productImage = popup.querySelector('.popup-product-image').src;
-    
-        var measures = popup.querySelectorAll('.measure');
-        for (var i = 0; i < measures.length; i++) {
-            var price = parseFloat(measures[i].getAttribute('data-price'));
-            var quantity = parseInt(measures[i].nextElementSibling.value, 10);
-            if (quantity > 0) {
-                var measure = measures[i].innerText;
-                var size = measures[i].parentNode.parentNode.querySelector('h4').innerText;
-    
-                var cart = document.getElementById('cart');
-                var cartItem = document.createElement('p');
-                
-                var productImageElement = document.createElement('img');
-                productImageElement.src = productImage;
-                cartItem.appendChild(productImageElement);
-                
-                var productInfo = document.createElement('span');
-                productInfo.className = 'product-info';
-                productInfo.innerText = productName + ' ' + color + ' | ' + size + ' ' + measure;
-                var priceElement = document.createElement('span');
-                priceElement.innerText = '€' + price.toFixed(2) + ' * ' + quantity + ' unid = €' + (price * quantity).toFixed(2);
-                productInfo.appendChild(document.createElement('br'));
-                productInfo.appendChild(priceElement);
-                cartItem.appendChild(productInfo);
-                
-                var deleteButton = document.createElement('button');
-                deleteButton.innerText = 'X';
-                deleteButton.addEventListener('click', removeFromCart);
+ 
+  function removeFromCart(e) {
+    var t = e.target.parentNode,
+      n = t.querySelector("span").innerText.match(/€(\d+(\.\d{1,2})?) \* (\d+) unid = €(\d+(\.\d{1,2})?)/),
+      r = parseFloat(n[1]),
+      o = parseInt(n[3]), // Declare 'o' before using it
+      l = document.getElementById("total"),
+      a = parseFloat(l.innerText),
+      c = document.getElementById("cart");
+    a -= r * o, l.innerText = a.toFixed(2), t.remove();
+    itemsInCart -= o; // Now decrement 'itemsInCart' by 'o'
 
-                
-                cartItem.appendChild(deleteButton);
-                cart.appendChild(cartItem);
-    
-                var totalElement = document.getElementById('total');
-                var total = parseFloat(totalElement.innerText);
-                total += price * quantity;
-                totalElement.innerText = total.toFixed(2);
-    
-                selectedSize = null;
-            }
-        }
-        // Fechar o popup após adicionar o item ao carrinho
-        closePopup();
-        // Resetar o campo de quantidade para 1
-        document.querySelector('.popup-quantity').value = 1;
+      // Aqui é a parte que remove o item do armazenamento local
+  let E = JSON.parse(getItemWithExpiry("cart") || "[]");
+  E.splice(E.indexOf(t.outerHTML), 1);
+  setItemWithExpiry("cart", JSON.stringify(E));
+
+  updateCartCount();
+  }
+  
+  window.addEventListener("resize", function () {
+    let e;
+    (initialViewportHeight - window.innerHeight) / initialViewportHeight * 100 > 20 ? document.body.classList.add("keyboard-open") : document.body.classList.remove("keyboard-open");
+  }), document.addEventListener("click", e => {
+    e.target.classList.contains("measure") && (selectedSize && selectedSize.classList.remove("selected"), e.target.classList.add("selected"), selectedSize = e.target);
+  }), document.getElementById("popup-add").addEventListener("click", addToCartFromPopup);
+  for (var colorButtons = document.getElementsByClassName("color"), i = 0; i < colorButtons.length; i++) colorButtons[i].addEventListener("click", openPopup);
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+  function getCartItemsText() {
+    var cartElements = document.getElementById("cart").children;
+    var cartText = "";
+    for (var i = 0; i < cartElements.length; i++) {
+        let productInfo = cartElements[i].querySelector(".product-info").innerText;
+        // We find the last line which contains the price calculation.
+        let lastLineStart = productInfo.lastIndexOf("\n") + 1;
+        let productText = productInfo.substring(0, lastLineStart);
+        let productPriceLine = productInfo.substring(lastLineStart);
+        // Now we can separate the price part to apply the bold effect
+        let productPriceParts = productPriceLine.split("=");
+        let productPrice = productPriceParts[0] + "=*" + productPriceParts[1].trim() + "*";
+        cartText += productText + productPrice + "\n\n";
     }
+    return cartText;
     
-    document.getElementById('popup-add').addEventListener('click', addToCartFromPopup);
-    
-    
-    function removeFromCart(event) {
-        var cartItem = event.target.parentNode;
-        var priceElement = cartItem.querySelector('span');
-        var priceAndQuantity = priceElement.innerText.match(/€(\d+(\.\d{1,2})?) \* (\d+) unid = €(\d+(\.\d{1,2})?)/);
-        var price = parseFloat(priceAndQuantity[1]);
-        var quantity = parseInt(priceAndQuantity[3]);
-    
-        var totalElement = document.getElementById('total');
-        var total = parseFloat(totalElement.innerText);
-        total -= price * quantity;
-        totalElement.innerText = total.toFixed(2);
-    
-        cartItem.remove();
-    }
-    
-    
-    
-    
-    
-    
-    var colorButtons = document.getElementsByClassName('color');
-    for (var i = 0; i < colorButtons.length; i++) {
-        colorButtons[i].addEventListener('click', openPopup);
-    }
-    
-    function closePopup() {
-        var popup = document.getElementById('popup');
-        popup.style.display = 'none';
-    }
-    
-    document.getElementById('popup-close').addEventListener('click', closePopup);
-    
-    function getCartItemsText() {
-        var cartItems = document.getElementById('cart').children;
-        var cartItemsText = '';
-        
-        for (var i = 0; i < cartItems.length; i++) {
-            var productInfo = cartItems[i].querySelector('.product-info').innerText;
-            cartItemsText += productInfo + '\n\n'; // Adiciona uma linha extra em branco entre cada item
-        }
-        
-        return cartItemsText;
-    }
-    
-    
-    
-    document.getElementById('whatsappButton').addEventListener('click', function() {
-        var cartItemsText = getCartItemsText();
-        var totalValue = document.getElementById('total').innerText;
-        var textToSend = "Resumo da Compra:\n" + cartItemsText + "Total: €" + totalValue;
-        var phoneNumber = "393898986018"; // Substitua pelo número de telefone desejado
-        var message = encodeURIComponent(textToSend);
-        window.open(`https://wa.me/${phoneNumber}?text=${message}`);
+}
+
+  document.getElementById("popup-close").addEventListener("click", closePopup);
+  document.getElementById("whatsappButton").addEventListener("click", function () {
+    var cartText = getCartItemsText();
+    var totalText = "Total: €" + document.getElementById("total").innerText;
+    var freightText = "Frete: €" + freight.toFixed(2); // Assuming "freight" is a global variable
+    var message = encodeURIComponent("Resumo da Compra:\n" + cartText + freightText + "\n" + totalText);
+    var totalText = "*Total: €" + document.getElementById("total").innerText + "*";
+    var freightText = "Frete: *€" + freight.toFixed(2) + "*"; // Assuming "freight" is a global variable
+    var message = encodeURIComponent("*Resumo da Compra:*\n\n" + cartText + freightText + "\n\n" + totalText);
+    window.open(`https://wa.me/393898986018?text=${message}`);
+  });
+document.getElementById("copyButton").addEventListener("click", function () {
+    var cartText = getCartItemsText();
+    var totalText = "*Total: €" + document.getElementById("total").innerText + "*";
+    var freightText = "Frete: *€" + freight.toFixed(2) + "*"; // Assuming "freight" is a global variable
+    var copiedText = "*Resumo da Compra:*\n\n" + cartText + freightText + "\n\n" + totalText;
+    navigator.clipboard.writeText(copiedText).then(() => {
+        var copyConfirmation = document.getElementById("copiedText");
+        copyConfirmation.innerText = "Copiado!";
+        copyConfirmation.style.visibility = "visible";
+        setTimeout(function () {
+            copyConfirmation.style.visibility = "hidden";
+        }, 3e3);
+    }).catch(err => {
+        console.error('Erro ao copiar texto: ', err);
     });
-    
-    document.getElementById('copyButton').addEventListener('click', function() {
-        var cartItemsText = getCartItemsText();
-        var totalValue = document.getElementById('total').innerText;
-        var textToCopy = "Resumo da Compra:\n" + cartItemsText + "Total: €" + totalValue;
-        var tempInput = document.createElement('textarea');
-        tempInput.style = "position: absolute; left: -1000px; top: -1000px";
-        tempInput.value = textToCopy;
-        document.body.appendChild(tempInput);
-        tempInput.select();
-        document.execCommand('copy');
-        document.body.removeChild(tempInput);
-    });
-    
-    
-    
+});
+
+  document.getElementById("clearCartButton").addEventListener("click", function () {
+    if (confirm("Você deseja remover todos os produtos do carrinho?")) {
+      var cart = document.getElementById("cart");
+      while (cart.firstChild) {
+        cart.firstChild.remove();
+      }
+      document.getElementById("total").innerText = freight.toFixed(2); // Define o total como o valor do frete
+      localStorage.removeItem("cart");
+      itemsInCart = 0; // Reset itemsInCart to 0
+    }
+  });  
+  
+  function setItemWithExpiry(key, value, ttl = 4 * 60 * 60 * 1000) {
+    const now = new Date();
+    const item = {
+      value: value,
+      expiry: now.getTime() + ttl
+    };
+    localStorage.setItem(key, JSON.stringify(item));
+  }
+  function getItemWithExpiry(key) {
+    const itemStr = localStorage.getItem(key);
+    if (!itemStr) {
+      return null;
+    }
+    const item = JSON.parse(itemStr);
+    const now = new Date();
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key);
+      return null;
+    }
+    return item.value;
+  }
+
+  document.getElementById("menuIcon").addEventListener("click", function() {
+    document.getElementById("sideMenu").style.width = "90%";
+  });
+  
+  document.getElementById("closeButton").addEventListener("click", function() {
+    document.getElementById("sideMenu").style.width = "0";
+  });
+  
