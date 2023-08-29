@@ -117,9 +117,11 @@ window.addEventListener("DOMContentLoaded", e => {
 
 function setActiveCategory(category) {
   activeCategory = category;
-  document.getElementById("active-category-title").innerText = getCategoryName(activeCategory); // Atualiza o título na área principal
+  let categoryName = getCategoryName(activeCategory);
+  document.querySelector("#active-category-title h1").innerText = categoryName; // Atualiza o título dentro do <h1>
   loadCategory(activeCategory);  // Chama a função para carregar os produtos da nova categoria
 }
+
 
 
   function getCategoryName(categoryId) {
