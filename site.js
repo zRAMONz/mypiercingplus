@@ -65,6 +65,9 @@ function openPopup(e) {
         // Você pode usar 'btn' para acessar o botão que foi clicado.
         // Por exemplo, sua função atual para abrir o modal pode ser chamada aqui.
       }
+
+  // Carrega a categoria "Básicos" como padrão
+  loadCategory('basicos');
     });
   });
   
