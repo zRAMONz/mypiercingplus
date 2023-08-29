@@ -251,6 +251,19 @@ for (var i = 0; i < cartItems.length; i++) {
    div.firstChild.querySelector("button").addEventListener("click", removeFromCart);
    cart.appendChild(div.firstChild);
 }
+var B = document.createElement("div");
+B.style.position = "absolute";
+B.style.top = "0";
+B.style.left = "10px";
+B.style.color = "white";
+B.style.padding = "5px";
+B.style.zIndex = "100";
+B.className = "added-banner";
+B.innerText = "Adicionado";
+
+var h = document.querySelector(`img[src="${productImage}"]`).closest(".product"); // Note que substituí "r" por "productImage", que é o nome da variável do seu código atual
+h.style.position = "relative";
+h.appendChild(B);
 
 closePopup();
 updateCartCount();
