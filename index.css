@@ -915,7 +915,7 @@ footer {
       }
       
       .side-menu .search-bar {
-        margin: 30px;
+        margin: 30px 0 30px 30px;
         padding: 5px;
         font-size: 57px;
       }
@@ -1005,17 +1005,19 @@ padding: 0 21px 0 21px;
 }
 
 .search-bar {
-  width: 100%;
+  width: 600px;
   padding: 10px;
 }
 
 .search-button {
-  background: none;
-  border: none;
-  padding: 10px;
+  background-color: white;
   cursor: pointer;
+border-width: 2px;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+margin: 0;
 }
 
 .fas.fa-search {
-  font-size: 16px;
+  font-size: 30px;
+margin-right: 0;
 }
