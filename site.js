@@ -107,6 +107,13 @@ window.addEventListener("DOMContentLoaded", e => {
       setActiveCategory(this.getAttribute("data-category"));
       document.getElementById("custom-dropdown").style.display = "none";
     });
+
+document.querySelectorAll("li[id$='-category']").forEach(item => {
+  item.addEventListener("click", function() {
+    let category = this.id.replace("-category", "");
+    setActiveCategory(category);
+  });
+
   });
 
   // Carrega a categoria "Básicos" como padrão
