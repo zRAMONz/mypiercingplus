@@ -454,7 +454,7 @@ footer {
 .popup-sizes .size .sizes2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 80px;
+    column-gap: 20px;
 }
 #cart p button {
     color: rgb(0 145 151);
@@ -987,4 +987,5 @@ top: 20px;
   border: 1px solid #ccc;
   padding: 0 5px;
     margin: 8px 0 8px 0;
+    min-height: 70px;
 }
