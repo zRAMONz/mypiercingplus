@@ -362,7 +362,7 @@ button.color:focus:active {
 header {
     display: flex;
     align-items: center;
-    padding: 20px;
+    padding: 80px 0 0 0;
     flex-direction: column;
 }
 .icons .whatsapp-container {
