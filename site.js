@@ -39,18 +39,26 @@ function openPopup(e) {
       measureContainer.insertBefore(decreaseButton, y);
       measureContainer.insertBefore(increaseButton, y.nextSibling);
 
-      // Eventos para os botões
-      decreaseButton.addEventListener("click", function() {
-        let currentValue = parseInt(y.value, 10);
-        if (currentValue > 0) {
-          y.value = currentValue - 1;
-        }
-      });
+decreaseButton.addEventListener("click", function(event) {
+  let inputElement = event.target.parentNode.querySelector(".measure-quantity");
+  let currentValue = parseInt(inputElement.value, 10);
+  if (isNaN(currentValue)) {
+    currentValue = 0;
+  }
+  if (currentValue > 0) {
+    inputElement.value = currentValue - 1;
+  }
+});
 
-      increaseButton.addEventListener("click", function() {
-        let currentValue = parseInt(y.value, 10);
-        y.value = currentValue + 1;
-      });
+increaseButton.addEventListener("click", function(event) {
+  let inputElement = event.target.parentNode.querySelector(".measure-quantity");
+  let currentValue = parseInt(inputElement.value, 10);
+  if (isNaN(currentValue)) {
+    currentValue = 0;
+  }
+  inputElement.value = currentValue + 1;
+});
+
     }
     
     d.appendChild(p);
