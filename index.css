@@ -931,8 +931,23 @@ top: 20px;
         .menu-icon {
           display: block; /* Mostra o ícone de menu em dispositivos pequenos */
         }
-      }
 
+        .sizes .size {
+            display: none;
+      }
+      .product {
+        flex-direction: column;
+        flex: 0 0 50%;
+      }
+product.container {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+}
+.colors {
+        flex-direction: row;
+}
+}
       button {
     border: 1px solid #979797;
 }
