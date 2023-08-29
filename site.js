@@ -70,6 +70,22 @@ function openPopup(e) {
     });
   // Carrega a categoria "Básicos" como padrão
   loadCategory('basicos');
+
+ const increaseButton = document.getElementById('increase');
+  const decreaseButton = document.getElementById('decrease');
+  const quantityInput = document.getElementById('quantity');
+
+  increaseButton.addEventListener('click', function() {
+    let currentValue = parseInt(quantityInput.value, 10);
+    quantityInput.value = currentValue + 1;
+  });
+
+  decreaseButton.addEventListener('click', function() {
+    let currentValue = parseInt(quantityInput.value, 10);
+    if(currentValue > 1) {
+      quantityInput.value = currentValue - 1;
+    }
+  });
   });
   
   // Função para carregar a categoria de produtos
