@@ -937,7 +937,8 @@ top: 20px;
       }
       .product {
         flex-direction: column;
-        flex: 0 0 50%;
+        flex: 0 0 calc(50% - 60px);
+        align-items: center;
       }
 .product-container {
     flex-wrap: wrap;
@@ -947,7 +948,10 @@ top: 20px;
 .colors {
         flex-direction: row;
 }
+.product-details {
+    margin-left: 0;
 }
+      }
       button {
     border: 1px solid #979797;
 }
