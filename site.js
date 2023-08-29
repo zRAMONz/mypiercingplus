@@ -139,13 +139,17 @@ window.addEventListener("DOMContentLoaded", e => {
   }
 
   function getCategoryName(categoryId) {
-    switch (categoryId) {
-      case "basicos": return "Básicos";
-      case "argola": return "Argola";
-      // Outras categorias aqui
-      default: return "Produtos";
-    }
+  switch (categoryId) {
+    case "basicos": return "Básicos";
+    case "nariz": return "Nariz";
+    case "septo": return "Septo";
+    case "orelha": return "Orelha";
+    case "sobrancelha": return "Sobrancelha";
+    case "umbigo": return "Umbigo";
+    case "mamilo": return "Mamilo";
+    default: return "Produtos";
   }
+}
 
 });
 
