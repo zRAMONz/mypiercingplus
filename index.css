@@ -937,7 +937,7 @@ top: 20px;
       }
       .product {
         flex-direction: column;
-        flex: 0 0 calc(50% - 60px);
+        flex: 0 0 calc(50% - 50px);
         align-items: center;
       }
 .product-container {
@@ -954,6 +954,16 @@ top: 20px;
 }
 .product h3 {
     margin-bottom: 10px;
+}
+.icons {
+    margin: 20px;
+    justify-content: flex-start;
+    position: absolute;
+    bottom: 10px;
+}
+.product img {
+    width: 100%;
+    width: 400px;
 }
       }
       button {
