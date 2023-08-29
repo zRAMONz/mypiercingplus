@@ -836,6 +836,7 @@ footer {
 .cart-container {
     position: absolute;
     right: 10px;
+top: 20px;
     display: flex;
     align-items: center;
   }
