@@ -80,7 +80,6 @@ window.addEventListener("DOMContentLoaded", e => {
   let itemsInCart = cartItems.length;
 
   if (cartItems.length > 0) {
-    var o;
     let l = document.getElementById("cart");
     for (let item of cartItems) {
       let d = document.createElement("div");
@@ -107,54 +106,49 @@ window.addEventListener("DOMContentLoaded", e => {
   document.querySelector('.product-container').addEventListener('click', function(event) {
     const target = event.target;
     
-    // Substitua 'classe-do-botao-com-preco' pela classe real que identifica o botão em seus produtos
     let btn = target.closest('.classe-do-botao-com-preco');
     
     if (btn) {
       // Coloque aqui o código que abre o modal de escolha de cada variação.
-      // Você pode usar 'btn' para acessar o botão que foi clicado.
-      // Por exemplo, sua função atual para abrir o modal pode ser chamada aqui.
     }
-
-
   });
-// Carrega a categoria "Básicos" como padrão
-loadCategory('basicos');
-var activeCategory = "basicos"; // Categoria padrão
 
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("active-category-title").innerText = getCategoryName(activeCategory);
+  // Carrega a categoria "Básicos" como padrão
+  loadCategory('basicos');
+  var activeCategory = "basicos"; // Categoria padrão
 
-    // Evento ao clicar em uma categoria pelo menu lateral
-    document.querySelectorAll("li[id$='-category']").forEach(function(li) {
-        li.addEventListener("click", function() {
-            setActiveCategory(this.id.replace('-category', ''));
-        });
+  document.getElementById("active-category-title").innerText = getCategoryName(activeCategory);
+
+  // Evento ao clicar em uma categoria pelo menu lateral
+  document.querySelectorAll("li[id$='-category']").forEach(function(li) {
+    li.addEventListener("click", function() {
+      setActiveCategory(this.id.replace('-category', ''));
     });
+  });
 
-    // Evento para o dropdown
-    document.getElementById("category-dropdown").addEventListener("change", function() {
-        setActiveCategory(this.value);
-    });
-});
-
-function setActiveCategory(category) {
+  // Evento para o dropdown
+  document.getElementById("category-dropdown").addEventListener("change", function() {
+    setActiveCategory(this.value);
+  });
+  
+  function setActiveCategory(category) {
     activeCategory = category;
     document.getElementById("active-category-title").innerText = getCategoryName(activeCategory);
 
     // Aqui você pode adicionar o código AJAX para carregar os produtos da nova categoria
-}
+  }
 
-function getCategoryName(categoryId) {
+  function getCategoryName(categoryId) {
     switch (categoryId) {
-        case "basicos": return "Básicos";
-        case "argola": return "Argola";
-        // Outras categorias aqui
-        default: return "Produtos";
+      case "basicos": return "Básicos";
+      case "argola": return "Argola";
+      // Outras categorias aqui
+      default: return "Produtos";
     }
-}
+  }
 
 });
+
 
 // Função para carregar a categoria de produtos
 function loadCategory(categoryName) {
