@@ -77,7 +77,6 @@ let itemsInCart = 0;
 window.addEventListener("DOMContentLoaded", e => {
   let cartItems = JSON.parse(getItemWithExpiry("cart") || "[]");
   let total = freight; // Inicializa o total com o valor do frete
-  let itemsInCart = cartItems.length;
 
   if (cartItems.length > 0) {
     let l = document.getElementById("cart");
@@ -102,14 +101,11 @@ window.addEventListener("DOMContentLoaded", e => {
     loadCategory('nariz');
   });
 
-  // Adicionando event delegation ao 'product-container'
   document.querySelector('.product-container').addEventListener('click', function(event) {
     const target = event.target;
-    
     let btn = target.closest('.classe-do-botao-com-preco');
-    
     if (btn) {
-      // Coloque aqui o código que abre o modal de escolha de cada variação.
+      // Seu código para abrir o modal de escolha de cada variação
     }
   });
 
@@ -119,52 +115,44 @@ window.addEventListener("DOMContentLoaded", e => {
 
   document.getElementById("active-category-title").innerText = getCategoryName(activeCategory);
 
-  // Evento ao clicar em uma categoria pelo menu lateral
   document.querySelectorAll("li[id$='-category']").forEach(function(li) {
     li.addEventListener("click", function() {
       setActiveCategory(this.id.replace('-category', ''));
     });
   });
 
-  // Evento para o dropdown
   document.getElementById("category-dropdown").addEventListener("change", function() {
     setActiveCategory(this.value);
   });
-  
+
   function setActiveCategory(category) {
     activeCategory = category;
     document.getElementById("active-category-title").innerText = getCategoryName(activeCategory);
-
-    // Aqui você pode adicionar o código AJAX para carregar os produtos da nova categoria
+    loadCategory(activeCategory);  // Chama a função para carregar os produtos da nova categoria
   }
 
   function getCategoryName(categoryId) {
-  switch (categoryId) {
-    case "basicos": return "Básicos";
-    case "nariz": return "Nariz";
-    case "septo": return "Septo";
-    case "orelha": return "Orelha";
-    case "sobrancelha": return "Sobrancelha";
-    case "umbigo": return "Umbigo";
-    case "mamilo": return "Mamilo";
-    default: return "Produtos";
+    switch (categoryId) {
+      case "basicos": return "Básicos";
+      case "nariz": return "Nariz";
+      case "septo": return "Septo";
+      case "orelha": return "Orelha";
+      case "sobrancelha": return "Sobrancelha";
+      case "umbigo": return "Umbigo";
+      case "mamilo": return "Mamilo";
+      default: return "Produtos";
+    }
   }
-}
 
 });
 
-
-// Função para carregar a categoria de produtos
+// Sua função loadCategory permaneceu inalterada
 function loadCategory(categoryName) {
   const xhr = new XMLHttpRequest();
   xhr.open('GET', `${categoryName}.html`, true);
-  
   xhr.onreadystatechange = function() {
       if (xhr.readyState === 4 && xhr.status === 200) {
-          // Substitua o conteúdo de 'product-container' com o novo conteúdo HTML
           document.querySelector('.product-container').innerHTML = xhr.responseText;
-
-          // Adiciona o evento aos novos botões de cor carregados
           let colorButtons = document.getElementsByClassName("color");
           for(let i=0; i < colorButtons.length; i++) {
               colorButtons[i].addEventListener("click", openPopup);
