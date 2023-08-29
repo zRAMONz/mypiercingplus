@@ -115,11 +115,12 @@ window.addEventListener("DOMContentLoaded", e => {
 
   document.getElementById("active-category-title").innerText = getCategoryName(activeCategory);
 
-  function setActiveCategory(category) {
-    activeCategory = category;
-    document.getElementById("active-category-title").innerText = getCategoryName(activeCategory);
-    loadCategory(activeCategory);  // Carrega os produtos da nova categoria
-  }
+function setActiveCategory(category) {
+  activeCategory = category;
+  document.getElementById("active-category-title").innerText = getCategoryName(activeCategory); // Atualiza o título na área principal
+  loadCategory(activeCategory);  // Chama a função para carregar os produtos da nova categoria
+}
+
 
   function getCategoryName(categoryId) {
     switch (categoryId) {
