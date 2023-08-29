@@ -1,1128 +1,783 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>My Piercing Italy</title>
-    <link rel="stylesheet" type="text/css" href="https://zramonz.github.io/miopiercing/index.css"><!DOCTYPE html><!DOCTYPE html>
-    <link rel="icon" href="https://i.imgur.com/P8IA7eK.jpg">
-    <meta name="theme-color" content="#dffafa">
-</head>
-<body>
-    <!-- Pop-up de boas-vindas -->
-    <div id="welcomePopup">
-            <div class="language-selector">
-                <img src="https://s1.static.brasilescola.uol.com.br/be/2022/10/bandeira-portugal-2.jpg" alt="Português" data-lang="pt">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Flag_of_Italy.svg/255px-Flag_of_Italy.svg.png" alt="Italiano" data-lang="it">
-                <img src="https://static.mundoeducacao.uol.com.br/mundoeducacao/2022/05/bandeira-estados-unidos.jpg" alt="Inglês" data-lang="en">
-            </div>
-        
-            <img id="popup-logo" src="https://i.imgur.com/yrF3iGI.jpg" alt="Logo">
-            <p>Benvenuto!</p>
-        <button id="individualButton">Persona Fisica</button>
-        <button id="businessButton">Persona Juridica</button>
+    <head>
+        <meta charset="UTF-8" />
+        <title>My Piercing Italy</title>
+        <link rel="stylesheet" type="text/css" href="href="https://zramonz.github.io/miopiercing/index.css" />
+        <link rel="icon" href="https://i.imgur.com/P8IA7eK.jpg" />
+        <link rel="icon" href="https://i.imgur.com/P8IA7eK.jpg" />
+        <meta name="theme-color" content="#dffafa" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMt23cez/9paNd+x9Zt5q5BdPtF+to8xM6B5z6W5" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <!-- Ícone do menu no canto superior esquerdo -->
+<div id="menuIcon" class="menu-icon">
+    <i class="fas fa-bars"></i>
+</div>
+
+<!-- Menu lateral -->
+<div id="sideMenu" class="side-menu">
+    <button id="closeButton" class="close-button">X</button>
+    <input type="text" class="search-bar" placeholder="Pesquisar...">
+    <div class="categories">
+        <h3>Parte do corpo:</h3>
+        <ul>
+            <li>Nariz</li>
+            <li>Septo</li>
+            <li>Orelha</li>
+            <li>Sobrancelha</li>
+            <li>Umbigo</li>
+            <li>Mamilo</li>
+        </ul>
+        <h3>Tipos de Piercing:</h3>
+        <ul>
+            <li>Argola</li>
+            <li>Banana</li>
+            <li>Labret</li>
+            <li>Dermal</li>
+            <li>Haste</li>
+            <li>Bolinha</li>
+            <li>Captive</li>
+        </ul>
     </div>
+</div>
 
-    <!-- Cabeçalho do site -->
-    <div class="icons">
-        <div class="insta-container">
-            <a href="https://www.instagram.com/" target="_blank">
-              <img src="https://i.imgur.com/fmTitG4.png" alt="Instagram">
-            </a>
+        <div class="icons">
+            <div class="insta-container">
+                <a href="https://www.instagram.com/Tuling463/" target="_blank"> <img src="https://i.imgur.com/fmTitG4.png" alt="Instagram" /> </a>
             </div>
-    <div class="whatsapp-container">
-        <a href="https://wa.me/393898986018" target="_blank">
-          <img src="https://i.imgur.com/9hAlWtG.png" alt="WhatsApp">
-        </a>
-      </div>
-      </div>
-        <header>
-
-          
-       <img src="https://i.imgur.com/yrF3iGI.jpg" alt="Logo" width="200" height="200">
-    </header>
-
-    <!-- Lista de produtos -->
-    <section id="productList">
-        <h2>Prodotti</h2>
-                       
-        <div class="category">
-            <div class="category-line product">
-                <div class="product-info">
-                    <img src="https://i.imgur.com/xgEFCps.jpg" alt="Categoria" width="100" height="100">
-                    <h2>Labrets</h2>
-                </div>
-                <div class="product-details">
-                    <button class="view-more">Ver mais</button>
-                </div>
+            <div class="whatsapp-container">
+                <a href="https://wa.me/393898986018" target="_blank"> <img src="https://i.imgur.com/9hAlWtG.png" alt="WhatsApp" /> </a>
             </div>
-            <div class="more-products" style="display: none;">
-                <!-- Produtos adicionais aqui -->
-                <div class="product">
-                    <div class="product-info">
-                        <img src="https://i.imgur.com/SrSUHYC.png" alt="LBT" width="100" height="100">
-                    </div><div class="product-details">
-                        <h3 class="product-name">LBT Bolinha 3 mm</h3>
-                    
-                
-                    <!-- Medidas para a cor Natural do produto D Ring -->
-                    <div class="sizes" data-color="Natural">
-                        <!-- Preços estão em euro -->
-                        <div class="size">
-                            <h4>1.2 mm x</h4>
-                                <div class="measure-container"><span class="measure" data-price="2.0">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                    <div class="measure-container"><span class="measure" data-price="2.0">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                        <div class="measure-container"><span class="measure" data-price="2.0">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                        <div class="measure-container"><span class="measure" data-price="2.0">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                        <div class="measure-container"><span class="measure" data-price="2.0">10 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                            <div class="measure-container"><span class="measure" data-price="2.0">12 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                            <div class="measure-container"><span class="measure" data-price="2.0">14 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+        </div>
+        <header><img src="https://i.imgur.com/yfnzUPF.png" alt="Logo" width="200" height="200" />
+            <div class="cart-container">
+                <span class="cart-count">0</span>
+                <a href="#cart"><i class="fas fa-shopping-cart cart-icon"></i></a>
                             </div>
-                
+            </header>
+        <section id="productList">
+            <h2>Produtos</h2>
+            <div class="product-container">
+                <div class="product">
+                    <div class="product-info"><img src="https://i.imgur.com/SrSUHYC.png" alt="LBT" width="100" height="100" /></div>
+                    <div class="product-details">
+                        <h3 class="product-name">LBT Bolinha 1.2 mm</h3>
+                        <div class="sizes" data-color="Natural">
+                            <div class="size">
+                                <h4>1.2 mm x</h4>
+                                <div class="sizes2">
+                                    <div class="measure-container"><span class="measure" data-price="2.0">4 x 3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.0">5 x 3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.0">6 x 3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.0">7 x 3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.0">8 x 3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.0">9 x 3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.0">10 x 3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.0">12 x 3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <div class="colors"><button class="color" data-price="2.0" data-color="Natural">€ 2.0</button></div>
                 </div>
-                    <div class="colors">
-                        <!-- Preços estão em euro -->
-                <!-- Preços estão em euro -->
-                <button class="color" data-price="2.0" data-color="Natural">€ 2.0</button>
-                
+                <div class="product">
+                    <div class="product-info"><img src="https://i.imgur.com/C1wjY31.jpg" alt="LBT" width="100" height="100" /></div>
+                    <div class="product-details">
+                        <h3 class="product-name">LBT Bolinha 1.6 mm</h3>
+                        <div class="sizes" data-color="Natural">
+                            <div class="size">
+                                <h4>1.6 mm x</h4>
+                                <div class="sizes2">
+                                    <div class="measure-container"><span class="measure" data-price="2.0">6 mm x 3</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.0">7 mm x 3</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.0">8 mm x 3</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.0">9 mm x 3</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.0">10 mm x 3</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.0">12 mm x 3</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.0">14 mm x 3</span><input type="number" min="0" class="measure-quantity" /></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <div class="colors"><button class="color" data-price="2.0" data-color="Natural">€ 2.0</button></div>
                 </div>
-                   <!-- Produto D Ring -->
-    <div class="product">
-        <div class="product-info">
-            <img src="https://i.imgur.com/C1wjY31.jpg" alt="LBT" width="100" height="100">
-        </div><div class="product-details">
-            <h3 class="product-name">LBT Bolinha 1.6 mm</h3>
-        
-    
-        <!-- Medidas para a cor Natural do produto D Ring -->
-        <div class="sizes" data-color="Natural">
-            <!-- Preços estão em euro -->
-            <div class="size">
-                <h4>1.6 mm x</h4>
-                    <div class="measure-container"><span class="measure" data-price="2.0">6 mm x 3</span><input type="number" min="0" class="measure-quantity" /></div>
-                        <div class="measure-container"><span class="measure" data-price="2.0">7 mm x 3</span><input type="number" min="0" class="measure-quantity" /></div>
-                            <div class="measure-container"><span class="measure" data-price="2.0">8 mm x 3</span><input type="number" min="0" class="measure-quantity" /></div>
-                            <div class="measure-container"><span class="measure" data-price="2.0">9 mm x 3</span><input type="number" min="0" class="measure-quantity" /></div>
-                            <div class="measure-container"><span class="measure" data-price="2.0">10 mm x 3</span><input type="number" min="0" class="measure-quantity" /></div>
-                                <div class="measure-container"><span class="measure" data-price="2.0">12 mm x 3</span><input type="number" min="0" class="measure-quantity" /></div>
-                                <div class="measure-container"><span class="measure" data-price="2.0">14 mm x 3</span><input type="number" min="0" class="measure-quantity" /></div>
-                </div>
-    
-        </div>
-    </div>
-        <div class="colors">
-            <!-- Preços estão em euro -->
-    <!-- Preços estão em euro -->
-    <button class="color" data-price="2.0" data-color="Natural">€ 2.0</button>
-    
-        </div>
-    </div>
-    <!-- Produto D Ring -->
-    
-                   <!-- Produto------------------------------------------------- -->
-            <div class="product">
-               
-                <div class="product-info">
-                    <img src="https://i.imgur.com/an3y0vF.jpg" alt="LBT Ponto de Luz Inglesa" width="100" height="100">
-                    
-                </div>
-                <div class="product-details">
-                <h3 class="product-name">LBT Ponto de Luz Inglesa</h3>
-                <!-- Medidas para a cor Natural do produto D Ring -->
-                <div class="sizes" data-color="Natural">
-                    <!-- Preços estão em euro -->
-                    <div class="size">
-                        <h4>1.2 x 6 x</h4>
-                            <div class="measure-container"><span class="measure" data-price="3.0">1.7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                <div class="product">
+                    <div class="product-info"><img src="https://i.imgur.com/an3y0vF.jpg" alt="LBT Ponto de Luz sem Garra" width="100" height="100" /></div>
+                    <div class="product-details">
+                        <h3 class="product-name">LBT Ponto de Luz sem Garra</h3>
+                        <div class="sizes" data-color="Natural">
+                            <div class="size">
+                                <h4>1.2 x 6 x</h4>
+                                <div class="measure-container"><span class="measure" data-price="3.0">1.7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
                                 <div class="measure-container"><span class="measure" data-price="3.0">2.0 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                    <div class="measure-container"><span class="measure" data-price="3.0">2.5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                    <div class="measure-container"><span class="measure" data-price="3.0">3.0 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-     </div>
-                    <div class="size">
-                        <h4>1.2 x 8 x</h4>
-                        <div class="measure-container"><span class="measure" data-price="3.0">1.7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                        <div class="measure-container"><span class="measure" data-price="3.0">2.0 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                            <div class="measure-container"><span class="measure" data-price="3.0">2.5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                            <div class="measure-container"><span class="measure" data-price="3.0">3.0 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-    </div>
-                </div>
-                </div>
-               
-                <div class="colors">
-                    <!-- Preços estão em euro -->
-    <!-- Preços estão em euro -->
-    <button class="color" data-price="3.0" data-color="Natural">€ 3.0</button>
-    
-                </div>
-            </div>
-            <!-- Produto------------------------------------------------- -->
-            <!-- Produto------------------------------------------------- -->
-            <div class="product">
-               
-                <div class="product-info">
-                    <img src="https://i.imgur.com/tW4RXhr.jpg" alt="LBT Ponto de Luz Garra" width="100" height="100">
-                    
-                </div>
-                <div class="product-details">
-                <h3 class="product-name">LBT Ponto de Luz Garra</h3>
-                <!-- Medidas para a cor Natural do produto D Ring -->
-                <div class="sizes" data-color="Natural">
-                    <!-- Preços estão em euro -->
-                    <div class="size">
-                        <h4>1.2 x 6 x</h4>
-                            <div class="measure-container"><span class="measure" data-price="3.0">2.0 mm</span><input type="number" min="0" class="measure-quantity" /></div>
                                 <div class="measure-container"><span class="measure" data-price="3.0">2.5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                    <div class="measure-container"><span class="measure" data-price="3.0">3.0 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                    <div class="measure-container"><span class="measure" data-price="3.0">4.0 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-     </div>
-                    <div class="size">
-                        <h4>1.2 x 8 x</h4>
-                        <div class="measure-container"><span class="measure" data-price="3.0">2.0 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                        <div class="measure-container"><span class="measure" data-price="3.0">2.5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                            <div class="measure-container"><span class="measure" data-price="3.0">3.0 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                            <div class="measure-container"><span class="measure" data-price="3.0">4.0 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-    </div>
+                                <div class="measure-container"><span class="measure" data-price="3.0">3.0 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                            </div>
+                            <div class="size">
+                                <h4>1.2 x 8 x</h4>
+                                <div class="measure-container"><span class="measure" data-price="3.0">1.7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.0">2.0 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.0">2.5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.0">3.0 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colors"><button class="color" data-price="3.0" data-color="Natural">€ 3.0</button></div>
                 </div>
+                <div class="product">
+                    <div class="product-info"><img src="https://i.imgur.com/tW4RXhr.jpg" alt="LBT Ponto de Luz Garra" width="100" height="100" /></div>
+                    <div class="product-details">
+                        <h3 class="product-name">LBT Ponto de Luz Garra</h3>
+                        <div class="sizes" data-color="Natural">
+                            <div class="size">
+                                <h4>1.2 x 6 x</h4>
+                                <div class="measure-container"><span class="measure" data-price="3.0">2.0 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.0">2.5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.0">3.0 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.0">4.0 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                            </div>
+                            <div class="size">
+                                <h4>1.2 x 8 x</h4>
+                                <div class="measure-container"><span class="measure" data-price="3.0">2.0 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.0">2.5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.0">3.0 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.0">4.0 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colors"><button class="color" data-price="3.0" data-color="Natural">€ 3.0</button></div>
                 </div>
-               
-                <div class="colors">
-                    <!-- Preços estão em euro -->
-    <!-- Preços estão em euro -->
-    <button class="color" data-price="3.0" data-color="Natural">€ 3.0</button>
-    
-                </div>
-            </div>
-            <!-- Produto------------------------------------------------- -->
-            </div>
-        </div>
-        
-          
-        <div class="category">
-            <div class="category-line product">
-                <div class="product-info">
-                    <img src="https://i.imgur.com/EPKO9T8.jpg" alt="Categoria" width="100" height="100">
-                    <h2>Umbigo</h2>
-                </div>
-                <div class="product-details">
-                    <button class="view-more">Ver mais</button>
-                </div>
-            </div>
-            <div class="more-products" style="display: none;">
-                <!-- Produtos adicionais aqui -->
-                <!-- Produto------------------------------------------------- -->
-<div class="product">
-    <div class="product-info">
-        <img src="https://cdn.awsli.com.br/2500x2500/1130/1130778/produto/185018334/5e796a3aea.jpg" alt="BNN Umbigo" width="100" height="100">
-    </div>
-    <div class="product-details">
-        <h3 class="product-name">BNN Umbigo</h3>
-        <!-- Medidas para a cor Natural do produto BNN Umbigo -->
-        <div class="sizes" data-color="Natural">
-            <!-- Preços estão em euro -->
-            <div class="size">
-                <h4>1.6 mm x</h4>
-                <div class="measure-container"><span class="measure" data-price="4.5">10 x 4/6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="4.5">10 x 5/8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="4.5">11 x 4/6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="4.5">12 x 4/6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="4.5">12 x 5/8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="4.5">14 x 5/7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-            </div>
-        </div>
-    </div>
-    <div class="colors">
-        <!-- Preços estão em euro -->
-        <button class="color" data-price="4.5" data-color="Natural">€ 4.5</button>
-    </div>
-</div>
-<!-- Produto------------------------------------------------- -->
-<!-- Produto------------------------------------------------- -->
-<div class="product">
-    <div class="product-info">
-        <img src="https://i.imgur.com/dc3bWHP.jpg" alt="BNN Bola" width="100" height="100">
-    </div>
-    <div class="product-details">
-        <h3 class="product-name">BNN Bola</h3>
-        <!-- Medidas para a cor Natural do produto BNN Bola -->
-        <div class="sizes" data-color="Natural">
-            <!-- Preços estão em euro -->
-            <div class="size">
-                <h4>1.6 mm x</h4>
-                <div class="measure-container"><span class="measure" data-price="4.5">10 x 4/6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="4.5">10 x 5/8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="4.5">11 x 4/6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="4.5">12 x 4/6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="4.5">12 x 5/8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="4.5">14 x 5/7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-            </div>
-        </div>
-    </div>
-    <div class="colors">
-        <!-- Preços estão em euro -->
-        <button class="color" data-price="4.5" data-color="Natural">€ 4.5</button>
-    </div>
-</div>
-<!-- Produto------------------------------------------------- -->
-<!-- Produto------------------------------------------------- -->
-<div class="product">
-    <div class="product-info">
-        <img src="https://cdn.awsli.com.br/2500x2500/1130/1130778/produto/164283256/flat-5k9sn2n473.jpg" alt="BNN Umbigo Flat Disco" width="100" height="100">
-    </div>
-    <div class="product-details">
-        <h3 class="product-name">BNN Umbigo Flat Disco</h3>
-        <!-- Medidas para a cor Natural do produto BNN Umbigo Flat Disco -->
-        <div class="sizes" data-color="Natural">
-            <!-- Preços estão em euro -->
-            <div class="size">
-                <h4>1.6 mm x</h4>
-                <div class="measure-container"><span class="measure" data-price="5.0">10 x 4/6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="5.0">12 x 4/6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-            </div>
-        </div>
-    </div>
-    <div class="colors">
-        <!-- Preços estão em euro -->
-        <button class="color" data-price="5.0" data-color="Natural">€ 5.0</button>
-    </div>
-</div>
-<!-- Produto------------------------------------------------- -->
-<!-- Produto------------------------------------------------- -->
-<div class="product">
-    <div class="product-info">
-        <img src="https://i.imgur.com/ZgiE4zN.jpg" alt="BNN Umbigo Zircônia c/ Garra" width="100" height="100">
-    </div>
-    <div class="product-details">
-        <h3 class="product-name">BNN Umbigo Zircônia c/ Garra</h3>
-        <!-- Medidas para a cor Natural do produto BNN Umbigo Zircônia c/ Garra -->
-        <div class="sizes" data-color="Natural">
-            <!-- Preços estão em euro -->
-            <div class="size">
-                <h4>1.6 mm x</h4>
-                <div class="measure-container"><span class="measure" data-price="6.0">10 x 4/6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="6.0">10 x 5/8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="6.0">12 x 4/6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="6.0">12 x 5/8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-            </div>
-        </div>
-    </div>
-    <div class="colors">
-        <!-- Preços estão em euro -->
-        <button class="color" data-price="6.0" data-color="Natural">€ 6.0</button>
-    </div>
-</div>
-<!-- Produto------------------------------------------------- -->
-<!-- Produto------------------------------------------------- -->
-<div class="product">
-    <div class="product-info">
-        <img src="https://i.imgur.com/GSjscMo.jpg" alt="Micro BNN Sobrancelha" width="100" height="100">
-    </div>
-    <div class="product-details">
-        <h3 class="product-name">Micro BNN Sobrancelha</h3>
-        <!-- Medidas para a cor Natural do produto Micro BNN Sobrancelha -->
-        <div class="sizes" data-color="Natural">
-            <!-- Preços estão em euro -->
-            <div class="size">
-                <h4>1 x 2 x</h4>
-                <div class="measure-container"><span class="measure" data-price="2.5">6 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="2.5">7 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="2.5">8 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="2.5">10 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="2.5">12 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-            </div>
-        </div>
-    </div>
-    <div class="colors">
-        <!-- Preços estão em euro -->
-        <button class="color" data-price="2.5" data-color="Natural">€ 2.5</button>
-    </div>
-</div>
-<!-- Produto------------------------------------------------- -->
-            </div>
-        </div>
-        
-            
-              
-        <!-- Produto------------------------------------------------- -->
-        <div class="product">
-            <div class="product-info">
-                <img src="https://i.imgur.com/85SCkiY.jpg" alt="Argola Segmento" width="100" height="100">
-            </div><div class="product-details">
-                <h3 class="product-name">Argola Segmento</h3>
-            
-
-            <!-- Medidas para a cor Natural do produto D Ring -->
-            <div class="size argola-segmento"> <div class="sizes" data-color="Natural">
-                <!-- Preços estão em euro -->
-                <div class="size">
-                    <h4>0.8 x</h4>
-                        <div class="measure-container"><span class="measure" data-price="2.8">5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                            <div class="measure-container"><span class="measure" data-price="2.8">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                <div class="product">
+                    <div class="product-info"><img src="https://i.imgur.com/85SCkiY.jpg" alt="Argola Segmento" width="100" height="100" /></div>
+                    <div class="product-details">
+                        <h3 class="product-name">Segmento 0.8 - 1.0 mm</h3>
+                        <div class="size argola-segmento">
+                            <div class="sizes" data-color="Natural">
+                                <div class="size">
+                                    <h4>0.8 mm</h4>
+                                    <div class="measure-container"><span class="measure" data-price="2.8">5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.8">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.8">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.8">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.8">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.8">10 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                </div>
+                                <div class="size">
+                                    <h4>1.0 mm</h4>
+                                    <div class="measure-container"><span class="measure" data-price="2.8">5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.8">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.8">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.8">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.8">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.8">10 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.8">11 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.8">12 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sizes" data-color="Gold">
+                            <div class="size">
+                                <h4>0.8 mm</h4>
+                                <div class="measure-container"><span class="measure" data-price="3.8">5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">10 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                            </div>
+                            <div class="size">
+                                <h4>1.0 mm</h4>
+                                <div class="measure-container"><span class="measure" data-price="3.8">5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">10 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">11 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">12 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                            </div>
+                        </div>
+                        <div class="sizes" data-color="Black">
+                            <div class="size">
+                                <h4>0.8 mm</h4>
+                                <div class="measure-container"><span class="measure" data-price="3.8">5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">10 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                            </div>
+                            <div class="size">
+                                <h4>1.0 mm</h4>
+                                <div class="measure-container"><span class="measure" data-price="2.8">5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="2.8">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
                                 <div class="measure-container"><span class="measure" data-price="2.8">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
                                 <div class="measure-container"><span class="measure" data-price="2.8">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
                                 <div class="measure-container"><span class="measure" data-price="2.8">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
                                 <div class="measure-container"><span class="measure" data-price="2.8">10 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                    </div>
-                    <div class="size">
-                        <h4>1.0 x</h4>
-                            <div class="measure-container"><span class="measure" data-price="2.8">5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                <div class="measure-container"><span class="measure" data-price="2.8">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                    <div class="measure-container"><span class="measure" data-price="2.8">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                    <div class="measure-container"><span class="measure" data-price="2.8">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                    <div class="measure-container"><span class="measure" data-price="2.8">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                    <div class="measure-container"><span class="measure" data-price="2.8">10 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                        </div>
-                        <div class="size">
-                            <h4>1.2 x</h4>
-                                <div class="measure-container"><span class="measure" data-price="2.8">5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                    <div class="measure-container"><span class="measure" data-price="2.8">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                        <div class="measure-container"><span class="measure" data-price="2.8">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                        <div class="measure-container"><span class="measure" data-price="2.8">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                        <div class="measure-container"><span class="measure" data-price="2.8">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                        <div class="measure-container"><span class="measure" data-price="2.8">10 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="2.8">11 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="2.8">12 mm</span><input type="number" min="0" class="measure-quantity" /></div>
                             </div>
-            </div></div>
-            <div class="sizes" data-color="Gold">
-                <!-- Preços estão em euro -->
-                <div class="size">
-                    <h4>0.8 mm</h4>
-                        <div class="measure-container"><span class="measure" data-price="3.8">5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                            <div class="measure-container"><span class="measure" data-price="3.8">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <button class="color" data-price="2.8" data-color="Natural">€ 2.8</button><button class="color" data-price="3.8" data-color="Gold">€ 3.8</button>
+                        <button class="color" data-price="3.8" data-color="Black">€ 3.8</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product-info"><img src="https://i.imgur.com/85SCkiY.jpg" alt="Argola Segmento 2" width="100" height="100" /></div>
+                    <div class="product-details">
+                        <h3 class="product-name">Segmento 1.2 - 1.6 mm</h3>
+                        <div class="sizes" data-color="Natural">
+                            <div class="size">
+                                <h4>1.2 mm</h4>
+                                <div class="measure-container"><span class="measure" data-price="2.8">5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="2.8">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="2.8">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="2.8">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="2.8">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="2.8">10 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="2.8">11 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="2.8">12 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="2.8">13 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="2.8">14 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="2.8">16 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                            </div>
+                            <div class="size">
+                                <h4>1.6 mm</h4>
+                                <div class="measure-container"><span class="measure" data-price="2.8">5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="2.8">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="2.8">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="2.8">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="2.8">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="2.8">10 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="2.8">12 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="2.8">14 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="2.8">16 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                            </div>
+                        </div>
+                        <div class="sizes" data-color="Gold">
+                            <div class="size">
+                                <h4>1.2 mm</h4>
+                                <div class="measure-container"><span class="measure" data-price="3.8">5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
                                 <div class="measure-container"><span class="measure" data-price="3.8">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
                                 <div class="measure-container"><span class="measure" data-price="3.8">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
                                 <div class="measure-container"><span class="measure" data-price="3.8">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
                                 <div class="measure-container"><span class="measure" data-price="3.8">10 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                    </div>
-                    <div class="size">
-                        <h4>1.0 mm</h4>
-                            <div class="measure-container"><span class="measure" data-price="2.8">5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                <div class="measure-container"><span class="measure" data-price="2.8">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                    <div class="measure-container"><span class="measure" data-price="2.8">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                    <div class="measure-container"><span class="measure" data-price="2.8">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                    <div class="measure-container"><span class="measure" data-price="2.8">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                    <div class="measure-container"><span class="measure" data-price="2.8">10 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                        </div>
-                        <div class="size">
-                            <h4>1.2 mm</h4>
-                                <div class="measure-container"><span class="measure" data-price="2.8">5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                    <div class="measure-container"><span class="measure" data-price="2.8">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                        <div class="measure-container"><span class="measure" data-price="2.8">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                        <div class="measure-container"><span class="measure" data-price="2.8">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                        <div class="measure-container"><span class="measure" data-price="2.8">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                        <div class="measure-container"><span class="measure" data-price="2.8">10 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">11 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">12 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">13 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">14 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">16 mm</span><input type="number" min="0" class="measure-quantity" /></div>
                             </div>
-            </div>
-            <div class="sizes" data-color="Black">
-                <!-- Preços estão em euro -->
-                <div class="size">
-                    <h4>0.8 mm</h4>
-                        <div class="measure-container"><span class="measure" data-price="3.8">5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                            <div class="measure-container"><span class="measure" data-price="3.8">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                            <div class="size">
+                                <h4>1.6 mm</h4>
+                                <div class="measure-container"><span class="measure" data-price="3.8">5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
                                 <div class="measure-container"><span class="measure" data-price="3.8">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
                                 <div class="measure-container"><span class="measure" data-price="3.8">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
                                 <div class="measure-container"><span class="measure" data-price="3.8">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
                                 <div class="measure-container"><span class="measure" data-price="3.8">10 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                    </div>
-                    <div class="size">
-                        <h4>1.0 mm</h4>
-                            <div class="measure-container"><span class="measure" data-price="2.8">5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                <div class="measure-container"><span class="measure" data-price="2.8">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                    <div class="measure-container"><span class="measure" data-price="2.8">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                    <div class="measure-container"><span class="measure" data-price="2.8">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                    <div class="measure-container"><span class="measure" data-price="2.8">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                    <div class="measure-container"><span class="measure" data-price="2.8">10 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                        </div>
-                        <div class="size">
-                            <h4>1.2 mm</h4>
-                                <div class="measure-container"><span class="measure" data-price="2.8">5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                    <div class="measure-container"><span class="measure" data-price="2.8">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                        <div class="measure-container"><span class="measure" data-price="2.8">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                        <div class="measure-container"><span class="measure" data-price="2.8">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                        <div class="measure-container"><span class="measure" data-price="2.8">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                        <div class="measure-container"><span class="measure" data-price="2.8">10 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">12 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">14 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">16 mm</span><input type="number" min="0" class="measure-quantity" /></div>
                             </div>
-            </div>
-
-</div>
-            <div class="colors">
-                <!-- Preços estão em euro -->
-<!-- Preços estão em euro -->
-<button class="color" data-price="2.8" data-color="Natural">€ 2.8</button>
-<button class="color" data-price="3.8" data-color="Gold">€ 3.8</button>
-<button class="color" data-price="3.8" data-color="Black">€ 3.8</button>
-
-            </div>
-        </div>
-<!-- Produto------------------------------------------------- -->
-<div class="product">
-    <div class="product-info">
-        <img src="https://i.imgur.com/exKkRx0.jpg" alt="Ferradura" width="100" height="100">
-    </div>
-    <div class="product-details">
-        <h3 class="product-name">Ferradura</h3>
-        <!-- Medidas para a cor Natural do produto Ferradura -->
-        <div class="sizes" data-color="Natural">
-            <!-- Preços estão em euro -->
-            <div class="size">
-                <h4>1.2 mm x</h4>
-                <div class="measure-container"><span class="measure" data-price="2.5">6 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="2.5">7 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="2.5">8 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="2.5">9 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="2.5">10 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="2.5">12 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-            </div>
-        </div>
-    </div>
-    <div class="colors">
-        <!-- Preços estão em euro -->
-        <button class="color" data-price="2.5" data-color="Natural">€ 2.5</button>
-    </div>
-</div>
-<!-- Produto------------------------------------------------- -->
-<!-- Produto------------------------------------------------- -->
-<div class="product">
-    <div class="product-info">
-        <img src="https://i.imgur.com/exKkRx0.jpg" alt="Ferradura 1.6 mm" width="100" height="100">
-    </div>
-    <div class="product-details">
-        <h3 class="product-name">Ferradura 1.6 mm</h3>
-        <!-- Medidas para a cor Natural do produto Ferradura 1.6 mm -->
-        <div class="sizes" data-color="Natural">
-            <!-- Preços estão em euro -->
-            <div class="size">
-                <h4>1.6 mm x</h4>
-                <div class="measure-container"><span class="measure" data-price="3.0">8 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="3.0">10 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="3.0">12 x 4/4 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-            </div>
-        </div>
-    </div>
-    <div class="colors">
-        <!-- Preços estão em euro -->
-        <button class="color" data-price="3.0" data-color="Natural">€ 3.0</button>
-    </div>
-</div>
-<!-- Produto------------------------------------------------- -->
-<!-- Produto------------------------------------------------- -->
-<div class="product">
-    <div class="product-info">
-        <img src="https://i.imgur.com/C0eVq7a.jpg" alt="Língua" width="100" height="100">
-    </div>
-    <div class="product-details">
-        <h3 class="product-name">Língua</h3>
-        <!-- Medidas para a cor Natural do produto Língua -->
-        <div class="sizes" data-color="Natural">
-            <!-- Preços estão em euro -->
-            <div class="size">
-                <h4>1.6 mm x</h4>
-                <div class="measure-container"><span class="measure" data-price="3.0">16 x 5/5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="3.0">18 x 5/5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="3.0">20 x 5/5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="3.0">22 x 5/5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="3.0">24 x 5/5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-            </div>
-        </div>
-    </div>
-    <div class="colors">
-        <!-- Preços estão em euro -->
-        <button class="color" data-price="3.0" data-color="Natural">€ 3.0</button>
-    </div>
-</div>
-<!-- Produto------------------------------------------------- -->
-<!-- Produto------------------------------------------------- -->
-<div class="product">
-    <div class="product-info">
-        <img src="https://i.imgur.com/DxtYCHN.jpg" alt="Industrial Barbell" width="100" height="100">
-    </div>
-    <div class="product-details">
-        <h3 class="product-name">Industrial Barbell</h3>
-        <!-- Medidas para a cor Natural do produto Industrial Barbell -->
-        <div class="sizes" data-color="Natural">
-            <!-- Preços estão em euro -->
-            <div class="size">
-                <h4>1.6 mm x</h4>
-                <div class="measure-container"><span class="measure" data-price="3.0">30 x 4/4 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="3.0">32 x 4/4 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="3.0">34 x 4/4 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="3.0">36 x 4/4 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="3.0">38 x 4/4 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="3.0">40 x 4/4 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-            </div>
-        </div>
-    </div>
-    <div class="colors">
-        <!-- Preços estão em euro -->
-        <button class="color" data-price="3.0" data-color="Natural">€ 3.0</button>
-    </div>
-</div>
-<!-- Produto------------------------------------------------- -->
-<!-- Produto------------------------------------------------- -->
-<div class="product">
-    <div class="product-info">
-        <img src="https://cdn.awsli.com.br/2500x2500/1130/1130778/produto/185018334/5e796a3aea.jpg" alt="BNN Umbigo" width="100" height="100">
-    </div>
-    <div class="product-details">
-        <h3 class="product-name">BNN Umbigo</h3>
-        <!-- Medidas para a cor Natural do produto BNN Umbigo -->
-        <div class="sizes" data-color="Natural">
-            <!-- Preços estão em euro -->
-            <div class="size">
-                <h4>1.6 mm x</h4>
-                <div class="measure-container"><span class="measure" data-price="4.5">10 x 4/6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="4.5">10 x 5/8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="4.5">11 x 4/6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="4.5">12 x 4/6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="4.5">12 x 5/8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="4.5">14 x 5/7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-            </div>
-        </div>
-    </div>
-    <div class="colors">
-        <!-- Preços estão em euro -->
-        <button class="color" data-price="4.5" data-color="Natural">€ 4.5</button>
-    </div>
-</div>
-<!-- Produto------------------------------------------------- -->
-<!-- Produto------------------------------------------------- -->
-<div class="product">
-    <div class="product-info">
-        <img src="https://i.imgur.com/dc3bWHP.jpg" alt="BNN Bola" width="100" height="100">
-    </div>
-    <div class="product-details">
-        <h3 class="product-name">BNN Bola</h3>
-        <!-- Medidas para a cor Natural do produto BNN Bola -->
-        <div class="sizes" data-color="Natural">
-            <!-- Preços estão em euro -->
-            <div class="size">
-                <h4>1.6 mm x</h4>
-                <div class="measure-container"><span class="measure" data-price="4.5">10 x 4/6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="4.5">10 x 5/8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="4.5">11 x 4/6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="4.5">12 x 4/6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="4.5">12 x 5/8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="4.5">14 x 5/7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-            </div>
-        </div>
-    </div>
-    <div class="colors">
-        <!-- Preços estão em euro -->
-        <button class="color" data-price="4.5" data-color="Natural">€ 4.5</button>
-    </div>
-</div>
-<!-- Produto------------------------------------------------- -->
-<!-- Produto------------------------------------------------- -->
-<div class="product">
-    <div class="product-info">
-        <img src="https://cdn.awsli.com.br/2500x2500/1130/1130778/produto/164283256/flat-5k9sn2n473.jpg" alt="BNN Umbigo Flat Disco" width="100" height="100">
-    </div>
-    <div class="product-details">
-        <h3 class="product-name">BNN Umbigo Flat Disco</h3>
-        <!-- Medidas para a cor Natural do produto BNN Umbigo Flat Disco -->
-        <div class="sizes" data-color="Natural">
-            <!-- Preços estão em euro -->
-            <div class="size">
-                <h4>1.6 mm x</h4>
-                <div class="measure-container"><span class="measure" data-price="5.0">10 x 4/6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="5.0">12 x 4/6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-            </div>
-        </div>
-    </div>
-    <div class="colors">
-        <!-- Preços estão em euro -->
-        <button class="color" data-price="5.0" data-color="Natural">€ 5.0</button>
-    </div>
-</div>
-<!-- Produto------------------------------------------------- -->
-<!-- Produto------------------------------------------------- -->
-<div class="product">
-    <div class="product-info">
-        <img src="https://i.imgur.com/ZgiE4zN.jpg" alt="BNN Umbigo Zircônia c/ Garra" width="100" height="100">
-    </div>
-    <div class="product-details">
-        <h3 class="product-name">BNN Umbigo Zircônia c/ Garra</h3>
-        <!-- Medidas para a cor Natural do produto BNN Umbigo Zircônia c/ Garra -->
-        <div class="sizes" data-color="Natural">
-            <!-- Preços estão em euro -->
-            <div class="size">
-                <h4>1.6 mm x</h4>
-                <div class="measure-container"><span class="measure" data-price="6.0">10 x 4/6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="6.0">10 x 5/8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="6.0">12 x 4/6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="6.0">12 x 5/8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-            </div>
-        </div>
-    </div>
-    <div class="colors">
-        <!-- Preços estão em euro -->
-        <button class="color" data-price="6.0" data-color="Natural">€ 6.0</button>
-    </div>
-</div>
-<!-- Produto------------------------------------------------- -->
-<!-- Produto------------------------------------------------- -->
-<div class="product">
-    <div class="product-info">
-        <img src="https://i.imgur.com/GSjscMo.jpg" alt="Micro BNN Sobrancelha" width="100" height="100">
-    </div>
-    <div class="product-details">
-        <h3 class="product-name">Micro BNN Sobrancelha</h3>
-        <!-- Medidas para a cor Natural do produto Micro BNN Sobrancelha -->
-        <div class="sizes" data-color="Natural">
-            <!-- Preços estão em euro -->
-            <div class="size">
-                <h4>1 x 2 x</h4>
-                <div class="measure-container"><span class="measure" data-price="2.5">6 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="2.5">7 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="2.5">8 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="2.5">10 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="2.5">12 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-            </div>
-        </div>
-    </div>
-    <div class="colors">
-        <!-- Preços estão em euro -->
-        <button class="color" data-price="2.5" data-color="Natural">€ 2.5</button>
-    </div>
-</div>
-<!-- Produto------------------------------------------------- -->
-<!-- Produto------------------------------------------------- -->
-<div class="product">
-    <div class="product-info">
-        <img src="https://i.imgur.com/W6C6eT1.jpg" alt="Micro Barbell" width="100" height="100">
-    </div><div class="product-details">
-        <h3 class="product-name">Micro Barbell</h3>
-    
-
-    <!-- Medidas para a cor Natural do produto D Ring -->
-    <div class="sizes" data-color="Natural">
-        <!-- Preços estão em euro -->
-        <div class="size">
-            <h4>1.2 mm x</h4>
-                <div class="measure-container"><span class="measure" data-price="2.5">6 mm x 3/3</span><input type="number" min="0" class="measure-quantity" /></div>
-                    <div class="measure-container"><span class="measure" data-price="2.5">8 mm x 3/3</span><input type="number" min="0" class="measure-quantity" /></div>
-                        <div class="measure-container"><span class="measure" data-price="2.5">10 mm x 3/3</span><input type="number" min="0" class="measure-quantity" /></div>
-                        <div class="measure-container"><span class="measure" data-price="2.5">12 mm x 3/3</span><input type="number" min="0" class="measure-quantity" /></div>
-                        <div class="measure-container"><span class="measure" data-price="2.5">14 mm x 3/3</span><input type="number" min="0" class="measure-quantity" /></div>
-            </div>
-    </div>
-
-</div>
-    <div class="colors">
-        <!-- Preços estão em euro -->
-<!-- Preços estão em euro -->
-<button class="color" data-price="1.5" data-color="Natural">€ 2.5</button>
-
-    </div>
-</div>
-               
-    <!-- Produto------------------------------------------------- -->
-<!-- Produto------------------------------------------------- -->
-<div class="product">
-    <div class="product-info">
-        <img src="https://i.imgur.com/FKuyw6a.jpg" alt="Nipple Barbell" width="100" height="100">
-    </div>
-    <div class="product-details">
-        <h3 class="product-name">Nipple Barbell</h3>
-        <!-- Medidas para a cor Natural do produto Nipple Barbell -->
-        <div class="sizes" data-color="Natural">
-            <!-- Preços estão em euro -->
-            <div class="size">
-                <h4>1.6 x</h4>
-                <div class="measure-container"><span class="measure" data-price="3.0">10 x 4/4 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="3.0">12 x 4/4 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="3.0">14 x 4/4 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="3.0">16 x 4/4 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-            </div>
-        </div>
-    </div>
-    <div class="colors">
-        <!-- Preços estão em euro -->
-        <button class="color" data-price="3.0" data-color="Natural">€ 3.0</button>
-    </div>
-</div>
-<!-- Produto------------------------------------------------- -->
-<!-- Produto------------------------------------------------- -->
-<div class="product">
-    <div class="product-info">
-        <img src="https://i.imgur.com/bZiQOs6.jpg" alt="Haste LBT" width="100" height="100">
-    </div>
-    <div class="product-details">
-        <h3 class="product-name">Haste LBT</h3>
-        <!-- Medidas para a cor Natural do produto Haste LBT -->
-        <div class="sizes" data-color="Natural">
-            <!-- Preços estão em euro -->
-            <div class="size">
-                <h4>1.2 mm x</h4>
-                <div class="measure-container"><span class="measure" data-price="1.3">4 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="1.3">5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="1.3">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="1.3">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="1.3">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="1.3">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="1.3">10 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="1.3">12 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-            </div>
-            <div class="size">
-                <h4>1.6 mm x</h4>
-                <div class="measure-container"><span class="measure" data-price="1.3">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="1.3">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="1.3">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="1.3">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="1.3">10 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="1.3">12 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="1.3">14 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                
- </div>
-        </div>
-    </div>
-    <div class="colors">
-        <!-- Preços estão em euro -->
-        <button class="color" data-price="1.3" data-color="Natural">€ 1.30</button>
-    </div>
-</div>
-<!-- Produto------------------------------------------------- -->
-  <!-- Produto------------------------------------------------- -->
-  <div class="product">
-    <div class="product-info">
-        <img src="https://i.imgur.com/YTKFdZk.jpg" alt="Bolinha" width="100" height="100">
-    </div><div class="product-details">
-        <h3 class="product-name">Bolinhas p/ jóia R/I 1.2 mm</h3>
-    
-
-    <!-- Medidas para a cor Natural do produto D Ring -->
-    <div class="sizes" data-color="Natural">
-        <!-- Preços estão em euro -->
-        <div class="size">
-            <h4>Diâmetros</h4>
-                <div class="measure-container"><span class="measure" data-price="1.0">2.5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                    <div class="measure-container"><span class="measure" data-price="1.0">3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                        <div class="measure-container"><span class="measure" data-price="1.0">4 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                        <div class="measure-container"><span class="measure" data-price="1.0">5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                        <div class="measure-container"><span class="measure" data-price="1.0">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
- </div>
-
-    </div>
-</div>
-    <div class="colors">
-        <!-- Preços estão em euro -->
-<!-- Preços estão em euro -->
-<button class="color" data-price="2.0" data-color="Natural">€ 2.0</button>
-
-    </div>
-</div>
-<!-- Produto------------------------------------------------- -->
-         <!-- Produto------------------------------------------------- -->
-         <div class="product">
-            <div class="product-info">
-                <img src="https://i.imgur.com/VKbE1GZ.jpg" alt="Haste Barbell 1.6" width="100" height="100">
-            </div><div class="product-details">
-                <h3 class="product-name">Haste Barbell 1.6 x 8 - 24 mm</h3>
-            
-
-            <!-- Medidas para a cor Natural do produto D Ring -->
-            <div class="sizes" data-color="Natural">
-                <!-- Preços estão em euro -->
-                <div class="size">
-                    <h4>1.2 mm x</h4>
-                     <div class="measure-container"><span class="measure" data-price="1.3">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                        </div>
+                        <div class="sizes" data-color="Black">
+                            <div class="size">
+                                <h4>1.2 mm</h4>
+                                <div class="measure-container"><span class="measure" data-price="3.8">5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">10 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">11 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">12 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">13 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">14 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">16 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                            </div>
+                            <div class="size">
+                                <h4>1.6 mm</h4>
+                                <div class="measure-container"><span class="measure" data-price="3.8">5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">10 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">12 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">14 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.8">16 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colors">
+                        <button class="color" data-price="2.8" data-color="Natural">€ 2.8</button><button class="color" data-price="3.8" data-color="Gold">€ 3.8</button>
+                        <button class="color" data-price="3.8" data-color="Black">€ 3.8</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product-info"><img src="https://i.imgur.com/exKkRx0.jpg" alt="Ferradura 1.2 mm" width="100" height="100" /></div>
+                    <div class="product-details">
+                        <h3 class="product-name">Ferradura 1.2 mm</h3>
+                        <div class="sizes" data-color="Natural">
+                            <div class="size">
+                                <h4>1.2 mm x</h4>
+                                <div class="sizes2">
+                                    <div class="measure-container"><span class="measure" data-price="2.5">6 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.5">7 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.5">8 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.5">9 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.5">10 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.5">12 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colors"><button class="color" data-price="2.5" data-color="Natural">€ 2.5</button></div>
+                </div>
+                <div class="product">
+                    <div class="product-info"><img src="https://i.imgur.com/exKkRx0.jpg" alt="Ferradura 1.6 mm" width="100" height="100" /></div>
+                    <div class="product-details">
+                        <h3 class="product-name">Ferradura 1.6 mm</h3>
+                        <div class="sizes" data-color="Natural">
+                            <div class="size">
+                                <h4>1.6 mm x</h4>
+                                <div class="measure-container"><span class="measure" data-price="3.0">8 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.0">10 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="3.0">12 x 4/4 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colors"><button class="color" data-price="3.0" data-color="Natural">€ 3.0</button></div>
+                </div>
+                <div class="product">
+                    <div class="product-info"><img src="https://i.imgur.com/C0eVq7a.jpg" alt="Língua" width="100" height="100" /></div>
+                    <div class="product-details">
+                        <h3 class="product-name">Língua</h3>
+                        <div class="sizes" data-color="Natural">
+                            <div class="size">
+                                <h4>1.6 mm x</h4>
+                                <div class="sizes2">
+                                    <div class="measure-container"><span class="measure" data-price="3.0">16 x 5/5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="3.0">18 x 5/5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="3.0">20 x 5/5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="3.0">22 x 5/5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="3.0">24 x 5/5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colors"><button class="color" data-price="3.0" data-color="Natural">€ 3.0</button></div>
+                </div>
+                <div class="product">
+                    <div class="product-info"><img src="https://i.imgur.com/DxtYCHN.jpg" alt="Industrial Barbell" width="100" height="100" /></div>
+                    <div class="product-details">
+                        <h3 class="product-name">Industrial Barbell</h3>
+                        <div class="sizes" data-color="Natural">
+                            <div class="size">
+                                <h4>1.6 mm x</h4>
+                                <div class="sizes2">
+                                    <div class="measure-container"><span class="measure" data-price="3.0">30 x 4/4 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="3.0">32 x 4/4 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="3.0">34 x 4/4 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="3.0">36 x 4/4 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="3.0">38 x 4/4 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="3.0">40 x 4/4 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colors"><button class="color" data-price="3.0" data-color="Natural">€ 3.0</button></div>
+                </div>
+                <div class="product">
+                    <div class="product-info"><img src="https://cdn.awsli.com.br/2500x2500/1130/1130778/produto/185018334/5e796a3aea.jpg" alt="BNN Umbigo" width="100" height="100" /></div>
+                    <div class="product-details">
+                        <h3 class="product-name">BNN Umbigo</h3>
+                        <div class="sizes" data-color="Natural">
+                            <div class="size">
+                                <h4>1.6 mm x</h4>
+                                <div class="sizes2">
+                                    <div class="measure-container"><span class="measure" data-price="4.5">10 x 4/6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="4.5">10 x 5/8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="4.5">11 x 4/6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="4.5">12 x 4/6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="4.5">12 x 5/8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="4.5">14 x 5/7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colors"><button class="color" data-price="4.5" data-color="Natural">€ 4.5</button></div>
+                </div>
+                <div class="product">
+                    <div class="product-info"><img src="https://i.imgur.com/dc3bWHP.jpg" alt="BNN Bola" width="100" height="100" /></div>
+                    <div class="product-details">
+                        <h3 class="product-name">BNN Bola</h3>
+                        <div class="sizes" data-color="Natural">
+                            <div class="size">
+                                <h4>1.6 mm x</h4>
+                                <div class="sizes2">
+                                    <div class="measure-container"><span class="measure" data-price="4.5">10 x 4/6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="4.5">10 x 5/8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="4.5">11 x 4/6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="4.5">12 x 4/6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="4.5">12 x 5/8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="4.5">14 x 5/7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colors"><button class="color" data-price="4.5" data-color="Natural">€ 4.5</button></div>
+                </div>
+                <div class="product">
+                    <div class="product-info"><img src="https://i.imgur.com/zvjQnTk.jpg" alt="BNN Umbigo Flat Disco" width="100" height="100" /></div>
+                    <div class="product-details">
+                        <h3 class="product-name">BNN Umbigo Flat Disco</h3>
+                        <div class="sizes" data-color="Natural">
+                            <div class="size">
+                                <h4>1.6 mm x</h4>
+                                <div class="measure-container"><span class="measure" data-price="5.0">10 x 4/6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="5.0">12 x 4/6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colors"><button class="color" data-price="5.0" data-color="Natural">€ 5.0</button></div>
+                </div>
+                <div class="product">
+                    <div class="product-info"><img src="https://i.imgur.com/ZgiE4zN.jpg" alt="BNN Umbigo com Garra" width="100" height="100" /></div>
+                    <div class="product-details">
+                        <h3 class="product-name">BNN Umbigo com Garra</h3>
+                        <div class="sizes" data-color="Natural">
+                            <div class="size">
+                                <h4>1.6 mm x</h4>
+                                <div class="sizes2">
+                                    <div class="measure-container"><span class="measure" data-price="6.0">10 x 4/6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="6.0">10 x 5/8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="6.0">12 x 4/6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="6.0">12 x 5/8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colors"><button class="color" data-price="6.0" data-color="Natural">€ 6.0</button></div>
+                </div>
+                <div class="product">
+                    <div class="product-info"><img src="https://i.imgur.com/GSjscMo.jpg" alt="Micro BNN Sobrancelha" width="100" height="100" /></div>
+                    <div class="product-details">
+                        <h3 class="product-name">Micro BNN Sobrancelha</h3>
+                        <div class="sizes" data-color="Natural">
+                            <div class="size">
+                                <h4>1 x 2 x</h4>
+                                <div class="sizes2">
+                                    <div class="measure-container"><span class="measure" data-price="2.5">6 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.5">7 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.5">8 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.5">10 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.5">12 x 3/3 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colors"><button class="color" data-price="2.5" data-color="Natural">€ 2.5</button></div>
+                </div>
+                <div class="product">
+                    <div class="product-info"><img src="https://i.imgur.com/W6C6eT1.jpg" alt="Micro Barbell" width="100" height="100" /></div>
+                    <div class="product-details">
+                        <h3 class="product-name">Micro Barbell</h3>
+                        <div class="sizes" data-color="Natural">
+                            <div class="size">
+                                <h4>1.2 mm x</h4>
+                                <div class="sizes2">
+                                    <div class="measure-container"><span class="measure" data-price="2.5">6 mm x 3/3</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.5">8 mm x 3/3</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.5">10 mm x 3/3</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.5">12 mm x 3/3</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="2.5">14 mm x 3/3</span><input type="number" min="0" class="measure-quantity" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colors"><button class="color" data-price="1.5" data-color="Natural">€ 2.5</button></div>
+                </div>
+                <div class="product">
+                    <div class="product-info"><img src="https://i.imgur.com/FKuyw6a.jpg" alt="Nipple Barbell" width="100" height="100" /></div>
+                    <div class="product-details">
+                        <h3 class="product-name">Nipple Barbell</h3>
+                        <div class="sizes" data-color="Natural">
+                            <div class="size">
+                                <h4>1.6 x</h4>
+                                <div class="sizes2">
+                                    <div class="measure-container"><span class="measure" data-price="3.0">10 x 4/4 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="3.0">12 x 4/4 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="3.0">14 x 4/4 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="3.0">16 x 4/4 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colors"><button class="color" data-price="3.0" data-color="Natural">€ 3.0</button></div>
+                </div>
+                <div class="product">
+                    <div class="product-info"><img src="https://i.imgur.com/bZiQOs6.jpg" alt="Haste LBT" width="100" height="100" /></div>
+                    <div class="product-details">
+                        <h3 class="product-name">Haste LBT</h3>
+                        <div class="sizes" data-color="Natural">
+                            <div class="size">
+                                <h4>1.2 mm x</h4>
+                                <div class="measure-container"><span class="measure" data-price="1.3">4 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="1.3">5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="1.3">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="1.3">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="1.3">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="1.3">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="1.3">10 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="1.3">12 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                            </div>
+                            <div class="size">
+                                <h4>1.6 mm x</h4>
+                                <div class="measure-container"><span class="measure" data-price="1.3">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="1.3">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="1.3">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="1.3">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
                                 <div class="measure-container"><span class="measure" data-price="1.3">10 mm</span><input type="number" min="0" class="measure-quantity" /></div>
                                 <div class="measure-container"><span class="measure" data-price="1.3">12 mm</span><input type="number" min="0" class="measure-quantity" /></div>
                                 <div class="measure-container"><span class="measure" data-price="1.3">14 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                <div class="measure-container"><span class="measure" data-price="1.3">16 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                <div class="measure-container"><span class="measure" data-price="1.3">18 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                <div class="measure-container"><span class="measure" data-price="1.3">20 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                <div class="measure-container"><span class="measure" data-price="1.3">22 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                <div class="measure-container"><span class="measure" data-price="1.3">24 mm</span><input type="number" min="0" class="measure-quantity" /></div>
- </div>
-
-                            
-                            
-            </div>
-
-</div>
-            <div class="colors">
-                <!-- Preços estão em euro -->
-<!-- Preços estão em euro -->
-<button class="color" data-price="1.3" data-color="Natural">€ 1.3</button>
-
-            </div>
-        </div>
-                       
-            <!-- Produto------------------------------------------------- -->
-               <!-- Produto------------------------------------------------- -->
-         <div class="product">
-            <div class="product-info">
-                <img src="https://i.imgur.com/aYvJQVq.jpg" alt="Haste Barbell 1.6 x 30 - 40 mm" width="100" height="100">
-            </div><div class="product-details">
-                <h3 class="product-name">Haste Barbell 1.6 x 30 - 40 mm</h3>
-            
-
-            <!-- Medidas para a cor Natural do produto D Ring -->
-            <div class="sizes" data-color="Natural">
-                <!-- Preços estão em euro -->
-                <div class="size">
-                    <h4>1.2 mm x</h4>
-<div class="measure-container"><span class="measure" data-price="1.8">30 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                <div class="measure-container"><span class="measure" data-price="1.8">32 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                <div class="measure-container"><span class="measure" data-price="1.8">36 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                <div class="measure-container"><span class="measure" data-price="1.8">38 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                <div class="measure-container"><span class="measure" data-price="1.8">40 mm</span><input type="number" min="0" class="measure-quantity" /></div>
                             </div>
-
-                            
-                            
-            </div>
-
-</div>
-            <div class="colors">
-                <!-- Preços estão em euro -->
-<!-- Preços estão em euro -->
-<button class="color" data-price="1.3" data-color="Natural">€ 1.3</button>
-
-            </div>
-        </div>
-                       
-            <!-- Produto------------------------------------------------- -->
-            <!-- Produto------------------------------------------------- -->
-            <div class="product">
-           
-                <div class="product-info">
-                    <img src="https://i.imgur.com/SZSFAUO.jpg" alt="Haste micro BNN" width="100" height="100">
-                    
-                </div>
-                <div class="product-details">
-                <h3 class="product-name">Haste micro BNN</h3>
-                <!-- Medidas para a cor Natural do produto  -->
-                <div class="sizes" data-color="Natural">
-                    <!-- Preços estão em euro -->
-                    <div class="size">
-                        <h4>1.2 mm x</h4>
-                            <div class="measure-container"><span class="measure" data-price="1.3">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                <div class="measure-container"><span class="measure" data-price="1.3">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                    <div class="measure-container"><span class="measure" data-price="1.3">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                    <div class="measure-container"><span class="measure" data-price="1.3">10 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                 <div class="measure-container"><span class="measure" data-price="1.3">12 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                    <div class="measure-container"><span class="measure" data-price="1.3">14 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-          </div>
-    
-                </div>
-                </div>
-               
-                <div class="colors">
-                    <!-- Preços estão em euro -->
-    <!-- Preços estão em euro -->
-    <button class="color" data-price="1.3" data-color="Natural">€ 1.3</button>
-    
-                </div>
-            </div>
-            <!-- Produto------------------------------------------------- -->
-        
-
-
-
-                      
-                                  <!-- Produto------------------------------------------------- -->
-        <div class="product">
-           
-            <div class="product-info">
-                <img src="https://i.imgur.com/vgP0fIy.jpg" alt="D Ring" width="100" height="100">
-                
-            </div>
-            <div class="product-details">
-            <h3 class="product-name">D Ring</h3>
-            <!-- Medidas para a cor Natural do produto  -->
-            <div class="sizes" data-color="Natural">
-                <!-- Preços estão em euro -->
-                <div class="size">
-                    <h4>1.0 mm x</h4>
-                        <div class="measure-container"><span class="measure" data-price="1.5">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                <div class="measure-container"><span class="measure" data-price="1.5">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                                <div class="measure-container"><span class="measure" data-price="1.5">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-        </div>
-
-            </div>
-            </div>
-           
-            <div class="colors">
-                <!-- Preços estão em euro -->
-<!-- Preços estão em euro -->
-<button class="color" data-price="1.5" data-color="Natural">€ 1.5</button>
-
-            </div>
-        </div>
-        <!-- Produto------------------------------------------------- -->
-                      <!-- Produto------------------------------------------------- -->
-                      <div class="product">
-           
-                        <div class="product-info">
-                            <img src="https://i.imgur.com/z2D473T.jpg" alt="Nostril Titânio Zircônia Inglesa" width="100" height="100">
-                            
-                        </div>
-                        <div class="product-details">
-                        <h3 class="product-name">Nostril Titânio Zircônia Inglesa</h3>
-                        <!-- Medidas para a cor Natural do produto  -->
-                        <div class="sizes" data-color="Natural">
-                            <!-- Preços estão em euro -->
-                            <div class="size">
-                                <h4>0.8 mm x</h4>
-                                    <div class="measure-container"><span class="measure" data-price="1.5">7 x 2 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                </div>
-                <div class="size">
-                                        <h4>1.0 mm x</h4>
-                                    <div class="measure-container"><span class="measure" data-price="1.5">7 x 2 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                </div>
-            
-                        </div>
-                        </div>
-                       
-                        <div class="colors">
-                            <!-- Preços estão em euro -->
-            <!-- Preços estão em euro -->
-            <button class="color" data-price="1.5" data-color="Natural">€ 1.5</button>
-            
                         </div>
                     </div>
-                
-                    <!-- Produto------------------------------------------------- -->
-                    
-
-
-
-
-
-
-                                  
-                                  <!-- Produto------------------------------------------------- -->
-        <div class="product">
-           
-            <div class="product-info">
-                <img src="https://i.imgur.com/L9EghUy.jpg" alt="Nostril Titânio Zircônia com Garra" width="100" height="100">
-                
+                    <div class="colors"><button class="color" data-price="1.3" data-color="Natural">€ 1.3</button></div>
+                </div>
+                <div class="product">
+                    <div class="product-info"><img src="https://i.imgur.com/VKbE1GZ.jpg" alt="Haste Barbell 1.2" width="100" height="100" /></div>
+                    <div class="product-details">
+                        <h3 class="product-name">Haste Barbell 1.2 mm</h3>
+                        <div class="sizes" data-color="Natural">
+                            <div class="size">
+                                <h4>1.2 mm x</h4>
+                                <div class="sizes2">
+                                    <div class="measure-container"><span class="measure" data-price="1.3">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="1.3">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="1.3">10 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="1.3">12 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="1.3">14 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colors"><button class="color" data-price="1.3" data-color="Natural">€ 1.3</button></div>
+                </div>
+                <div class="product">
+                    <div class="product-info"><img src="https://i.imgur.com/VKbE1GZ.jpg" alt="Haste Barbell 1.6" width="100" height="100" /></div>
+                    <div class="product-details">
+                        <h3 class="product-name">Haste Barbell 1.6 x 8 - 24 mm</h3>
+                        <div class="sizes" data-color="Natural">
+                            <div class="size">
+                                <h4>1.6 mm x</h4>
+                                <div class="sizes2">
+                                    <div class="measure-container"><span class="measure" data-price="1.3">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="1.3">10 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="1.3">12 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="1.3">14 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="1.3">16 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="1.3">18 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="1.3">20 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="1.3">22 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="1.3">24 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colors"><button class="color" data-price="1.3" data-color="Natural">€ 1.3</button></div>
+                </div>
+                <div class="product">
+                    <div class="product-info"><img src="https://i.imgur.com/aYvJQVq.jpg" alt="Haste Barbell 1.6 x 30 - 40 mm" width="100" height="100" /></div>
+                    <div class="product-details">
+                        <h3 class="product-name">Haste Barbell 1.6 x 30 - 40 mm</h3>
+                        <div class="sizes" data-color="Natural">
+                            <div class="size">
+                                <h4>1.6 mm x</h4>
+                                <div class="sizes2">
+                                    <div class="measure-container"><span class="measure" data-price="1.8">30 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="1.8">32 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="1.8">36 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="1.8">38 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="1.8">40 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colors"><button class="color" data-price="1.3" data-color="Natural">€ 1.3</button></div>
+                </div>
+                <div class="product">
+                    <div class="product-info"><img src="https://i.imgur.com/SZSFAUO.jpg" alt="Haste micro BNN" width="100" height="100" /></div>
+                    <div class="product-details">
+                        <h3 class="product-name">Haste micro BNN</h3>
+                        <div class="sizes" data-color="Natural">
+                            <div class="size">
+                                <h4>1.2 mm x</h4>
+                                <div class="sizes2">
+                                    <div class="measure-container"><span class="measure" data-price="1.3">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="1.3">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="1.3">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="1.3">10 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="1.3">12 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="1.3">14 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colors"><button class="color" data-price="1.3" data-color="Natural">€ 1.3</button></div>
+                </div>
+                <div class="product">
+                    <div class="product-info"><img src="https://i.imgur.com/vgP0fIy.jpg" alt="D Ring" width="100" height="100" /></div>
+                    <div class="product-details">
+                        <h3 class="product-name">D Ring</h3>
+                        <div class="sizes" data-color="Natural">
+                            <div class="size">
+                                <h4>1.0 mm x</h4>
+                                <div class="measure-container"><span class="measure" data-price="1.5">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="1.5">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                <div class="measure-container"><span class="measure" data-price="1.5">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colors"><button class="color" data-price="1.5" data-color="Natural">€ 1.5</button></div>
+                </div>
+                <div class="product">
+                    <div class="product-info"><img src="https://i.imgur.com/z2D473T.jpg" alt="Nostril Titânio Zircônia sem Garra" width="100" height="100" /></div>
+                    <div class="product-details">
+                        <h3 class="product-name">Nostril Zircônia sem Garra</h3>
+                        <div class="sizes" data-color="Natural">
+                            <div class="size">
+                                <h4>0.8 mm x</h4>
+                                <div class="measure-container"><span class="measure" data-price="1.5">7 x 2 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                            </div>
+                            <div class="size">
+                                <h4>1.0 mm x</h4>
+                                <div class="measure-container"><span class="measure" data-price="1.5">7 x 2 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colors"><button class="color" data-price="1.5" data-color="Natural">€ 1.5</button></div>
+                </div>
+                <div class="product">
+                    <div class="product-info"><img src="https://i.imgur.com/L9EghUy.jpg" alt="Nostril Titânio Zircônia com Garra" width="100" height="100" /></div>
+                    <div class="product-details">
+                        <h3 class="product-name">Nostril Zircônia com Garra</h3>
+                        <div class="sizes" data-color="Natural">
+                            <div class="size">
+                                <h4>0.8 mm x</h4>
+                                <div class="measure-container"><span class="measure" data-price="1.8">7 x 2 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                            </div>
+                            <div class="size">
+                                <h4>1.0 mm x</h4>
+                                <div class="measure-container"><span class="measure" data-price="1.8">7 x 2 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colors"><button class="color" data-price="1.8" data-color="Natural">€ 1.8</button></div>
+                </div>
+                <div class="product">
+                    <div class="product-info"><img src="https://i.imgur.com/P1ywly8.jpg" alt="Clicker Zircônia Nariz" width="100" height="100" /></div>
+                    <div class="product-details">
+                        <h3 class="product-name">Clicker Zircônia - Nariz</h3>
+                        <div class="sizes" data-color="Natural">
+                            <div class="size">
+                                <h4>0.8 mm x</h4>
+                                <div class="sizes2">
+                                    <div class="measure-container"><span class="measure" data-price="1.8 x">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="1.8 x">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="1.8 x">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="1.8 x">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colors"><button class="color" data-price="1.8" data-color="Natural">€ 1.8</button></div>
+                </div>
+                <div class="product">
+                    <div class="product-info"><img src="https://i.imgur.com/m8Ot8Oo.jpg" alt="Clicker Zircônia para Helix" width="100" height="100" /></div>
+                    <div class="product-details">
+                        <h3 class="product-name">Clicker Zircônia - Helix</h3>
+                        <div class="sizes" data-color="Natural">
+                            <div class="size">
+                                <h4>1.2 mm x</h4>
+                                <div class="sizes2">
+                                    <div class="measure-container"><span class="measure" data-price="10.0">5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="10.0">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="10.0">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="10.0">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="10.0">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="10.0">10 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="10.0">11 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="10.0">12 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                    <div class="measure-container"><span class="measure" data-price="10.0">13 mm</span><input type="number" min="0" class="measure-quantity" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colors"><button class="color" data-price="10.0" data-color="Natural">€ 10.0</button></div>
+                </div>
             </div>
-            <div class="product-details">
-            <h3 class="product-name">Nostril Titânio Zircônia com Garra</h3>
-            <!-- Medidas para a cor Natural do produto  -->
-            <div class="sizes" data-color="Natural">
-                <!-- Preços estão em euro -->
-                <div class="size">
-                    <h4>0.8 mm x</h4>
-                        <div class="measure-container"><span class="measure" data-price="1.8">7 x 2 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-    </div><div class="size">
-		                    <h4>1.0 mm x</h4>
-                        <div class="measure-container"><span class="measure" data-price="1.8">7 x 2 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-    </div>
-
+            <div id="popup" style="display: none;">
+                <div class="popup-header">
+                    <img id="popup-product-image" class="popup-product-image" src="" alt="Product Image" />
+                    <div class="popup-text">
+                        <h2>Selecione as medidas:</h2>
+                        <p class="popup-product-name"></p>
+                        <p class="popup-color"></p>
+                    </div>
+                </div>
+                <div class="popup-sizes"></div>
+                <button id="popup-add">Adicionar</button> <button id="popup-close">X</button>
             </div>
+        </section>
+        <section id="purchaseSummary">
+            <h2>Resumo da Compra</h2>
+<div id="cart"></div>
+<span id="shipping">Frete: € 21.0</span>
+<p id="total-label">Total: €<span id="total">0</span></p>
+
+            <div id="buttonContainer">
+                <button id="copyButton"><i class="fas fa-copy"></i> Copiar</button>
+                <div id="copiedText"></div>
+                <button id="whatsappButton"><i class="fab fa-whatsapp"></i> Whatsapp</button>
             </div>
-           
-            <div class="colors">
-                <!-- Preços estão em euro -->
-<!-- Preços estão em euro -->
-<button class="color" data-price="1.8" data-color="Natural">€ 1.8</button>
-
+            <div id="clearcartContainer">
+                <button id="clearCartButton"><i class="fas fa-trash-alt"></i> Limpar Carrinho</button>
             </div>
-        </div>
-        <!-- Produto------------------------------------------------- -->
-        <!-- Produto------------------------------------------------- -->
-        <div class="product">
-           
-            <div class="product-info">
-                <img src="https://i.imgur.com/P1ywly8.jpg" alt="Clicker Zircônia Nariz" width="100" height="100">
-                
+        </section>
+        <footer>
+            <div class="contact-info">
+                <div>
+                    <img src="https://i.imgur.com/9hAlWtG.png" alt="Phone Icon" /> <a href="https://wa.me/393898986018" class="no-underline" target="_blank"><p>+39 38 9898-6018</p></a>
+                </div>
+                <div>
+                    <img src="https://i.imgur.com/fmTitG4.png" alt="Instagram Icon" /> <a href="https://www.instagram.com/tuling463/" class="no-underline" target="_blank"><p>instagram.com/tuling463</p></a>
+                </div>
+                <div>
+                    <img src="https://i.imgur.com/IRMadVw.png" alt="Email Icon" />
+                    <p>tulingepp@yahoo.com.br</p>
+                </div>
             </div>
-            <div class="product-details">
-            <h3 class="product-name">Clicker Zircônia Nariz</h3>
-            <!-- Medidas para a cor Natural do produto  -->
-            <div class="sizes" data-color="Natural">
-                <!-- Preços estão em euro -->
-                <div class="size">
-                    <h4>0.8 mm x</h4>
-                        <div class="measure-container"><span class="measure" data-price="1.0 x">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-    <div class="measure-container"><span class="measure" data-price="1.0 x">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-    <div class="measure-container"><span class="measure" data-price="1.0 x">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-    <div class="measure-container"><span class="measure" data-price="1.0 x">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-
-
+        </footer>
+        <div id="updateModal" class="modal">
+            <div class="modal-content">
+              <span class="modal-close">&times;</span>
+              <img id="updateModalImage" src="" alt="Produto">
+              <h2 id="updateModalTitle"></h2>
+              <input type="number" id="updateModalQuantity" min="1">
+              <button id="updateButton">Atualizar</button>
             </div>
-            </div>
-        </div>
-            <div class="colors">
-                <!-- Preços estão em euro -->
-<!-- Preços estão em euro -->
-<button class="color" data-price="1.8" data-color="Natural">€ 1.8</button>
-
-            </div>
-        </div>
-        <!-- Produto------------------------------------------------- -->
-    <!-- Produto------------------------------------------------- -->
-<div class="product">
-    <div class="product-info">
-        <img src="https://i.imgur.com/m8Ot8Oo.jpg" alt="Clicker Zircônia para Helix" width="100" height="100">
-    </div>
-    <div class="product-details">
-        <h3 class="product-name">Clicker Zircônia para Helix</h3>
-        <!-- Medidas para a cor Natural do produto Clicker Zircônia para Helix -->
-        <div class="sizes" data-color="Natural">
-            <!-- Preços estão em euro -->
-            <div class="size">
-                <h4>1.2 mm x</h4>
-                <div class="measure-container"><span class="measure" data-price="10.0">5 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="10.0">6 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="10.0">7 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="10.0">8 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="10.0">9 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="10.0">10 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="10.0">11 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="10.0">12 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-                <div class="measure-container"><span class="measure" data-price="10.0">13 mm</span><input type="number" min="0" class="measure-quantity" /></div>
-            </div>
-        </div>
-    </div>
-    <div class="colors">
-        <!-- Preços estão em euro -->
-        <button class="color" data-price="10.0" data-color="Natural">€ 10.0</button>
-    </div>
-</div>
-<!-- Produto------------------------------------------------- -->
-                     
-             
-<!-- Produto------------------------------------------------- -->
-
-<!-- Pop-up de seleção de cores e medidas -->
-<div id="popup" style="display: none;">
-    <div class="popup-header">
-        <img id="popup-product-image" class="popup-product-image" src="" alt="Product Image"/>
-         <div class="popup-text">
-                 <p class="popup-product-name"></p>
-                    <p class="popup-color"></p>
-         </div>
-         </div>
-        
-    <h2>Seleziona las misuras</h2>
-    
-    <div class="popup-sizes">
-        <!-- Aqui vão as opções de medidas -->
-    </div>
-
-    <button id="popup-add">Aggiungere</button>
-    <button id="popup-close">X</button>
-</div>
-
-    </section>
-
-    <!-- Resumo da compra -->
-    <section id="purchaseSummary">
-        <h2>Riepilogo Acquisti</h2>
-        <div id="cart">
-            <!-- Lista de produtos selecionados será preenchida aqui pelo JavaScript -->
-        </div>
-        <p>Totale: €<span id="total">0</span></p>
-        <button id="copyButton">Copia</button>
-        <button id="whatsappButton">Whatsapp</button>
-    </section>
-
-
-    <script src="https://zramonz.github.io/miopiercing/index.js"></script>
-</body>
-
+          </div>
+          
+        <script src="href="https://zramonz.github.io/miopiercing/index.js"></script>
+    </body>
 </html>
