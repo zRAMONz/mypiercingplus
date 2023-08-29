@@ -224,8 +224,7 @@ button.color:focus:active {
     flex-wrap: nowrap;
 }
 .measure-quantity {
-    width: 100px;
-    height: 50px;
+    width: 80px;
     padding: 5px;
     border: 2px solid #a1a1a1;
     margin: 8px;
@@ -846,19 +845,16 @@ footer {
 }
 
 .cart-count {
-    position: absolute;  /* Mudado para absolute */
-    top: 0;  /* Ajuste conforme necessário */
-    right: 0;  /* Ajuste conforme necessário */
-    background-color: white;
-    color: black;
+    position: absolute;
+    top: 36px;
+    right: 50px;
+    background-color: #ffffff;
+    color: #0db2b9;
     border-radius: 50%;
-    padding: 5px 20px;
+    padding: 5px 10px;
     font-size: 45px;
-    border: 2px solid gray;
-    font-weight: bold;
-    z-index: 2;  /* Adicionado para assegurar que este número fique acima do ícone */
+    z-index: 2;
 }
-  
   @media (min-width: 990px) {
     .cart-container {
         position: absolute;
@@ -971,7 +967,7 @@ footer {
     border: 1px solid #979797;
 }
 .decrease-button, .increase-button, .measure-quantity {
-  height: 90%; /* Isso fará com que os botões e a caixa de texto tenham a mesma altura */
+   height: 70px;
   vertical-align: middle; /* Alinha verticalmente os elementos */
 }
 
@@ -983,7 +979,6 @@ footer {
     cursor: pointer;
     margin: 10px 0 10px 0;
 border-radius: 0;
-height: 70px;
 }
 .increase-button {
 border-radius: 0 15px 15px 0;
@@ -995,7 +990,7 @@ border-radius: 15px 0 0 15px;
   border: 1px solid #ccc;
   padding: 0 5px;
     margin: 8px 0 8px 0;
-    height: 70px;
+   
 text-align: center;
 }
 .measure {
