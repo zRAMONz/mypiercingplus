@@ -885,8 +885,8 @@ top: 20px;
 
     .menu-icon {
         position: absolute;
-        top: 10px;
-        left: 10px;
+           top: 30px;
+    left: 30px;
         font-size: 90px;
         cursor: pointer;
         display: none; /* Escondido por padrão */
