@@ -113,6 +113,8 @@ document.querySelectorAll("li[id$='-category']").forEach(item => {
     let category = this.id.replace("-category", "");
     setActiveCategory(category);
   });
+});
+
 
   });
 
