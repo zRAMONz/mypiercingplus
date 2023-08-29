@@ -28,7 +28,7 @@ function openPopup(e) {
     let cartItems = JSON.parse(getItemWithExpiry("cart") || "[]");
     let total = freight; // Inicializa o total com o valor do frete
     let itemsInCart = cartItems.length;
-
+  
     if (cartItems.length > 0) {
       var o;
       let l = document.getElementById("cart");
@@ -36,35 +36,60 @@ function openPopup(e) {
         let d = document.createElement("div");
         d.innerHTML = item;
         let s = d.firstChild;
-        s.querySelector("button").addEventListener("click", removeFromCart), l.appendChild(s);
+        s.querySelector("button").addEventListener("click", removeFromCart);
+        l.appendChild(s);
         total += parseFloat(s.querySelector(".product-info > span").innerText.match(/€(\d+(\.\d{1,2})?) \* (\d+) unid = €(\d+(\.\d{1,2})?)/)[4]);
       }
-      
+  
       document.getElementById("total").innerText = total.toFixed(2);
     } else {
       // se o carrinho está vazio, o total deve ser o valor do frete
       document.getElementById("total").innerText = freight.toFixed(2);
-  }
-  updateCartCount();
-  document.getElementById('nariz-category').addEventListener('click', function() {
-    loadCategory('nariz');
-  });
-  });
-
-  // Função para carregar a categoria de produtos
-function loadCategory(categoryName) {
-  const xhr = new XMLHttpRequest();
-  xhr.open('GET', `${categoryName}.html`, true);
+    }
   
-  xhr.onreadystatechange = function() {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-          // Substitua o conteúdo de 'product-container' com o novo conteúdo HTML
-          document.querySelector('.product-container').innerHTML = xhr.responseText;
+    updateCartCount();
+  
+    document.getElementById('nariz-category').addEventListener('click', function() {
+      loadCategory('nariz');
+    });
+  
+    // Adicionando event delegation ao 'product-container'
+    document.querySelector('.product-container').addEventListener('click', function(event) {
+      const target = event.target;
+      
+      // Substitua 'classe-do-botao-com-preco' pela classe real que identifica o botão em seus produtos
+      let btn = target.closest('.classe-do-botao-com-preco');
+      
+      if (btn) {
+        // Coloque aqui o código que abre o modal de escolha de cada variação.
+        // Você pode usar 'btn' para acessar o botão que foi clicado.
+        // Por exemplo, sua função atual para abrir o modal pode ser chamada aqui.
       }
-  };
+    });
+  });
+  
+  // Função para carregar a categoria de produtos
+  function loadCategory(categoryName) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', `${categoryName}.html`, true);
+    
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // Substitua o conteúdo de 'product-container' com o novo conteúdo HTML
+            document.querySelector('.product-container').innerHTML = xhr.responseText;
 
-  xhr.send();
+            // Adiciona o evento aos novos botões de cor carregados
+            let colorButtons = document.getElementsByClassName("color");
+            for(let i=0; i < colorButtons.length; i++) {
+                colorButtons[i].addEventListener("click", openPopup);
+            }
+        }
+    };
+  
+    xhr.send();
 }
+
+  
 
 
   function addToCartFromPopup() {
