@@ -902,7 +902,6 @@ top: 20px;
         left: 0;
         background-color: #dffafa;
         overflow-x: hidden;
-        transition: 0.5s;
         color: #006367;
         z-index: 1000;  /* Adiciona um z-index alto para sobrepor outros elementos */
   box-shadow: 0 4px 10px 0 rgb(0 0 0 / 52%);
