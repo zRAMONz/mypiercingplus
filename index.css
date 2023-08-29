@@ -970,16 +970,17 @@ top: 20px;
     border: 1px solid #979797;
 }
 .decrease-button, .increase-button, .measure-quantity {
-  height: 100%; /* Isso fará com que os botões e a caixa de texto tenham a mesma altura */
+  height: 90%; /* Isso fará com que os botões e a caixa de texto tenham a mesma altura */
   vertical-align: middle; /* Alinha verticalmente os elementos */
 }
 
 /* Se quiser, você também pode adicionar mais estilos aos botões para torná-los mais atraentes */
 .decrease-button, .increase-button {
-  background-color: #eee;
-  border: 1px solid #ccc;
-  padding: 0 10px;
-  cursor: pointer;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    padding: 15px;
+    cursor: pointer;
+    margin: 10px 0 10px 0;
 }
 
 .measure-quantity {
