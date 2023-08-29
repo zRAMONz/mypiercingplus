@@ -63,16 +63,21 @@
             </header>
         <section id="productList">
             <h1 id="active-category-title">Produtos</h1>
-<select id="category-dropdown">
-    <option value="basicos">Básicos</option>
-    <option value="nariz">Nariz</option>
-<option value="septo">Septo</option>
-<option value="orelha">Orelha</option>
-<option value="sobrancelha">Sobrancelha</option>
-<option value="umbigo">Umbigo</option>
-<option value="mamilo">Mamilo</option>
+<div id="custom-dropdown-wrapper">
+  <div id="active-category-title" class="dropdown-title">
+    Orelha <span class="arrow">&#9660;</span>
+  </div>
+  <div id="custom-dropdown" class="dropdown-content">
+    <div class="dropdown-item" data-category="basicos">Básicos</div>
+    <div class="dropdown-item" data-category="nariz">Nariz</div>
+    <div class="dropdown-item" data-category="septo">Septo</div>
+    <div class="dropdown-item" data-category="orelha">Orelha</div>
+    <div class="dropdown-item" data-category="sobrancelha">Sobrancelha</div>
+    <div class="dropdown-item" data-category="umbigo">Umbigo</div>
+    <div class="dropdown-item" data-category="mamilo">Mamilo</div>
+  </div>
+</div>
 
-</select>
             <div class="product-container">
 </div>
  <div id="popup" style="display: none;">
