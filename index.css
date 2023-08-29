@@ -1031,9 +1031,22 @@ ul {
     list-style-type: none;
 }
 
-select#category-dropdown {
-  font-size: 16px;  /* Define o tamanho da fonte */
-  padding: 10px;    /* Espaço interno ao redor do texto */
-  width: 200px;     /* Largura do dropdown */
-  height: 40px;     /* Altura do dropdown */
+.dropdown-title {
+  cursor: pointer;
 }
+
+.arrow {
+  margin-left: 10px;
+}
+
+.dropdown-content {
+  display: none;
+  flex-direction: column;
+  border: 1px solid #ccc;
+}
+
+.dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
