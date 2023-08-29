@@ -944,6 +944,7 @@ top: 20px;
     flex-wrap: wrap;
     display: flex;
     justify-content: space-between;
+    margin: 20px;
 }
 .colors {
         flex-direction: row;
