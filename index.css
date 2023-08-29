@@ -1015,6 +1015,7 @@ padding: 0 21px 0 21px;
 border-width: 2px;
     border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
 margin: 0;
+border-style: inset;
 }
 
 .fas.fa-search {
