@@ -120,6 +120,40 @@ window.addEventListener("DOMContentLoaded", e => {
   });
 // Carrega a categoria "Básicos" como padrão
 loadCategory('basicos');
+var activeCategory = "basicos"; // Categoria padrão
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("active-category-title").innerText = getCategoryName(activeCategory);
+
+    // Evento ao clicar em uma categoria pelo menu lateral
+    document.querySelectorAll("li[id$='-category']").forEach(function(li) {
+        li.addEventListener("click", function() {
+            setActiveCategory(this.id.replace('-category', ''));
+        });
+    });
+
+    // Evento para o dropdown
+    document.getElementById("category-dropdown").addEventListener("change", function() {
+        setActiveCategory(this.value);
+    });
+});
+
+function setActiveCategory(category) {
+    activeCategory = category;
+    document.getElementById("active-category-title").innerText = getCategoryName(activeCategory);
+
+    // Aqui você pode adicionar o código AJAX para carregar os produtos da nova categoria
+}
+
+function getCategoryName(categoryId) {
+    switch (categoryId) {
+        case "basicos": return "Básicos";
+        case "argola": return "Argola";
+        // Outras categorias aqui
+        default: return "Produtos";
+    }
+}
+
 });
 
 // Função para carregar a categoria de produtos
