@@ -1037,6 +1037,7 @@ ul {
 
 .arrow {
   margin-left: 10px;
+  display: inline-block;
 }
 
 .dropdown-content {
