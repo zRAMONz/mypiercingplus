@@ -306,5 +306,6 @@ categoryButtons.forEach((button) => {
     button.addEventListener("click", function() {
         const categoryName = button.id.replace("-category", "");  // Extrai o nome da categoria do ID
         loadCategory(categoryName);
+        document.getElementById("sideMenu").style.display = "none";
     });
 });
