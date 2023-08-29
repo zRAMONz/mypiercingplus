@@ -66,9 +66,10 @@ function openPopup(e) {
         // Por exemplo, sua função atual para abrir o modal pode ser chamada aqui.
       }
 
+
+    });
   // Carrega a categoria "Básicos" como padrão
   loadCategory('basicos');
-    });
   });
   
   // Função para carregar a categoria de produtos
