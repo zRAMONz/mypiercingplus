@@ -830,7 +830,7 @@ footer {
 
 
 .cart-container {
-    position: relative;  /* Mudado de absolute para relative */
+    position: absolute;  /* Mudado de absolute para relative */
     right: 10px;
     top: 20px;
     display: flex;
