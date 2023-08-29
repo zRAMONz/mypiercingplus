@@ -939,7 +939,7 @@ top: 20px;
         flex-direction: column;
         flex: 0 0 50%;
       }
-product.container {
+.product-container {
     flex-wrap: wrap;
     display: flex;
     justify-content: center;
