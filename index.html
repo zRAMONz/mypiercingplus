@@ -65,17 +65,24 @@
             <div class="product-container">
 </div>
             <div id="popup" style="display: none;">
-                <div class="popup-header">
-                    <img id="popup-product-image" class="popup-product-image" src="" alt="Product Image" />
-                    <div class="popup-text">
-                        <h2>Selecione as medidas:</h2>
-                        <p class="popup-product-name"></p>
-                        <p class="popup-color"></p>
-                    </div>
-                </div>
-                <div class="popup-sizes"></div>
-                <button id="popup-add">Adicionar</button> <button id="popup-close">X</button>
-            </div>
+    <div class="popup-header">
+        <img id="popup-product-image" class="popup-product-image" src="" alt="Product Image" />
+        <div class="popup-text">
+            <h2>Selecione as medidas:</h2>
+            <p class="popup-product-name"></p>
+            <p class="popup-color"></p>
+        </div>
+    </div>
+    <div class="popup-sizes"></div>
+    <div class="quantity-container">
+        <button id="decrease">-</button>
+        <input type="text" id="quantity" value="1">
+        <button id="increase">+</button>
+    </div>
+    <button id="popup-add">Adicionar</button> 
+    <button id="popup-close">X</button>
+</div>
+
         </section>
         <section id="purchaseSummary">
             <h2>Resumo da Compra</h2>
