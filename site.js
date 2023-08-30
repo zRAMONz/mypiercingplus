@@ -242,6 +242,9 @@ productElement.addEventListener("click", function() {
 
           // Adicionar o novo elemento ao array cartItems
           cartItems.push(productElement.outerHTML);
+// Adicione esta linha
+updateClickableItems();
+
       }
   }
 
@@ -278,6 +281,16 @@ function updateCartCount() {
 const cart = document.getElementById("cart");
 const cartCount = document.querySelector(".cart-count");
 cartCount.innerText = cart.children.length;
+}
+function updateClickableItems() {
+  // Pega todos os elementos de produto do carrinho
+  var cartItems = document.querySelectorAll(".cart-item");
+
+  // Adiciona um evento de clique a cada item do carrinho
+  cartItems.forEach(function(item) {
+    item.removeEventListener("click", function() { openEditPopup(this); });  // Remove o evento existente para evitar múltiplas chamadas
+    item.addEventListener("click", function() { openEditPopup(this); });  // Adiciona o novo evento
+  });
 }
 
 
