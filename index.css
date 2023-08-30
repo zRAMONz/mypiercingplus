@@ -329,6 +329,7 @@ button.color:focus:active {
     font-size: 35px;
     font-weight: bold;
     margin: 0;
+    text-align: center;
 }
 #cart div {
     margin-bottom: 10px;
@@ -1077,8 +1078,12 @@ ul {
   position: relative;
   margin: 10% auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: #f2fdfd;
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
 }
 
 .close-popup {
@@ -1095,6 +1100,8 @@ ul {
 #edit-quantity {
   width: 100px; /* ou qualquer outro tamanho que você prefira */
   font-size: 50px; /* ajuste o tamanho da fonte conforme necessário */
+  text-align: center;
+  border: 1px solid #979797;
 }
 .cart-icon-flashing {
   color: #00f5ff;
