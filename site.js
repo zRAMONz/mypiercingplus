@@ -267,6 +267,13 @@ h.appendChild(B);
 
 closePopup();
 updateCartCount();
+// Depois da linha onde você insere productElement no DOM ou em cartItems
+if (productElement) {
+    productElement.addEventListener("click", function() {
+        openEditPopup(this);
+    });
+}
+
 }
 function updateCartCount() {
 const cart = document.getElementById("cart");
@@ -424,7 +431,9 @@ function confirmEdit() {
   // Pegue a nova quantidade a partir do modal
   var newQuantity = parseInt(document.getElementById("edit-quantity").value);
   var productName = document.querySelector(".popup-product-name").innerText;
-  var color = document.querySelector(".popup-color").innerText.split(":")[1].trim();
+  var colorText = document.querySelector(".popup-color").innerText.split(":")[1];
+var color = colorText ? colorText.trim() : '';
+
   var size = document.querySelector(".popup-size").innerText.split(":")[1].trim();
 
   let cartItems = JSON.parse(getItemWithExpiry("cart") || "[]");
