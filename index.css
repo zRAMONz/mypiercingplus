@@ -1092,3 +1092,7 @@ ul {
     max-width: 100px;
     max-height: 100px;
 }
+#edit-quantity {
+  width: 100px; /* ou qualquer outro tamanho que você prefira */
+  font-size: 18px; /* ajuste o tamanho da fonte conforme necessário */
+}
