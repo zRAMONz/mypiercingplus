@@ -544,6 +544,7 @@ function updateCartSummary() {
     totalAmount += unitPrice * quantity;
   }
 
-  // Aqui você atualiza o elemento HTML que mostra o total do carrinho
-  document.getElementById("cart-total").innerText = "Total: €" + totalAmount.toFixed(2);
+    // Aqui você atualiza o elemento HTML que mostra o total do carrinho
+document.getElementById("total").innerText = totalAmount.toFixed(2);
+
 }
