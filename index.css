@@ -1096,3 +1096,6 @@ ul {
   width: 100px; /* ou qualquer outro tamanho que você prefira */
   font-size: 50px; /* ajuste o tamanho da fonte conforme necessário */
 }
+.cart-icon-flashing {
+  color: #00f5ff;
+}
