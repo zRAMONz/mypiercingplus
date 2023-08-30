@@ -230,9 +230,13 @@ function addToCartFromPopup() {
           // Atualizar o totalValue de acordo com a nova quantidade
           totalValue += price * quantity;
 
+// Dentro da sua função addToCartFromPopup
+var uniqueIdentifier = productName + "_" + color + "_" + sizeName + "_" + sizeText;
+
 var productElement = document.createElement("p");
 productElement.className = "cart-item";
-productElement.setAttribute("data-id", algum_identificador_unico);  // Escolha um identificador único para cada produto
+productElement.setAttribute("data-id", uniqueIdentifier);
+
 
 
           var imgElement = document.createElement("img");
