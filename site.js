@@ -297,6 +297,7 @@ var h = document.querySelector(`img[src="${productImage}"]`).closest(".product")
 h.style.position = "relative";
 h.appendChild(B);
 
+  flashCartIcon();
 closePopup();
 updateCartCount();
 }
@@ -334,6 +335,7 @@ E.splice(E.indexOf(t.outerHTML), 1);
 setItemWithExpiry("cart", JSON.stringify(E));
 
 updateCartCount();
+  flashCartIcon();
 }
 
 window.addEventListener("resize", function () {
@@ -544,6 +546,14 @@ function updateCartSummary() {
     totalAmount += unitPrice * quantity;
   }
 
+function flashCartIcon() {
+  var cartIcon = document.querySelector('.cart-icon');
+  cartIcon.classList.add('cart-icon-flashing');
+  
+  setTimeout(function() {
+    cartIcon.classList.remove('cart-icon-flashing');
+  }, 500);
+}
     // Aqui você atualiza o elemento HTML que mostra o total do carrinho
 document.getElementById("total").innerText = totalAmount.toFixed(2);
 
