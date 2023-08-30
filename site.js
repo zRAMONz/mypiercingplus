@@ -484,12 +484,40 @@ function closeEditPopup() {
 }
 
 function confirmEdit() {
-  var popup = document.getElementById("edit-product-popup");
-  var quantity = parseInt(document.getElementById("edit-quantity").value);
-  // Aqui você atualiza a quantidade do produto no resumo e no cache.
-  // Código para atualizar a linha do produto e o cache vai aqui.
-  popup.style.display = "none";
+  // Obter o valor atualizado da quantidade do modal
+  var updatedQuantity = parseInt(document.getElementById("edit-quantity").value);
+
+  // Obter o item atual a ser editado pelo seu identificador único
+  var cartItems = JSON.parse(getItemWithExpiry("cart") || "[]");
+  var uniqueId = document.getElementById("edit-product-popup").getAttribute("data-id");
+
+  var index = cartItems.findIndex(htmlString => {
+    var div = document.createElement('div');
+    div.innerHTML = htmlString;
+    return div.firstChild.getAttribute("data-id") === uniqueId;
+  });
+
+  if (index !== -1) {
+    var div = document.createElement('div');
+    div.innerHTML = cartItems[index];
+    var productElement = div.firstChild;
+
+    // Atualizar a quantidade no elemento HTML
+    var pricePerUnit = parseFloat(productElement.querySelector(".product-info > span").innerText.split("€")[1].split(" *")[0]);
+    var totalPrice = pricePerUnit * updatedQuantity;
+
+    productElement.querySelector(".product-info > span").innerText = `€${pricePerUnit.toFixed(2)} * ${updatedQuantity} unid = €${totalPrice.toFixed(2)}`;
+    cartItems[index] = productElement.outerHTML;
+
+    // Atualizar o cache
+    setItemWithExpiry("cart", JSON.stringify(cartItems), 3600);
+
+    // Aqui você pode também atualizar qualquer elemento que mostre o total da compra
+  }
+
+  closeEditPopup();  // Fechar o modal
 }
+
 document.addEventListener("click", function(event) {
   if (event.target.closest(".cart-item")) {
     const itemId = event.target.closest(".cart-item").getAttribute("data-id");
