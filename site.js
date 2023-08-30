@@ -527,3 +527,23 @@ document.addEventListener("click", function(event) {
     openEditPopup(itemId);
   }
 });
+function updateCartSummary() {
+  var cartItems = JSON.parse(getItemWithExpiry("cart") || "[]");
+  var totalAmount = 0;
+
+  for (var i = 0; i < cartItems.length; i++) {
+    var div = document.createElement('div');
+    div.innerHTML = cartItems[i];
+    var unitPriceElement = div.querySelector(".product-info span");
+    var unitPriceText = unitPriceElement.innerText.split("*")[0].split("€")[1].trim();
+    var unitPrice = parseFloat(unitPriceText);
+    
+    var quantityText = unitPriceElement.innerText.split("*")[1].split("unid")[0].trim();
+    var quantity = parseFloat(quantityText);
+    
+    totalAmount += unitPrice * quantity;
+  }
+
+  // Aqui você atualiza o elemento HTML que mostra o total do carrinho
+  document.getElementById("cart-total").innerText = "Total: €" + totalAmount.toFixed(2);
+}
