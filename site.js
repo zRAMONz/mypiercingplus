@@ -234,6 +234,12 @@ function addToCartFromPopup() {
           removeButton.addEventListener("click", removeFromCart);
           productElement.appendChild(removeButton);
 
+// Adicionar evento de clique para abrir o modal de edição
+productElement.className = "cart-item";
+productElement.addEventListener("click", function() {
+  openEditPopup(this);
+});
+
           // Adicionar o novo elemento ao array cartItems
           cartItems.push(productElement.outerHTML);
       }
@@ -403,3 +409,30 @@ categoryButtons.forEach((button) => {
       document.getElementById("sideMenu").style.width = "0";
   });
 });
+function openEditPopup(productElement) {
+  var popup = document.getElementById("edit-product-popup");
+  var productName = productElement.querySelector(".product-info").innerText.split(" | ")[0];
+  var colorSize = productElement.querySelector(".product-info").innerText.split(" | ")[1];
+  var color = colorSize.split(" ")[0];
+  var size = colorSize.split(" ")[2];
+  var quantity = productElement.querySelector(".product-info > span").innerText.split("*")[1].split("unid")[0].trim();
+
+  popup.querySelector(".popup-product-name").innerText = productName;
+  popup.querySelector(".popup-color").innerText = "Cor: " + color;
+  popup.querySelector(".popup-size").innerText = "Tamanho: " + size;
+  document.getElementById("edit-quantity").value = quantity;
+  
+  popup.style.display = "block";
+}
+
+function closeEditPopup() {
+  document.getElementById("edit-product-popup").style.display = "none";
+}
+
+function confirmEdit() {
+  var popup = document.getElementById("edit-product-popup");
+  var quantity = parseInt(document.getElementById("edit-quantity").value);
+  // Aqui você atualiza a quantidade do produto no resumo e no cache.
+  // Código para atualizar a linha do produto e o cache vai aqui.
+  popup.style.display = "none";
+}
