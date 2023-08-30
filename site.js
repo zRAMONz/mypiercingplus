@@ -545,6 +545,7 @@ function updateCartSummary() {
     
     totalAmount += unitPrice * quantity;
   }
+}
 
 function flashCartIcon() {
   var cartIcon = document.querySelector('.cart-icon');
@@ -557,4 +558,3 @@ function flashCartIcon() {
     // Aqui você atualiza o elemento HTML que mostra o total do carrinho
 document.getElementById("total").innerText = totalAmount.toFixed(2);
 
-}
