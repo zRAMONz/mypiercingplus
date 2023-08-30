@@ -1,3 +1,13 @@
+// Esta função deve ser adicionada no início do seu código JavaScript
+document.getElementById("cartContainer").addEventListener("click", function(event) {
+    var targetElement = event.target;
+    
+    // Verifique se o elemento clicado é um item do carrinho
+    if (targetElement.classList.contains("cart-item")) {
+        openEditPopup(targetElement);
+    }
+});
+
 function openPopup(e) {
   var t = e.target.closest(".product"),
       n = e.target.getAttribute("data-color"),
