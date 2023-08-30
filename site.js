@@ -484,39 +484,40 @@ function closeEditPopup() {
 }
 
 function confirmEdit() {
-  // Obter o valor atualizado da quantidade do modal
-  var updatedQuantity = parseInt(document.getElementById("edit-quantity").value);
+  var popup = document.getElementById("edit-product-popup");
+  var newQuantity = document.getElementById("edit-quantity").value;
+  console.log("Nova quantidade: " + newQuantity); // Para rastrear a nova quantidade
 
-  // Obter o item atual a ser editado pelo seu identificador único
+  var itemId = popup.getAttribute("data-id");
+  console.log("ID do Item: " + itemId); // Para rastrear o ID do item
+
   var cartItems = JSON.parse(getItemWithExpiry("cart") || "[]");
-  var uniqueId = document.getElementById("edit-product-popup").getAttribute("data-id");
 
-  var index = cartItems.findIndex(htmlString => {
+  for (var i = 0; i < cartItems.length; i++) {
     var div = document.createElement('div');
-    div.innerHTML = htmlString;
-    return div.firstChild.getAttribute("data-id") === uniqueId;
-  });
+    div.innerHTML = cartItems[i];
+    var currentId = div.firstChild.getAttribute("data-id");
 
-  if (index !== -1) {
-    var div = document.createElement('div');
-    div.innerHTML = cartItems[index];
-    var productElement = div.firstChild;
+    if (currentId === itemId) {
+      var unitPriceElement = div.querySelector(".product-info span");
+      var unitPriceText = unitPriceElement.innerText.split("*")[0].split("€")[1].trim();
+      var unitPrice = parseFloat(unitPriceText);
+      console.log("Preço unitário: " + unitPrice); // Para rastrear o preço unitário
 
-    // Atualizar a quantidade no elemento HTML
-    var pricePerUnit = parseFloat(productElement.querySelector(".product-info > span").innerText.split("€")[1].split(" *")[0]);
-    var totalPrice = pricePerUnit * updatedQuantity;
+      var totalPrice = unitPrice * newQuantity;
+      console.log("Preço total: " + totalPrice); // Para rastrear o preço total
 
-    productElement.querySelector(".product-info > span").innerText = `€${pricePerUnit.toFixed(2)} * ${updatedQuantity} unid = €${totalPrice.toFixed(2)}`;
-    cartItems[index] = productElement.outerHTML;
-
-    // Atualizar o cache
-    setItemWithExpiry("cart", JSON.stringify(cartItems), 3600);
-
-    // Aqui você pode também atualizar qualquer elemento que mostre o total da compra
+      unitPriceElement.innerText = `€${unitPrice.toFixed(2)} * ${newQuantity} unid = €${totalPrice.toFixed(2)}`;
+      cartItems[i] = div.innerHTML;
+      break;
+    }
   }
 
-  closeEditPopup();  // Fechar o modal
+  setItemWithExpiry("cart", JSON.stringify(cartItems), 86400000);
+  updateCartSummary();
+  closeEditPopup();
 }
+
 
 document.addEventListener("click", function(event) {
   if (event.target.closest(".cart-item")) {
