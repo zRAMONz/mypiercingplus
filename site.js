@@ -461,6 +461,24 @@ function openEditPopup(productElement) {
   popup.style.display = "block";
   document.getElementById("edit-product-popup").style.display = "block";
 }
+function openEditPopup(uniqueId) {
+  var cartItems = JSON.parse(getItemWithExpiry("cart") || "[]");
+
+  var foundItem = cartItems.find(htmlString => {
+    var div = document.createElement('div');
+    div.innerHTML = htmlString;
+    return div.firstChild.getAttribute("data-id") === uniqueId;
+  });
+
+  if (foundItem) {
+    var div = document.createElement('div');
+    div.innerHTML = foundItem;
+
+    var productElement = div.firstChild;
+    var productName = productElement.querySelector(".product-info").innerText.split(" | ")[0];
+    // resto do seu código
+  }
+}
 
 function closeEditPopup() {
   document.getElementById("edit-product-popup").style.display = "none";
