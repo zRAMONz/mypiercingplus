@@ -445,44 +445,35 @@ categoryButtons.forEach((button) => {
       document.getElementById("sideMenu").style.width = "0";
   });
 });
-function openEditPopup(uniqueId) {
-  console.log("Abre o popup");
-
+function openEditPopup(itemId) {
   var cartItems = JSON.parse(getItemWithExpiry("cart") || "[]");
-  console.log("Itens no carrinho:", cartItems);
 
   var foundItem = cartItems.find(htmlString => {
     var div = document.createElement('div');
     div.innerHTML = htmlString;
-    return div.firstChild.getAttribute("data-id") === uniqueId;
+    return div.firstChild.getAttribute("data-id") === itemId;
   });
-
-  console.log("Item encontrado:", foundItem);
 
   if (foundItem) {
     var div = document.createElement('div');
     div.innerHTML = foundItem;
     var productElement = div.firstChild;
 
-    var productName = productElement.querySelector(".product-info").innerText.split(" | ")[0];
-    var colorSize = productElement.querySelector(".product-info").innerText.split(" | ")[1];
-    var colorSizeSplit = colorSize.split(" ");
-    var color = colorSizeSplit[0];
-    var size = colorSizeSplit.slice(2).join(" ");
-    var productImage = productElement.querySelector("img").src;
-var quantity = productElement.querySelector(".product-info > span").innerText.split("*")[1].split("unid")[0].trim();
+    var fullInfo = productElement.querySelector(".product-info").innerHTML;
+    var productImgSrc = productElement.querySelector("img").src;
 
     var popup = document.getElementById("edit-product-popup");
-    popup.querySelector(".popup-product-name").innerText = productName;
-    popup.querySelector(".popup-color").innerText = "Cor: " + color;
-    popup.querySelector(".popup-size").innerText = "Tamanho: " + size;
-    popup.querySelector(".popup-image").src = productImage;
+
+    popup.querySelector(".popup-product-name").innerHTML = fullInfo;
+    popup.querySelector(".popup-image").src = productImgSrc;
+
+    var quantity = fullInfo.split("*")[1].split("unid")[0].trim();
     document.getElementById("edit-quantity").value = quantity;
 
-    console.log("Abrindo modal com as informações do produto");
     popup.style.display = "block";
   }
 }
+
 
 
 
