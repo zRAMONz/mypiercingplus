@@ -1094,14 +1094,15 @@ ul {
 }
 
 .popup-image {
-    max-width: 100px;
-    max-height: 100px;
+    max-width: 400px;
+    max-height: 400px;
 }
 #edit-quantity {
   width: 100px; /* ou qualquer outro tamanho que você prefira */
   font-size: 50px; /* ajuste o tamanho da fonte conforme necessário */
   text-align: center;
   border: 1px solid #979797;
+  margin: 20px 0 20px 0;
 }
 .cart-icon-flashing {
   color: #00f5ff;
