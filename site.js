@@ -470,6 +470,7 @@ function openEditPopup(uniqueId) {
     var color = colorSizeSplit[0];
     var size = colorSizeSplit.slice(2).join(" ");
     var productImage = productElement.querySelector("img").src;
+var quantity = productElement.querySelector(".product-info > span").innerText.split("*")[1].split("unid")[0].trim();
 
     var popup = document.getElementById("edit-product-popup");
     popup.querySelector(".popup-product-name").innerText = productName;
