@@ -463,6 +463,7 @@ function openEditPopup(itemId) {
     var productImgSrc = productElement.querySelector("img").src;
 
     var popup = document.getElementById("edit-product-popup");
+    popup.setAttribute("data-id", itemId); // Nova linha
 
     popup.querySelector(".popup-product-name").innerHTML = fullInfo;
     popup.querySelector(".popup-image").src = productImgSrc;
@@ -473,6 +474,7 @@ function openEditPopup(itemId) {
     popup.style.display = "block";
   }
 }
+
 
 
 
