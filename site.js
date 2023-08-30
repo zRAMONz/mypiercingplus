@@ -445,24 +445,11 @@ categoryButtons.forEach((button) => {
       document.getElementById("sideMenu").style.width = "0";
   });
 });
-function openEditPopup(productElement) {
-  var popup = document.getElementById("edit-product-popup");
-  var productName = productElement.querySelector(".product-info").innerText.split(" | ")[0];
-  var colorSize = productElement.querySelector(".product-info").innerText.split(" | ")[1];
-  var color = colorSize.split(" ")[0];
-  var size = colorSize.split(" ")[2];
-  var quantity = productElement.querySelector(".product-info > span").innerText.split("*")[1].split("unid")[0].trim();
-
-  popup.querySelector(".popup-product-name").innerText = productName;
-  popup.querySelector(".popup-color").innerText = "Cor: " + color;
-  popup.querySelector(".popup-size").innerText = "Tamanho: " + size;
-  document.getElementById("edit-quantity").value = quantity;
-  
-  popup.style.display = "block";
-  document.getElementById("edit-product-popup").style.display = "block";
-}
 function openEditPopup(uniqueId) {
+  console.log("Abre o popup");
+
   var cartItems = JSON.parse(getItemWithExpiry("cart") || "[]");
+  console.log("Itens no carrinho:", cartItems);
 
   var foundItem = cartItems.find(htmlString => {
     var div = document.createElement('div');
@@ -470,15 +457,34 @@ function openEditPopup(uniqueId) {
     return div.firstChild.getAttribute("data-id") === uniqueId;
   });
 
+  console.log("Item encontrado:", foundItem);
+
   if (foundItem) {
     var div = document.createElement('div');
     div.innerHTML = foundItem;
-
     var productElement = div.firstChild;
+
     var productName = productElement.querySelector(".product-info").innerText.split(" | ")[0];
-    // resto do seu código
+    console.log("Nome do produto:", productName);
+
+    var colorSize = productElement.querySelector(".product-info").innerText.split(" | ")[1];
+    var color = colorSize.split(" ")[0];
+    var size = colorSize.split(" ")[2];
+    var quantity = productElement.querySelector(".product-info > span").innerText.split("*")[1].split("unid")[0].trim();
+
+    var popup = document.getElementById("edit-product-popup");
+    popup.querySelector(".popup-product-name").innerText = productName;
+    popup.querySelector(".popup-color").innerText = "Cor: " + color;
+    popup.querySelector(".popup-size").innerText = "Tamanho: " + size;
+    document.getElementById("edit-quantity").value = quantity;
+
+    console.log("Abrindo modal com as informações do produto");
+    popup.style.display = "block";
   }
 }
+
+
+
 
 function closeEditPopup() {
   document.getElementById("edit-product-popup").style.display = "none";
