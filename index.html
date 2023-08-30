@@ -109,6 +109,19 @@
                 <button id="clearCartButton"><i class="fas fa-trash-alt"></i> Limpar Carrinho</button>
             </div>
         </section>
+<div id="edit-product-popup" class="popup-container">
+  <div class="popup">
+    <button class="close-popup" onclick="closeEditPopup()">X</button>
+    <h3 class="popup-product-name"></h3>
+    <div class="popup-content">
+      <span class="popup-color"></span>
+      <span class="popup-size"></span>
+      <input id="edit-quantity" type="number" min="1">
+    </div>
+    <button onclick="confirmEdit()">OK</button>
+  </div>
+</div>
+
         <footer>
             <div class="contact-info">
                 <div>
