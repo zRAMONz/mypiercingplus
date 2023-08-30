@@ -465,23 +465,24 @@ function openEditPopup(uniqueId) {
     var productElement = div.firstChild;
 
     var productName = productElement.querySelector(".product-info").innerText.split(" | ")[0];
-    console.log("Nome do produto:", productName);
-
     var colorSize = productElement.querySelector(".product-info").innerText.split(" | ")[1];
-    var color = colorSize.split(" ")[0];
-    var size = colorSize.split(" ")[2];
-    var quantity = productElement.querySelector(".product-info > span").innerText.split("*")[1].split("unid")[0].trim();
+    var colorSizeSplit = colorSize.split(" ");
+    var color = colorSizeSplit[0];
+    var size = colorSizeSplit.slice(2).join(" ");
+    var productImage = productElement.querySelector("img").src;
 
     var popup = document.getElementById("edit-product-popup");
     popup.querySelector(".popup-product-name").innerText = productName;
     popup.querySelector(".popup-color").innerText = "Cor: " + color;
     popup.querySelector(".popup-size").innerText = "Tamanho: " + size;
+    popup.querySelector(".popup-image").src = productImage;
     document.getElementById("edit-quantity").value = quantity;
 
     console.log("Abrindo modal com as informações do produto");
     popup.style.display = "block";
   }
 }
+
 
 
 
