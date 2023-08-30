@@ -230,9 +230,10 @@ function addToCartFromPopup() {
           // Atualizar o totalValue de acordo com a nova quantidade
           totalValue += price * quantity;
 
-          var productElement = document.createElement("p");
-// Adicione esta linha onde você cria o elemento do produto
+var productElement = document.createElement("p");
 productElement.className = "cart-item";
+productElement.setAttribute("data-id", algum_identificador_unico);  // Escolha um identificador único para cada produto
+
 
           var imgElement = document.createElement("img");
           imgElement.src = productImage;
@@ -454,6 +455,7 @@ function openEditPopup(productElement) {
   document.getElementById("edit-quantity").value = quantity;
   
   popup.style.display = "block";
+  document.getElementById("edit-product-popup").style.display = "block";
 }
 
 function closeEditPopup() {
@@ -467,3 +469,9 @@ function confirmEdit() {
   // Código para atualizar a linha do produto e o cache vai aqui.
   popup.style.display = "none";
 }
+document.addEventListener("click", function(event) {
+  if (event.target.closest(".cart-item")) {
+    const itemId = event.target.closest(".cart-item").getAttribute("data-id");
+    openEditPopup(itemId);
+  }
+});
