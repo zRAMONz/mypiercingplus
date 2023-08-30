@@ -1,12 +1,17 @@
 // Esta função deve ser adicionada no início do seu código JavaScript
-document.getElementById("cartContainer").addEventListener("click", function(event) {
+document.querySelector(".cart-container").addEventListener("click", function(event) {
     var targetElement = event.target;
     
     // Verifique se o elemento clicado é um item do carrinho
-    if (targetElement.classList.contains("cart-item")) {
+    while (targetElement != null && !targetElement.classList.contains("cart-item")) {
+        targetElement = targetElement.parentElement;
+    }
+
+    if (targetElement != null) {
         openEditPopup(targetElement);
     }
 });
+
 
 function openPopup(e) {
   var t = e.target.closest(".product"),
@@ -226,6 +231,9 @@ function addToCartFromPopup() {
           totalValue += price * quantity;
 
           var productElement = document.createElement("p");
+// Adicione esta linha onde você cria o elemento do produto
+productElement.className = "cart-item";
+
           var imgElement = document.createElement("img");
           imgElement.src = productImage;
           productElement.appendChild(imgElement);
