@@ -403,3 +403,64 @@ categoryButtons.forEach((button) => {
       document.getElementById("sideMenu").style.width = "0";
   });
 });
+function openEditPopup(event) {
+  var productElement = event.target.closest("p");
+  var productName = productElement.querySelector(".product-info").innerText.split("|")[0].trim();
+  var color = productElement.querySelector(".product-info").innerText.split("|")[1].split(":")[0].trim();
+  var size = productElement.querySelector(".product-info").innerText.split("|")[1].split(":")[1].trim();
+  var quantity = parseInt(productElement.querySelector(".product-info > span").innerText.split("*")[1].split("unid")[0].trim());
+  
+  document.getElementById("edit-product-popup").style.display = "block";
+  document.querySelector(".popup-product-name").innerText = productName;
+  document.querySelector(".popup-color").innerText = "Cor: " + color;
+  document.querySelector(".popup-size").innerText = "Tamanho: " + size;
+  document.getElementById("edit-quantity").value = quantity;
+}
+function closeEditPopup() {
+  document.getElementById("edit-product-popup").style.display = "none";
+}
+
+function confirmEdit() {
+  // Pegue a nova quantidade a partir do modal
+  var newQuantity = parseInt(document.getElementById("edit-quantity").value);
+  var productName = document.querySelector(".popup-product-name").innerText;
+  var color = document.querySelector(".popup-color").innerText.split(":")[1].trim();
+  var size = document.querySelector(".popup-size").innerText.split(":")[1].trim();
+
+  let cartItems = JSON.parse(getItemWithExpiry("cart") || "[]");
+
+  // Encontrar o índice do produto existente
+  var existingIndex = cartItems.findIndex(p => {
+      var div = document.createElement('div');
+      div.innerHTML = p;
+      return div.firstChild.querySelector(".product-info").innerText.includes(productName + " " + color + " | " + size);
+  });
+
+  if (existingIndex >= 0) {
+      var div = document.createElement('div');
+      div.innerHTML = cartItems[existingIndex];
+      var existingQtySpan = div.firstChild.querySelector(".product-info > span");
+      var existingPrice = parseFloat(existingQtySpan.innerText.split("€")[1].split("*")[0].trim());
+      existingQtySpan.innerText = "€" + existingPrice.toFixed(2) + " * " + newQuantity + " unid = €" + (existingPrice * newQuantity).toFixed(2);
+
+      // Atualizar o item no array e no localStorage
+      cartItems[existingIndex] = div.innerHTML;
+      setItemWithExpiry("cart", JSON.stringify(cartItems));
+  }
+
+  // Agora atualize o carrinho no DOM
+  var cart = document.getElementById("cart");
+  cart.innerHTML = "";
+  for (var i = 0; i < cartItems.length; i++) {
+    var div = document.createElement('div');
+    div.innerHTML = cartItems[i];
+    div.firstChild.querySelector("button").addEventListener("click", removeFromCart);
+    cart.appendChild(div.firstChild);
+  }
+
+  closeEditPopup();
+  updateCartCount();
+}
+
+// ... (Código existente)
+productElement.addEventListener("click", openEditPopup);
